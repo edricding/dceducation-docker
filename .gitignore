@@ -1,0 +1,79 @@
+# ============== 图片文件 ==============
+# 常见图片格式
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.webp
+# *.svg
+# *.bmp
+# *.ico
+# *.tiff
+# *.tif
+# *.heic
+
+# 有的项目会把图片放在特定文件夹，也一并忽略（可选，根据实际情况删掉）
+# images/
+# assets/images/
+# public/images/
+
+# ============== Adobe 文件 ==============
+# Photoshop
+# *.psd
+# *.psb
+
+# Illustrator
+# *.ai
+
+# Adobe 常见的临时/缓存文件
+# *.ait        # Illustrator 模板
+# *.aip        # Illustrator 插件数据
+# ~*.ai        # Illustrator 临时备份文件
+# ~*.psd
+
+# ============== 其他常见的设计/临时文件（推荐一起忽略）==============
+# Mac 系统临时文件
+.DS_Store
+*.swp
+
+# Windows 缩略图缓存
+Thumbs.db
+Desktop.ini
+
+# Adobe Cache
+Adobe Photoshop Temp*
+Illustrator*.tmp
+
+# Figma 导出常用格式（如果有的话）
+*.fig
+
+# 矢量图标类
+# *.eps
+# *.pdf        # 有时候设计师会把 pdf 当图片用，如果你的项目需要上传 pdf，请删掉这行
+
+
+# ---- env files (secrets) ----
+.env
+.env.*
+!/\.env\.example
+!/\.env\.template
+
+# systemd / deploy env (if you ever put copies in repo)
+*.env
+*.env.*
+
+# ---- logs / temp ----
+*.log
+tmp/
+temp/
+
+# ---- Go build artifacts ----
+/bin/
+/dist/
+*.exe
+*.out
+*.test
+
+# ---- IDE ----
+.vscode/
+.idea/

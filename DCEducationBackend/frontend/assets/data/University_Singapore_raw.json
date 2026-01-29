@@ -1,0 +1,220 @@
+[
+  {
+    "domains": [
+      "aventis.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.aventis.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Aventis School of Management",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "ntu.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.ntu.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Nanyang Technological University",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "nus.edu",
+      "nus.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.nus.edu/",
+      "https://www.nus.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "National University of Singapore",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "yale-nus.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.yale-nus.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "yale-NUS",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "sim.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.sim.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore Institute of Management (SIM)",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "smu.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.smu.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore Management University",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "singaporetech.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.singaporetech.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore Institute of Technology",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "sutd.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.sutd.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore University of Technology and Design",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "suss.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.suss.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore University of Social Sciences",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "uas.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.uas.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "University of the Arts Singapore",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "taoistcollege.org.sg"
+    ],
+    "web_pages": [
+      "https://www.taoistcollege.org.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Taoist College Singapore",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "ite.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.ite.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Institute of Technical Education",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "tp.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.tp.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Temasek Polytechnic",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "sp.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.sp.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Singapore Polytechnic",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "np.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.np.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Ngee Ann Polytechnic",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "nyp.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.nyp.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Nanyang Polytechnic",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "rp.edu.sg"
+    ],
+    "web_pages": [
+      "https://www.rp.edu.sg/"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Republic Polytechnic",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "ais.edu.sg"
+    ],
+    "web_pages": [
+      "https://ais.com.sg"
+    ],
+    "alpha_two_code": "SG",
+    "country": "Singapore",
+    "name": "Australian International School",
+    "state-province": null
+  }
+]

@@ -1,0 +1,1617 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template">
+  <meta name="keywords"
+    content="admin template, ra-admin admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="la-themes">
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+
+  <title>留学分析 | 鼎承教育</title>
+
+  <!--font-awesome-css-->
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- tabler icons-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/tabler-icons/tabler-icons.css">
+
+  <!--animation-css-->
+  <link rel="stylesheet" href="assets/vendor/animation/animate.min.css">
+
+  <!--flag Icon css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/flag-icons-master/flag-icon.css">
+
+  <!-- Bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+  <!-- simplebar css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
+  <!-- Selecrt css -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/select/select2.min.css">
+
+  <!-- tree-view css  -->
+  <link rel="stylesheet" href="assets/vendor/jstree/style.min.css">
+
+  <!-- App css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Responsive css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <div class="loader-wrapper">
+      <div class="app-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Menu Navigation starts -->
+    <nav>
+      <div class="app-logo">
+        <a class="logo d-inline-block" href="index.html">
+          <img src="assets/images/logo/1.png" alt="#">
+        </a>
+
+        <span class="bg-light-primary toggle-semi-nav">
+          <i class="ti ti-chevrons-right f-s-20"></i>
+        </span>
+      </div>
+      <div class="app-nav" id="app-simple-bar">
+        <ul class="main-nav p-0 mt-2">
+          <li class="menu-title">
+            <span>控制台</span>
+          </li>
+          <li>
+            <a class="" data-bs-toggle="collapse" href="#dashboard" aria-expanded="false">
+              <i class="ph-duotone  ph-house-line"></i>
+              控制台
+              <!-- <span class="badge text-bg-success badge-notification ms-2">4</span> -->
+            </a>
+            <ul class="collapse" id="dashboard">
+              <li><a href="dashboard_index.html">主页</a></li>
+              <li><a href="dashboard_analysis.html">留学分析</a></li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <a class="" data-bs-toggle="collapse" href="#apps" aria-expanded="false">
+              <i class="ph-duotone  ph-stack"></i>
+              应用
+            </a>
+            <ul class="collapse" id="apps">
+
+
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#Data-page" aria-expanded="false">
+                  数据
+                </a>
+                <ul class="collapse" id="Data-page">
+                  <li><a href="app_data_upload.html">上传数据</a></li>
+                  <li><a href="app_data_read.html">读取数据</a></li>
+                </ul>
+              </li>
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#Tags-page" aria-expanded="false">
+                  标签
+                </a>
+                <ul class="collapse" id="Tags-page">
+                  <li><a href="app_tags_update.html">标签录入</a></li>
+                  <li><a href="app_tags_settings.html">标签设置</a></li>
+                </ul>
+              </li>
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#User-page" aria-expanded="false">
+                  用户
+                </a>
+                <ul class="collapse" id="User-page">
+                  <li><a href="app_user_add.html">新增用户</a></li>
+                  <li><a href="app_user_list.html">用户管理</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+
+        </ul>
+      </div>
+
+      <div class="menu-navs">
+        <span class="menu-previous"><i class="ti ti-chevron-left"></i></span>
+        <span class="menu-next"><i class="ti ti-chevron-right"></i></span>
+      </div>
+
+    </nav>
+    <!-- Menu Navigation ends -->
+
+
+    <div class="app-content">
+      <div class="">
+
+        <!-- Header Section starts -->
+        <header class="header-main">
+          <div class="container-fluid">
+            <div class="row">
+
+
+              <div class="col-12 d-flex align-items-center justify-content-end header-right p-0">
+
+                <ul class="d-flex align-items-center">
+
+
+
+                  <li class="header-apps">
+                    <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#appscanvasRights" aria-controls="appscanvasRights">
+                      <i class="ph ph-bounding-box"></i>
+
+                    </a>
+
+                    <div class="offcanvas offcanvas-end header-apps-canvas" tabindex="-1" id="appscanvasRights"
+                      aria-labelledby="appscanvasRightsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="appscanvasRightsLabel">快捷方式</h5>
+
+                      </div>
+                      <div class="offcanvas-body app-scroll">
+                        <div class="row row-cols-3">
+
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="dashboard_analysis.html" target="_blank">
+                              <span>
+                                <i class="ph-duotone  ph-scroll text-info f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">留学分析</p>
+                            </a>
+                          </div>
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="app_user_list.html" target="_blank">
+                              <span>
+                                <i class="ph ph-user-circle-plus text-success f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">添加用户</p>
+                            </a>
+                          </div>
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="app_user_list.html" target="_blank">
+                              <span>
+                                <i class="ph ph-user-gear text-danger f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">用户管理</p>
+                            </a>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+
+
+
+                  <li class="header-profile">
+                    <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#profilecanvasRight" aria-controls="profilecanvasRight">
+                      <img src="assets/images/avtar/1.jpg" alt="avtar" class="b-r-10 h-35 w-35">
+                    </a>
+
+                    <div class="offcanvas offcanvas-end header-profile-canvas" tabindex="-1" id="profilecanvasRight"
+                      aria-labelledby="profilecanvasRight">
+                      <div class="offcanvas-body app-scroll">
+                        <ul class="">
+                          <li>
+                            <div class="d-flex-center">
+                              <span class="h-45 w-45 d-flex-center b-r-10 position-relative">
+                                <img src="assets/images/avtar/2.jpg" alt="" class="img-fluid b-r-10">
+                              </span>
+                            </div>
+                            <div class="text-center mt-2">
+                              <h6 class="mb-0"><span class="js-user-name">Admin</span></h6>
+                              <p class="f-s-12 mb-0 text-secondary"><span
+                                  class="js-user-email">info@dceducation.com.cn</span></p>
+                            </div>
+                          </li>
+
+                          <li class="app-divider-v dotted py-1"></li>
+                          <li>
+                            <a class="f-w-500" href="./profile.html" target="_blank">
+                              <i class="ph-duotone  ph-user-circle pe-1 f-s-20"></i> 账号详情
+                            </a>
+                          </li>
+                          <li>
+                            <a class="f-w-500" href="./setting.html" target="_blank">
+                              <i class="ph-duotone  ph-gear pe-1 f-s-20"></i> 设置
+                            </a>
+                          </li>
+
+                          <li class="app-divider-v dotted py-1"></li>
+
+
+                          <li>
+                            <a class="mb-0 text-danger" href="#" target="_blank">
+                              <i class="ph-duotone  ph-sign-out pe-1 f-s-20"></i> 登出
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Header Section ends -->
+
+        <!-- Body main section starts -->
+        <main>
+          <div class="container-fluid">
+            <!-- Breadcrumb start -->
+            <div class="row m-1">
+              <div class="col-12 ">
+                <h4 class="main-title">留学分析</h4>
+                <ul class="app-line-breadcrumbs mb-3 mt-3">
+                  <li class="">
+                    <a href="#" class="f-s-14 f-w-500">
+                      <span>
+                        <i class="ph-duotone  ph-stack f-s-16 "></i> 应用
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="f-s-14 f-w-500">出国留学</a>
+                  </li>
+                  <li class="active">
+                    <a href="#" class="f-s-14 f-w-500">留学分析</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Breadcrumb end -->
+
+            <!-- setting-app start -->
+            <div class="row">
+              <div class="col-lg-3 col-xxl-2">
+                <div class="row">
+
+                  <div class="col-12">
+                    <div class="card courses-cards card-primary" data-bs-toggle="modal"
+                      data-bs-target="#ModalBachelorApply">
+                      <div class="card-body">
+                        <i class="ph-duotone  ph-graduation-cap icon-bg"></i>
+                        <span class="bg-white h-50 w-50 d-flex-center b-r-15">
+                          <i class="ph-duotone  ph-graduation-cap text-primary f-s-24"></i>
+                        </span>
+                        <div class="mt-5">
+                          <h4>本科申请</h4>
+                          <p class="f-w-500 mb-0">Bachelor</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 ">
+                    <div class="card courses-cards card-warning" data-bs-toggle="modal"
+                      data-bs-target="#ModalMasterApply">
+                      <div class="card-body">
+                        <i class="ph-duotone  ph-pencil-line icon-bg"></i>
+                        <span class="bg-white h-50 w-50 d-flex-center b-r-15">
+                          <i class="ph-duotone  ph-pencil-line text-warning text-warning f-s-24"></i>
+                        </span>
+                        <div class="mt-5">
+                          <h4>研究生申请</h4>
+                          <p class="f-w-500 mb-0">Master</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card order-timeline-card">
+                  <div class="card-header">
+                    <h5>查询历史</h5>
+                  </div>
+                  <div class="card-body app-scroll">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Bachelor.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 本科申请</div>
+                        <div class="text-muted f-s-12">United Kingdom</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Master.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 研究生申请</div>
+                        <div class="text-muted f-s-12">HongKong</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Bachelor.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 本科申请</div>
+                        <div class="text-muted f-s-12">United Kingdom</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Master.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 研究生申请</div>
+                        <div class="text-muted f-s-12">HongKong</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Bachelor.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 本科申请</div>
+                        <div class="text-muted f-s-12">United Kingdom</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Master.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 研究生申请</div>
+                        <div class="text-muted f-s-12">HongKong</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Bachelor.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 本科申请</div>
+                        <div class="text-muted f-s-12">United Kingdom</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="h-40 w-40 d-flex-center b-r-50 overflow-hidden">
+                        <img src="assets/images/avtar/3-Master.png" alt="image" class="img-fluid">
+                      </div>
+                      <div class="flex-grow-1 ps-2">
+                        <div class="fw-medium"> 研究生申请</div>
+                        <div class="text-muted f-s-12">HongKong</div>
+                      </div>
+                      <a href="#" class="btn btn-light-secondary icon-btn b-r-22"> <i
+                          class="ph-bold  ph-arrow-square-out f-s-20"></i> </a>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9 col-xxl-10">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>搜索条件</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12 col-lg-4 ">
+                        <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">申请类型</h6>
+                              <p class="text-dark mb-0" id="summary_apply_type">-</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">目标国家</h6>
+                              <ul id="summary_target_countries"></ul>
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">本科目标学校</h6>
+                              <ul id="summary_bachelor_target_schools"></ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">本科目标专业</h6>
+                              <ul id="summary_bachelor_target_majors"></ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">研究生目标学校</h6>
+                              <ul id="summary_master_target_schools"></ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">研究生目标专业</h6>
+                              <ul id="summary_master_target_majors"></ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-4">
+                        <div class="wallet-card mt-0 mb-3 card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">大学经历</h6>
+                              <p class="text-dark mb-0">类型：<a id="summary_undergrad_type">-</a></p>
+                              <p class="text-dark mb-0">名称：<a id="summary_grad_school">-</a></p>
+                              <p class="text-dark mb-0">专业：<a id="summary_grad_major">-</a></p>
+                              <p class="text-dark mb-0">GPA：<a id="summary_undergrad_gpa">-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">高中经历</h6>
+                              <p class="text-dark mb-0">类型：<a id="summary_highschool_type">-</a></p>
+                              <p class="text-dark mb-0">GPA：<a id="summary_highschool_gpa">-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">国际课程</h6>
+                              <p class="text-dark mb-0">A-LEVEL：<span id="summary_alevel">-</span></p>
+                              <p class="text-dark mb-0">IB：<a id="summary_ib">-</a></p>
+                              <p class="text-dark mb-0">AP>=4：<a id="summary_ap">-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">语言</h6>
+                              <p class="text-dark mb-0">雅思：<span id="summary_ielts">-</span></p>
+                              <p class="text-dark mb-0">托福：<span id="summary_toefl">-</span></p>
+                              <p class="text-dark mb-0">PTE：<span id="summary_pte">-</span></p>
+                              <p class="text-dark mb-0">多邻国：<a id="summary_duolingo">-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">SAT/ACT</h6>
+                              <p class="text-dark mb-0">SAT：<a>-</a></p>
+                              <p class="text-dark mb-0">ACT：<a>-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">GRE/GMET</h6>
+                              <p class="text-dark mb-0">GRE：<a>-</a></p>
+                              <p class="text-dark mb-0">GMAT：<a>-</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-4">
+                        <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">活动及获奖 - 高质量</h6>
+                              <p class="text-dark mb-0">活动: <a id="summary_activities">0</a></p>
+                              <p class="text-dark mb-0">科研/论文：<a id="summary_research">0</a></p>
+                              <p class="text-dark mb-0">获奖：<a id="summary_awards">0</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">工作经历 - 高质量</h6>
+                              <p class="text-dark mb-0">国外专业相关：<a id="summary_work_abroad_related">0</a></p>
+                              <p class="text-dark mb-0">国外专业不相关：<a id="summary_work_abroad_unrelated">0</a></p>
+                              <div class="app-divider-v dashed pt-1 pb-1"></div>
+                              <p class="text-dark mb-0">国内专业相关：<a id="summary_work_domestic_related">0</a></p>
+                              <p class="text-dark mb-0">国内专业不相关：<a id="summary_work_domestic_unrelated">0</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-danger" id="btn-summary-reset">重置</button>
+                    <button type="button" class="btn btn-outline-primary" disabled>生成结果</button>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h5>分析结果</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="wallet-card mt-0 mb-3">
+                          <div class="position-relative">
+                            <div>
+                              <h6 class="mb-0 text-secondary mb-1">Results</h6>
+                              <div class="nestable">
+                                <div id="result_tree"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <!-- <div class="card">
+                  <div class="card-header">
+                    <h5>学生画像</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="wallet-card mt-0 mb-3">
+                          <canvas id="studentRadarChart" height="220"></canvas>
+                          <div class="text-muted mt-2" id="studentRadarHint"></div>
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                </div> -->
+
+
+              </div>
+
+            </div>
+            <!--setting app end -->
+          </div>
+        </main>
+
+        <!-- Body main section ends -->
+
+
+        <!-- tap on top -->
+        <div class="go-top">
+          <span class="progress-value">
+            <i class="ti ti-arrow-up"></i>
+          </span>
+        </div>
+
+        <!-- Footer Section starts-->
+        <footer>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <ul class="footer-text">
+                  <li>
+                    <p class="mb-0">Copyright © 2025 DCEDUCATION. All rights reserved</p>
+                  </li>
+                  <li> <a> V1.0.0 </a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </footer>
+        <!-- Footer Section ends-->
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- modal bachelor start  -->
+  <div class="modal fade" id="ModalBachelorApply" tabindex="-1" aria-labelledby="ModalBachelorApplyLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-lg-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-black" id="ModalBachelorApplyLabel">本科申请</h6>
+          <button type="button" class="btn-close m-0 fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="app-form">
+
+
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">留学目标</h5>
+
+              <div class="row d-flex flex-wrap gap-2 col-lg-6 col-12 mb-3">
+                <label class="form-label">是否有目标留学国家？</label>
+
+                <div class="col-12">
+                  <div class="d-flex flex-wrap align-items-center gap-4"> <!-- 关键：横向排列 + 间距 -->
+
+                    <!-- 英国 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_uk">
+                      <label class="form-check-label" for="checkbox_bachelor_uk">
+                        英国
+                      </label>
+                    </div>
+
+                    <!-- 澳大利亚 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_australia">
+                      <label class="form-check-label" for="checkbox_bachelor_australia">
+                        澳大利亚
+                      </label>
+                    </div>
+
+                    <!-- 香港 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_hongkong">
+                      <label class="form-check-label" for="checkbox_bachelor_hongkong">
+                        香港
+                      </label>
+                    </div>
+
+                    <!-- 新加坡 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_singapore">
+                      <label class="form-check-label" for="checkbox_bachelor_singapore">
+                        新加坡
+                      </label>
+                    </div>
+
+                    <!-- 美国 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_usa">
+                      <label class="form-check-label" for="checkbox_bachelor_usa">
+                        美国
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="row d-flex flex-wrap gap-2 col-lg-6 col-12">
+                  <label class="form-label">是否有目标院校？</label>
+
+                  <div class="col-12">
+                    <select class="select-basic-multiple-four w-100" name="states[]" multiple="multiple"
+                      id="select_bachelor_to_school" disabled>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row d-flex flex-wrap gap-2 col-lg-6 col-12">
+                  <label class="form-label">是否有目标专业？</label>
+
+                  <div class="col-12">
+                    <select class="select-basic-multiple-four w-100" name="states[]" multiple="multiple"
+                      id="select_bachelor_to_major" disabled>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Coming</option>
+                      <option value="WY">Hanry Die</option>
+                      <option value="WY">John Doe</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+
+
+            <div class="row">
+
+              <h5 class="mb-2 text-dark f-w-600">高中经历</h5>
+              <div class="col-lg-6 col-12 mb-3 mt-3">
+                <div class="row d-flex flex-wrap gap-2">
+                  <label class="form-label">类型</label>
+                  <div class="col-12 d-flex flex-row gap-4 align-items-center">
+
+                    <div class="d-flex align-items-center gap-1">
+                      <input class="form-check-input f-s-18 mb-1 m-1" type="radio"
+                        name="radio_highSchool_domestic_or_international" id="radio_bachelor_highSchool_domestic"
+                        checked>
+                      <label class="form-check-label" for="radio_bachelor_highSchool_domestic">
+                        体制内
+                      </label>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                      <input class="form-check-input f-s-18 mb-1 m-1" type="radio"
+                        name="radio_highSchool_domestic_or_international" id="radio_bachelor_highSchool_international">
+                      <label class="form-check-label" for="radio_bachelor_highSchool_international">
+                        国际学校
+                      </label>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                      <input class="form-check-input f-s-18 mb-1 m-1" type="radio"
+                        name="radio_highSchool_domestic_or_international" id="radio_bachelor_highSchool_abroad">
+                      <label class="form-check-label" for="radio_bachelor_highSchool_abroad">
+                        国外高中
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12 mb-3 mt-3">
+                <div class="row d-flex flex-wrap gap-2">
+                  <label class="form-label">高中 GPA</label>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control bachelor-highSchool-gpa-input"
+                      id="input_bachelor_highschool_gpa" placeholder="4.0">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+            <h5 class="mb-2 text-dark f-w-600">语言及国际课程</h5>
+            <div class="row d-flex flex-wrap gap-2">
+              <label class="form-label">是否有语言成绩？</label>
+              <div class="col-12 d-flex flex-column gap-4">
+
+                <!-- 语言成绩部分（是否有语言成绩：雅思、托福、多邻国） -->
+                <!-- 雅思 IELTS -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_ielts">
+                    <label class="form-check-label" for="checkbox_bachelor_ielts" style="width: 100px;">
+                      雅思
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="bachelor_ielts_score_container"
+                    style="display: none;">
+                    <input type="text" id="input_bachelor_IELTS_overall"
+                      class="form-control bachelor-IELTS-overall-input" placeholder="Overall (0-9)" disabled
+                      style="width: 120px;">
+                    <input type="text" id="input_bachelor_IELTS_listening"
+                      class="form-control bachelor-IELTS-section-input" placeholder="Listening" disabled
+                      style="width: 100px;">
+                    <input type="text" id="input_bachelor_IELTS_reading"
+                      class="form-control bachelor-IELTS-section-input" placeholder="Reading" disabled
+                      style="width: 100px;">
+                    <input type="text" id="input_bachelor_IELTS_writing"
+                      class="form-control bachelor-IELTS-section-input" placeholder="Writing" disabled
+                      style="width: 100px;">
+                    <input type="text" id="input_bachelor_IELTS_speaking"
+                      class="form-control bachelor-IELTS-section-input" placeholder="Speaking" disabled
+                      style="width: 100px;">
+                  </div>
+                </div>
+
+                <!-- 托福 TOEFL iBT -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_toefl">
+                    <label class="form-check-label" for="checkbox_bachelor_toefl" style="width: 100px;">
+                      托福
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="bachelor_toefl_score_container"
+                    style="display: none;">
+                    <input type="text" id="score_toefl_total" class="form-control bachelor-TOEFL-total-input"
+                      id="input_bachelor_TOEFL_total" placeholder="总分(0-120)" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_reading" class="form-control bachelor-TOEFL-section-input"
+                      id="input_bachelor_TOEFL_reading" placeholder="Reading" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_listening" class="form-control bachelor-TOEFL-section-input"
+                      id="input_bachelor_TOEFL_listening" placeholder="Listening" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_speaking" class="form-control bachelor-TOEFL-section-input"
+                      id="input_bachelor_TOEFL_speaking" placeholder="Speaking" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_writing" class="form-control bachelor-TOEFL-section-input"
+                      id="input_bachelor_TOEFL_writing" placeholder="Writing" disabled style="width: 120px;">
+                  </div>
+                </div>
+
+                <!-- PTE -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_pte">
+                    <label class="form-check-label" for="checkbox_bachelor_pte" style="width: 100px;">
+                      PTE
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="bachelor_pte_score_container"
+                    style="display: none;">
+                    <input type="text" id="score_pte_total" class="form-control bachelor-PTE-total-input"
+                      placeholder="总分(10-90)" id="input_bachelor_PTE_total" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_reading" class="form-control bachelor-PTE-section-input"
+                      id="input_bachelor_PTE_reading" placeholder="Reading" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_listening" class="form-control bachelor-PTE-section-input"
+                      id="input_bachelor_PTE_listening" placeholder="Listening" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_speaking" class="form-control bachelor-PTE-section-input"
+                      id="input_bachelor_PTE_speaking" placeholder="Speaking" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_writing" class="form-control bachelor-PTE-section-input"
+                      id="input_bachelor_PTE_writing" placeholder="Writing" disabled style="width: 120px;">
+                  </div>
+                </div>
+
+                <!-- 多邻国 Duolingo English Test -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_duolingo">
+                    <label class="form-check-label" for="checkbox_bachelor_duolingo" style="width: 100px;">
+                      多邻国
+                    </label>
+                  </div>
+
+                  <input type="text" id="score_duolingo" class="form-control bachelor-DUOLINGO-input"
+                    placeholder="总分 (10-160)" id="input_bachelor_Duolingo_total" disabled style="width: 150px;">
+                </div>
+
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+            <div class="row d-flex flex-wrap gap-2">
+              <label class="form-label">是否有国际课程？</label>
+              <div class="col-12 d-flex flex-column gap-4">
+
+                <!-- A-Level（支持最多四门成绩） -->
+                <div class="d-flex flex-column gap-3">
+                  <!-- A-Level（checkbox 和四个成绩选择框在同一行） -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <!-- checkbox 部分 -->
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_alevel">
+                      <label class="form-check-label" for="checkbox_bachelor_alevel" style="width: 100px;">
+                        A-LEVEL
+                      </label>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 align-items-center" id="bachelor_alevel_scores_container"
+                      style="display: none;">
+                      <select class="form-select" id="select_bachelor_score_alevel_1" disabled style="width: 80px;">
+                        <option value="">第1门</option>
+                        <option value="A*">A*</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                      </select>
+                      <select class="form-select" id="select_bachelor_score_alevel_2" disabled style="width: 80px;">
+                        <option value="">第2门</option>
+                        <option value="A*">A*</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                      </select>
+                      <select class="form-select" id="select_bachelor_score_alevel_3" disabled style="width: 80px;">
+                        <option value="">第3门</option>
+                        <option value="A*">A*</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                      </select>
+                      <select class="form-select" id="select_bachelor_score_alevel_4" disabled style="width: 80px;">
+                        <option value="">第4门</option>
+                        <option value="A*">A*</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="d-flex align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_ib">
+                    <label class="form-check-label me-4" for="checkbox_bachelor_ib" style="width: 100px;">
+                      IB
+                    </label>
+                  </div>
+
+
+                  <input type="text" id="input_bachelor_score_ib" class="form-control bachelor-IB-input"
+                    placeholder="总分" disabled style="width: 150px;">
+                </div>
+
+
+                <div class="d-flex align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkbox_bachelor_ap">
+                    <label class="form-check-label me-4" for="checkbox_bachelor_ap" style="width: 100px;">
+                      AP（4分以上）
+                    </label>
+                  </div>
+                  <input type="text" id="input_bachelor_score_ap" class="form-control bachelor-AP-input"
+                    placeholder="4分以上的AP" disabled style="width: 150px;">
+                </div>
+
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">活动及获奖 - 高质量</h5>
+              <div class="row d-flex flex-wrap gap-2">
+                <label class="form-label">是否有活动或获奖经历？</label>
+                <div class="col-12 d-flex flex-column gap-4">
+
+                  <!-- 活动 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_activity">
+                      <label class="form-check-label" for="checkbox_bachelor_activity" style="width: 100px;">
+                        活动
+                      </label>
+                    </div>
+
+                    <!-- 输入框一直显示，只在勾选时启用 -->
+                    <input type="text" id="input_bachelor_activity" class="form-control bachelor-activity-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+                  <!-- 科研/论文 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_research">
+                      <label class="form-check-label" for="checkbox_bachelor_research" style="width: 100px;">
+                        科研/论文
+                      </label>
+                    </div>
+
+                    <input type="text" id="input_bachelor_research" class="form-control bachelor-research-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+                  <!-- 获奖 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_bachelor_award">
+                      <label class="form-check-label" for="checkbox_bachelor_award" style="width: 100px;">
+                        获奖
+                      </label>
+                    </div>
+
+                    <input type="text" id="input_bachelor_award" class="form-control bachelor-award-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-secondary btn-sm" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-modal-bachelor-confirm"
+            data-bs-dismiss="modal">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal bachelor end -->
+
+  <!-- modal master start -->
+  <div class="modal fade" id="ModalMasterApply" tabindex="-1" aria-labelledby="ModalMasterApplyLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-lg-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-black" id="ModalMasterApplyLabel">硕士申请</h6>
+          <button type="button" class="btn-close m-0 fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="app-form">
+
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">留学目标</h5>
+
+              <div class="row d-flex flex-wrap gap-2 col-lg-6 col-12 mb-3">
+                <label class="form-label">是否有目标留学国家？</label>
+
+                <div class="col-12">
+                  <div class="d-flex flex-wrap align-items-center gap-4">
+
+                    <!-- 英国 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_uk">
+                      <label class="form-check-label" for="checkbox_master_uk">
+                        英国
+                      </label>
+                    </div>
+
+                    <!-- 澳大利亚 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_australia">
+                      <label class="form-check-label" for="checkbox_master_australia">
+                        澳大利亚
+                      </label>
+                    </div>
+
+                    <!-- 香港 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_hongkong">
+                      <label class="form-check-label" for="checkbox_master_hongkong">
+                        香港
+                      </label>
+                    </div>
+
+                    <!-- 新加坡 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_singapore">
+                      <label class="form-check-label" for="checkbox_master_singapore">
+                        新加坡
+                      </label>
+                    </div>
+
+                    <!-- 美国 -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_usa">
+                      <label class="form-check-label" for="checkbox_master_usa">
+                        美国
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-12 mb-3">
+                  <label class="form-label">是否有目标学校？</label>
+
+                  <div class="col-12">
+                    <select class="select-basic-multiple-four w-100" name="states[]" multiple="multiple"
+                      id="select_master_to_school">
+                      <!-- 选项保持不变，可自行替换为真实院校 -->
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Wyoming</option>
+                      <option value="WY">Wyoming</option>
+                      <!-- ... 其他选项 -->
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label class="form-label">是否有目标专业？</label>
+
+                  <div class="col-12">
+                    <select class="select-basic-multiple-four w-100" name="states[]" multiple="multiple"
+                      id="select_master_to_major">
+                      <!-- 选项保持不变 -->
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                      <!-- ... 其他选项 -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">本科经历</h5>
+              <div class="col-lg-6 col-12 mb-3">
+                <div class="row d-flex flex-wrap gap-2 mb-3">
+                  <label class="form-label">类型</label>
+                  <div class="col-12 d-flex flex-row gap-4 align-items-center">
+
+                    <div class="d-flex align-items-center gap-1">
+                      <input class="form-check-input f-s-18 mb-1 m-1" type="radio"
+                        name="radio_undergraduate_domestic_or_abroad" id="radio_master_undergraduate_domestic" checked>
+                      <label class="form-check-label" for="radio_master_undergraduate_domestic">
+                        国内本科
+                      </label>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                      <input class="form-check-input f-s-18 mb-1 m-1" type="radio"
+                        name="radio_undergraduate_domestic_or_abroad" id="radio_master_undergraduate_abroad">
+                      <label class="form-check-label" for="radio_master_undergraduate_abroad">
+                        国外本科
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-lg-6 col-12 mb-3">
+                <div class="row d-flex flex-wrap gap-2">
+                  <label class="form-label">本科 GPA</label>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control master-undergraduate-gpa-input"
+                      id="input_master_undergraduate_gpa" placeholder="4.0">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-6 col-12 mb-3 mt-3">
+                <div class="row d-flex flex-wrap gap-2 mb-3">
+                  <label class="form-label">本科院校</label>
+                  <div class="col-12">
+                    <select class="js-states form-control" id="select_master_graduated_school">
+                      <option></option>
+                    </select>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-lg-6 col-12 mb-3 mt-3">
+                <div class="row d-flex flex-wrap gap-2 mb-3">
+                  <label class="form-label">本科专业</label>
+                  <div class="col-12">
+                    <select class="js-states form-control" id="select_master_graduated_major">
+                      <option></option>
+                    </select>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+            <h5 class="mb-2 text-dark f-w-600">语言及国际课程</h5>
+            <div class="row d-flex flex-wrap gap-2">
+              <label class="form-label">是否有语言成绩？</label>
+              <div class="col-12 d-flex flex-column gap-4">
+
+                <!-- 雅思 IELTS -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_master_ielts">
+                    <label class="form-check-label" for="checkbox_master_ielts" style="width: 100px;">
+                      雅思
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="master_ielts_score_container"
+                    style="display: none;">
+                    <input type="text" id="score_ielts_overall" class="form-control master-IELTS-overall-input"
+                      placeholder="Overall (0-9)" disabled style="width: 120px;">
+                    <input type="text" id="score_ielts_listening" class="form-control master-IELTS-section-input"
+                      placeholder="Listening" disabled style="width: 100px;">
+                    <input type="text" id="score_ielts_reading" class="form-control master-IELTS-section-input"
+                      placeholder="Reading" disabled style="width: 100px;">
+                    <input type="text" id="score_ielts_writing" class="form-control master-IELTS-section-input"
+                      placeholder="Writing" disabled style="width: 100px;">
+                    <input type="text" id="score_ielts_speaking" class="form-control master-IELTS-section-input"
+                      placeholder="Speaking" disabled style="width: 100px;">
+                  </div>
+                </div>
+
+                <!-- 托福 TOEFL iBT -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_master_toefl">
+                    <label class="form-check-label" for="checkbox_master_toefl" style="width: 100px;">
+                      托福
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="master_toefl_score_container"
+                    style="display: none;">
+                    <input type="text" id="score_toefl_total" class="form-control master-TOEFL-total-input"
+                      placeholder="总分(0-120)" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_reading" class="form-control master-TOEFL-section-input"
+                      placeholder="Reading" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_listening" class="form-control master-TOEFL-section-input"
+                      placeholder="Listening" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_speaking" class="form-control master-TOEFL-section-input"
+                      placeholder="Speaking" disabled style="width: 120px;">
+                    <input type="text" id="score_toefl_writing" class="form-control master-TOEFL-section-input"
+                      placeholder="Writing" disabled style="width: 120px;">
+                  </div>
+                </div>
+
+                <!-- PTE -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_master_pte">
+                    <label class="form-check-label" for="checkbox_master_pte" style="width: 100px;">
+                      PTE
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center" id="master_pte_score_container"
+                    style="display: none;">
+                    <input type="text" id="score_pte_total" class="form-control master-PTE-total-input"
+                      placeholder="总分(10-90)" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_reading" class="form-control master-PTE-section-input"
+                      placeholder="Reading" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_listening" class="form-control master-PTE-section-input"
+                      placeholder="Listening" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_speaking" class="form-control master-PTE-section-input"
+                      placeholder="Speaking" disabled style="width: 120px;">
+                    <input type="text" id="score_pte_writing" class="form-control master-PTE-section-input"
+                      placeholder="Writing" disabled style="width: 120px;">
+                  </div>
+                </div>
+
+                <!-- 多邻国 Duolingo English Test -->
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="checkbox_master_duolingo">
+                    <label class="form-check-label" for="checkbox_master_duolingo" style="width: 100px;">
+                      多邻国
+                    </label>
+                  </div>
+
+                  <input type="text" id="score_duolingo" class="form-control master-DUOLINGO-input"
+                    placeholder="总分 (10-160)" disabled style="width: 150px;">
+                </div>
+
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">活动及获奖 - 高质量</h5>
+              <div class="row d-flex flex-wrap gap-2">
+                <label class="form-label">是否有活动或获奖经历？</label>
+                <div class="col-12 d-flex flex-column gap-4">
+
+                  <!-- 活动 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_activity">
+                      <label class="form-check-label" for="checkbox_master_activity" style="width: 100px;">
+                        活动
+                      </label>
+                    </div>
+                    <input type="text" id="input_master_activity" class="form-control master-activity-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+                  <!-- 科研/论文 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_research">
+                      <label class="form-check-label" for="checkbox_master_research" style="width: 100px;">
+                        科研/论文
+                      </label>
+                    </div>
+                    <input type="text" id="input_master_research" class="form-control master-research-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+                  <!-- 获奖 -->
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_award">
+                      <label class="form-check-label" for="checkbox_master_award" style="width: 100px;">
+                        获奖
+                      </label>
+                    </div>
+                    <input type="text" id="input_master_award" class="form-control master-award-input" placeholder=""
+                      disabled style="width: 100px;">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="app-divider-v dotted"></div>
+            </div>
+
+
+            <div class="row">
+              <h5 class="mb-2 text-dark f-w-600">工作经历 - 高质量</h5>
+              <div class="row d-flex flex-wrap gap-2">
+                <label class="form-label">是否有工作经历？</label>
+                <div class="col-12 d-flex flex-column gap-4">
+
+
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_work_abroad_related">
+                      <label class="form-check-label" for="checkbox_master_work_abroad_related" style="width: 100px;">
+                        国外专业相关
+                      </label>
+                    </div>
+
+
+                    <input type="text" id="input_master_work_abroad_related" class="form-control ACTIVITY-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_work_abroad_unrelated">
+                      <label class="form-check-label" for="checkbox_master_work_abroad_unrelated" style="width: 100px;">
+                        国外专业不相关
+                      </label>
+                    </div>
+
+                    <input type="text" id="input_master_work_abroad_unrelated" class="form-control RESEARCH-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_work_domestic_related">
+                      <label class="form-check-label" for="checkbox_master_work_domestic_related" style="width: 100px;">
+                        国内专业相关
+                      </label>
+                    </div>
+
+                    <input type="text" id="input_master_work_domestic_related" class="form-control AWARD-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+
+                  <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox_master_work_domestic_unrelated">
+                      <label class="form-check-label" for="checkbox_master_work_domestic_unrelated"
+                        style="width: 100px;">
+                        国内专业不相关
+                      </label>
+                    </div>
+
+                    <input type="text" id="input_master_work_domestic_unrelated" class="form-control INTERNSHIP-input"
+                      placeholder="" disabled style="width: 100px;">
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-secondary btn-sm" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-modal-master-confirm"
+            data-bs-dismiss="modal">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal master end -->
+
+  <!-- modal master start  -->
+  <div class="modal fade" id="ModalAnalysisResult" tabindex="-1" aria-labelledby="ModalAnalysisResultLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-lg-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-black" id="ModalAnalysisResultLabel">XXXXXXX</h6>
+          <button type="button" class="btn-close m-0 fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-secondary btn-sm" data-bs-dismiss="modal">关闭</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal master end -->
+
+
+  <!-- latest jquery-->
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+  <!-- Simple bar js-->
+  <script src="assets/vendor/simplebar/simplebar.js"></script>
+
+  <!-- phosphor js -->
+  <script src="assets/vendor/phosphor/phosphor.js"></script>
+
+  <!-- Bootstrap js-->
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <!--cleave js  -->
+  <script src="assets/vendor/cleavejs/cleave.min.js"></script>
+  <!-- select2 -->
+  <script src="assets/vendor/select/select2.min.js"></script>
+  <!-- js -->
+  <script src="assets/js/input_masks.js"></script>
+
+  <!-- js
+    <script src="assets/js/select.js"></script> -->
+
+  <script src="assets/vendor/jstree/jstree.min.js"></script>
+  <!-- tree-view-custom-js  -->
+  <script src="assets/js/tree-view.js"></script>
+
+  <!-- App js-->
+  <script src="assets/js/script.js"></script>
+
+  <script type="module" src="assets/js/dashboard_analysis.js"></script>
+
+  <script src="assets/js/HTTPRequest.js"></script>
+
+</body>
+
+</html>

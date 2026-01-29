@@ -1,0 +1,242 @@
+[
+ 
+ 
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Birmingham",
+    "name_EN_short": "Birmingham",
+    "name_CN": "伯明翰大学",
+    "domains": [
+      "bham.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Bristol",
+    "name_EN_short": "Bristol",
+    "name_CN": "布里斯托大学",
+    "domains": [
+      "bristol.ac.uk",
+      "bris.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Cambridge",
+    "name_EN_short": "Cambridge",
+    "name_CN": "剑桥大学",
+    "domains": [
+      "cam.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Durham",
+    "name_EN_short": "University of Durham",
+    "name_CN": " 杜伦大学",
+    "domains": [
+      "dur.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Edinburgh",
+    "name_EN_short": "Edinburgh",
+    "name_CN": "爱丁堡大学",
+    "domains": [
+      "ed.ac.uk"
+    ]
+  },
+  
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Exeter",
+    "name_EN_short": "Exeter",
+    "name_CN": "埃克塞特大学",
+    "domains": [
+      "ex.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Glasgow",
+    "name_EN_short": "Glasgow",
+    "name_CN": "格拉斯哥大学",
+    "domains": [
+      "gla.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "Imperial College London",
+    "name_EN_short": "Imperial",
+    "name_CN": "帝国理工学院",
+    "domains": [
+      "imperial.ac.uk",
+      "ic.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "King's College London, University of London",
+    "name_EN_short": "King's College London, University of London",
+    "name_CN": "伦敦国王学院",
+    "domains": [
+      "kcl.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Wales, Lampeter",
+    "name_EN_short": "University of Wales, Lampeter",
+    "name_CN": " 威尔士大学",
+    "domains": [
+      "lamp.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Leeds",
+    "name_EN_short": "Leeds",
+    "name_CN": "利兹大学",
+    "domains": [
+      "leeds.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Liverpool",
+    "name_EN_short": "University of Liverpool",
+    "name_CN": "利物浦大学",
+    "domains": [
+      "liv.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "London School of Economics and Political Science, University of London",
+    "name_EN_short": "London School of Economics and Political Science, University of London",
+    "name_CN": "伦敦政治经济学院",
+    "domains": [
+      "lse.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Manchester",
+    "name_EN_short": "Manchester",
+    "name_CN": "曼彻斯特大学",
+    "domains": [
+      "manchester.ac.uk",
+      "mbs.ac.uk",
+      "man.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Nottingham",
+    "name_EN_short": "Nottingham",
+    "name_CN": "诺丁汉大学",
+    "domains": [
+      "nottingham.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Oxford",
+    "name_EN_short": "Oxford",
+    "name_CN": "牛津大学",
+    "domains": [
+      "oxford.ac.uk",
+      "ox.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "The University of Sheffield",
+    "name_EN_short": "The University of Sheffield",
+    "name_CN": "谢菲尔德大学",
+    "domains": [
+      "shef.ac.uk",
+      "sheffield.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Southampton",
+    "name_EN_short": "Southampton",
+    "name_CN": "南安普顿大学",
+    "domains": [
+      "soton.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University College London, University of London",
+    "name_EN_short": "University College London, University of London",
+    "name_CN": "伦敦大学学院",
+    "domains": [
+      "ucl.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of Warwick",
+    "name_EN_short": "Warwick",
+    "name_CN": "华威大学",
+    "domains": [
+      "warwick.ac.uk"
+    ]
+  },
+  
+  {
+    "country_code": "UK",
+    "country": "United Kingdom",
+    "name_EN": "University of York",
+    "name_EN_short": "York",
+    "name_CN": "约克大学",
+    "domains": [
+      "york.ac.uk"
+    ]
+  }
+  
+]

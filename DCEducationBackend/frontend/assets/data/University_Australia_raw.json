@@ -1,0 +1,711 @@
+[
+  {
+    "domains": [
+      "student.eit.edu.au"
+    ],
+    "web_pages": [
+      "https://www.eit.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Engineering Institute of Technology",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "acs.edu.au"
+    ],
+    "web_pages": [
+      "http://www.acs.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian Correspondence Schools",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "acu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.acu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian Catholic University",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "adelaide.edu.au"
+    ],
+    "web_pages": [
+      "http://www.adelaide.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Adelaide",
+    "state-province": "South Australia"
+  },
+  {
+    "domains": [
+      "adfa.oz.au"
+    ],
+    "web_pages": [
+      "http://www.adfa.oz.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian Defence Force Academy",
+    "state-province": "Australian Capital Territory"
+  },
+  {
+    "domains": [
+      "alc.edu.au"
+    ],
+    "web_pages": [
+      "http://www.alc.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian Lutheran College",
+    "state-province": "South Australia"
+  },
+  {
+    "domains": [
+      "amc.edu.au"
+    ],
+    "web_pages": [
+      "http://www.amc.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian Maritime College",
+    "state-province": "Tasmania"
+  },
+  {
+    "domains": [
+      "anu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.anu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Australian National University",
+    "state-province": "Australian Capital Territory"
+  },
+  {
+    "domains": [
+      "avondale.edu.au"
+    ],
+    "web_pages": [
+      "http://www.avondale.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Avondale University",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "federation.edu.au"
+    ],
+    "web_pages": [
+      "http://federation.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Federation University Australia",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "bond.edu.au"
+    ],
+    "web_pages": [
+      "http://www.bond.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Bond University",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "canberra.edu.au"
+    ],
+    "web_pages": [
+      "http://www.canberra.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Canberra",
+    "state-province": "Australian Capital Territory"
+  },
+  {
+    "domains": [
+      "cdu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.cdu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Charles Darwin University",
+    "state-province": "Northern Territory"
+  },
+  {
+    "domains": [
+      "cqu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.cqu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Central Queensland University",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "csu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.csu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Charles Sturt University",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "curtin.edu.au"
+    ],
+    "web_pages": [
+      "http://www.curtin.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Curtin University",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "deakin.edu.au"
+    ],
+    "web_pages": [
+      "http://www.deakin.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Deakin University",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "ecu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.ecu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Edith Cowan University",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "flinders.edu.au"
+    ],
+    "web_pages": [
+      "http://www.flinders.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Flinders University of South Australia",
+    "state-province": "South Australia"
+  },
+  {
+    "domains": [
+      "griffith.edu.au"
+    ],
+    "web_pages": [
+      "https://www.griffith.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Griffith University",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "holmes.edu.au"
+    ],
+    "web_pages": [
+      "http://www.holmes.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Holmes Institute",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "hotelschool.com.au"
+    ],
+    "web_pages": [
+      "http://www.hotelschool.com.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Blue Mountains Hotel School",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "icthm.edu.au"
+    ],
+    "web_pages": [
+      "http://www.icthm.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "International College of Tourism and Hotel Management",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "iota.edu.au"
+    ],
+    "web_pages": [
+      "http://www.iota.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Institute Of Technology, Australia",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "jcu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.jcu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "James Cook University of North Queensland",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "latrobe.edu.au"
+    ],
+    "web_pages": [
+      "http://www.latrobe.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "La Trobe University",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "marcusoldham.vic.edu.au"
+    ],
+    "web_pages": [
+      "http://www.marcusoldham.vic.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Marcus Oldham College",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "monash.edu",
+      "monash.edu.au"
+    ],
+    "web_pages": [
+      "http://www.monash.edu/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Monash University",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "mq.edu.au"
+    ],
+    "web_pages": [
+      "http://www.mq.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Macquarie University",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "murdoch.edu.au",
+      "student.murdoch.edu.au"
+    ],
+    "web_pages": [
+      "http://www.murdoch.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Murdoch University",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "nd.edu.au"
+    ],
+    "web_pages": [
+      "http://www.nd.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Notre Dame Australia",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "newcastle.edu.au"
+    ],
+    "web_pages": [
+      "http://www.newcastle.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Newcastle",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "nt.gov.au"
+    ],
+    "web_pages": [
+      "http://www.nt.gov.au/batc/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Batchelor Institute of Indigenous Tertiary Education",
+    "state-province": "Northern Territory"
+  },
+  {
+    "domains": [
+      "qut.edu.au"
+    ],
+    "web_pages": [
+      "http://www.qut.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Queensland University of Technology",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "rmit.edu.au"
+    ],
+    "web_pages": [
+      "http://www.rmit.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Royal Melbourne Institute of Technology",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "smtafe.wa.edu.au",
+      "southmetrotafe.wa.edu.au",
+      "tafe.wa.edu.au"
+    ],
+    "web_pages": [
+      "https://www.southmetrotafe.wa.edu.au/",
+      "https://www.tafe.wa.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "South Metropolitan TAFE",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "scu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.scu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Southern Cross University",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "swin.edu.au"
+    ],
+    "web_pages": [
+      "http://www.swin.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Swinburne University of Technology",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "une.edu.au"
+    ],
+    "web_pages": [
+      "http://www.une.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of New England",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "unimelb.edu",
+      "unimelb.edu.au"
+    ],
+    "web_pages": [
+      "http://www.unimelb.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Melbourne",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "unisa.edu.au"
+    ],
+    "web_pages": [
+      "http://www.unisa.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of South Australia",
+    "state-province": "South Australia"
+  },
+  {
+    "domains": [
+      "unsw.edu.au"
+    ],
+    "web_pages": [
+      "http://www.unsw.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of New South Wales",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "uow.edu.au",
+      "uowmail.edu.au"
+    ],
+    "web_pages": [
+      "http://www.uow.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Wollongong",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "uq.edu.au"
+    ],
+    "web_pages": [
+      "http://www.uq.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Queensland",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "usc.edu.au"
+    ],
+    "web_pages": [
+      "http://www.usc.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of the Sunshine Coast",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "usq.edu.au"
+    ],
+    "web_pages": [
+      "http://www.usq.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Southern Queensland",
+    "state-province": "Queensland"
+  },
+  {
+    "domains": [
+      "sydney.edu.au",
+      "usyd.edu.au",
+      "uni.sydney.edu.au"
+    ],
+    "web_pages": [
+      "http://sydney.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Sydney",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "utas.edu.au"
+    ],
+    "web_pages": [
+      "http://www.utas.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Tasmania",
+    "state-province": "Tasmania"
+  },
+  {
+    "domains": [
+      "uts.edu.au",
+      "student.uts.edu.au"
+    ],
+    "web_pages": [
+      "http://www.uts.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Technology Sydney",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "uwa.edu.au"
+    ],
+    "web_pages": [
+      "http://www.uwa.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Western Australia",
+    "state-province": "Western Australia"
+  },
+  {
+    "domains": [
+      "uws.edu.au"
+    ],
+    "web_pages": [
+      "http://www.uws.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "University of Western Sydney",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "vu.edu.au"
+    ],
+    "web_pages": [
+      "http://www.vu.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Victoria University",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "torrens.edu.au",
+      "tua.edu.au"
+    ],
+    "web_pages": [
+      "https://www.torrens.edu.au"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Torrens University Australia",
+    "state-province": "South Australia"
+  },
+  {
+    "domains": [
+      "bhtafe.edu.au",
+      "boxhill.edu.au"
+    ],
+    "web_pages": [
+      "http://www.bhtafe.edu.au",
+      "http://www.boxhill.edu.au"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Box Hill Institute",
+    "state-province": "Victoria"
+  },
+  {
+    "domains": [
+      "linuwel.nsw.edu.au"
+    ],
+    "web_pages": [
+      "http://www.linuwel.nsw.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Linuwel School",
+    "state-province": "New South Wales"
+  },
+  {
+    "domains": [
+      "stgc.uwa.edu.au"
+    ],
+    "web_pages": [
+      "https://stgc.uwa.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "St. George's University (Australia)",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "spjain.org"
+    ],
+    "web_pages": [
+      "https://www.spjain.org/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "SP Jain School of Global Management",
+    "state-province": null
+  },
+  {
+    "domains": [
+      "westernsydney.edu.au"
+    ],
+    "web_pages": [
+      "https://www.westernsydney.edu.au/"
+    ],
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "name": "Western Sydney University",
+    "state-province": "New South Wales"
+  }
+]

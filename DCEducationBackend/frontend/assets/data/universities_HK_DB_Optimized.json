@@ -1,0 +1,116 @@
+[
+  
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "City University of Hong Kong",
+    "name_EN_short": "CityU",
+    "name_CN": "香港城市大学",
+    "domains": [
+      "cityu.edu.hk",
+      "um.cityu.edu.hk",
+      "my.cityu.edu.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The Chinese University of Hong Kong",
+    "name_EN_short": "CUHK",
+    "name_CN": "香港中文大学",
+    "domains": [
+      "cuhk.edu.hk",
+      "link.cuhk.edu.hk",
+      "cuhk.edu.cn"
+    ]
+  },
+ 
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "Hong Kong Baptist University",
+    "name_EN_short": "HKBU",
+    "name_CN": "香港浸会大学",
+    "domains": [
+      "hkbu.edu.hk",
+      "life.hkbu.edu.hk",
+      "associate.hkbu.edu.hk"
+    ]
+  },
+  
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The University of Hong Kong",
+    "name_EN_short": "HKU",
+    "name_CN": "香港大学",
+    "domains": [
+      "hku.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "Lingnan University",
+    "name_EN_short": "Lingnan",
+    "name_CN": "岭南大学",
+    "domains": [
+      "ln.edu.hk",
+      "ln.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "Hong Kong Metropolitan University",
+    "name_EN_short": "HKMU",
+    "name_CN": "香港都会大学",
+    "domains": [
+      "hkmu.edu.hk",
+      "ouhk.edu.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The Hong Kong Polytechnic University",
+    "name_EN_short": "PolyU",
+    "name_CN": "香港理工大学",
+    "domains": [
+      "polyu.edu.hk",
+      "connect.polyu.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The Hong Kong University of Science and Technology",
+    "name_EN_short": "HKUST",
+    "name_CN": "香港科技大学",
+    "domains": [
+      "ust.hk",
+      "connect.ust.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The Education University of Hong Kong",
+    "name_EN_short": "EdUHK",
+    "name_CN": "香港教育大学",
+    "domains": [
+      "s.eduhk.hk",
+      "eduhk.hk"
+    ]
+  },
+  {
+    "country_code": "HK",
+    "country": "Hong Kong",
+    "name_EN": "The Hang Seng University of Hong Kong",
+    "name_EN_short": "HSUHK",
+    "name_CN": "香港恒生大学",
+    "domains": [
+      "hsu.edu.hk"
+    ]
+  }
+]

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template">
+  <meta name="keywords"
+    content="admin template, ra-admin admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="la-themes">
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+
+  <title>用户管理 | 鼎承教育</title>
+
+  <!--font-awesome-css-->
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- tabler icons-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/tabler-icons/tabler-icons.css">
+
+  <!--animation-css-->
+  <link rel="stylesheet" href="assets/vendor/animation/animate.min.css">
+
+  <!--flag Icon css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/flag-icons-master/flag-icon.css">
+
+  <!-- Bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+  <!-- Data Table css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/datatable/jquery.dataTables.min.css">
+  <!-- simplebar css-->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
+
+  <!-- tree-view css  -->
+  <link rel="stylesheet" href="assets/vendor/jstree/style.min.css">
+
+  <!-- App css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Responsive css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <div class="loader-wrapper">
+      <div class="app-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Menu Navigation starts -->
+    <nav>
+      <div class="app-logo">
+        <a class="logo d-inline-block" href="index.html">
+          <img src="assets/images/logo/1.png" alt="#">
+        </a>
+
+        <span class="bg-light-primary toggle-semi-nav">
+          <i class="ti ti-chevrons-right f-s-20"></i>
+        </span>
+      </div>
+      <div class="app-nav" id="app-simple-bar">
+        <ul class="main-nav p-0 mt-2">
+          <li class="menu-title">
+            <span>控制台</span>
+          </li>
+          <li>
+            <a class="" data-bs-toggle="collapse" href="#dashboard" aria-expanded="false">
+              <i class="ph-duotone  ph-house-line"></i>
+              控制台
+              <!-- <span class="badge text-bg-success badge-notification ms-2">4</span> -->
+            </a>
+            <ul class="collapse" id="dashboard">
+              <li><a href="dashboard_index.html">主页</a></li>
+              <li><a href="dashboard_analysis.html">留学分析</a></li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <a class="" data-bs-toggle="collapse" href="#apps" aria-expanded="false">
+              <i class="ph-duotone  ph-stack"></i>
+              应用
+            </a>
+            <ul class="collapse" id="apps">
+
+
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#Data-page" aria-expanded="false">
+                  数据
+                </a>
+                <ul class="collapse" id="Data-page">
+                  <li><a href="app_data_upload.html">上传数据</a></li>
+                  <li><a href="app_data_read.html">读取数据</a></li>
+                </ul>
+              </li>
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#Tags-page" aria-expanded="false">
+                  标签
+                </a>
+                <ul class="collapse" id="Tags-page">
+                  <li><a href="app_tags_update.html">标签录入</a></li>
+                  <li><a href="app_tags_settings.html">标签设置</a></li>
+                </ul>
+              </li>
+              <li class="another-level">
+                <a class="" data-bs-toggle="collapse" href="#User-page" aria-expanded="false">
+                  用户
+                </a>
+                <ul class="collapse" id="User-page">
+                  <li><a href="app_user_add.html">新增用户</a></li>
+                  <li><a href="app_user_list.html">用户管理</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+
+        </ul>
+      </div>
+
+      <div class="menu-navs">
+        <span class="menu-previous"><i class="ti ti-chevron-left"></i></span>
+        <span class="menu-next"><i class="ti ti-chevron-right"></i></span>
+      </div>
+
+    </nav>
+    <!-- Menu Navigation ends -->
+
+
+    <div class="app-content">
+      <div class="">
+
+        <!-- Header Section starts -->
+        <header class="header-main">
+          <div class="container-fluid">
+            <div class="row">
+
+
+              <div class="col-12 d-flex align-items-center justify-content-end header-right p-0">
+
+                <ul class="d-flex align-items-center">
+
+
+
+                  <li class="header-apps">
+                    <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#appscanvasRights" aria-controls="appscanvasRights">
+                      <i class="ph ph-bounding-box"></i>
+
+                    </a>
+
+                    <div class="offcanvas offcanvas-end header-apps-canvas" tabindex="-1" id="appscanvasRights"
+                      aria-labelledby="appscanvasRightsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="appscanvasRightsLabel">快捷方式</h5>
+
+                      </div>
+                      <div class="offcanvas-body app-scroll">
+                        <div class="row row-cols-3">
+
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="dashboard_analysis.html" target="_blank">
+                              <span>
+                                <i class="ph-duotone  ph-scroll text-info f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">留学分析</p>
+                            </a>
+                          </div>
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="app_user_list.html" target="_blank">
+                              <span>
+                                <i class="ph ph-user-circle-plus text-success f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">添加用户</p>
+                            </a>
+                          </div>
+
+                          <div class="d-flex-center text-light text-center mb-3">
+                            <a href="app_user_list.html" target="_blank">
+                              <span>
+                                <i class="ph ph-user-gear text-danger f-s-30"></i>
+                              </span>
+                              <p class="mb-0 f-w-500 text-secondary">用户管理</p>
+                            </a>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+
+
+
+                  <li class="header-profile">
+                    <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#profilecanvasRight" aria-controls="profilecanvasRight">
+                      <img src="assets/images/avtar/1.jpg" alt="avtar" class="b-r-10 h-35 w-35">
+                    </a>
+
+                    <div class="offcanvas offcanvas-end header-profile-canvas" tabindex="-1" id="profilecanvasRight"
+                      aria-labelledby="profilecanvasRight">
+                      <div class="offcanvas-body app-scroll">
+                        <ul class="">
+                          <li>
+                            <div class="d-flex-center">
+                              <span class="h-45 w-45 d-flex-center b-r-10 position-relative">
+                                <img src="assets/images/avtar/2.jpg" alt="" class="img-fluid b-r-10">
+                              </span>
+                            </div>
+                            <div class="text-center mt-2">
+                              <h6 class="mb-0"><span class="js-user-name">Admin</span></h6>
+                              <p class="f-s-12 mb-0 text-secondary"><span
+                                  class="js-user-email">info@dceducation.com.cn</span></p>
+                            </div>
+                          </li>
+
+                          <li class="app-divider-v dotted py-1"></li>
+                          <li>
+                            <a class="f-w-500" href="./profile.html" target="_blank">
+                              <i class="ph-duotone  ph-user-circle pe-1 f-s-20"></i> 账号详情
+                            </a>
+                          </li>
+                          <li>
+                            <a class="f-w-500" href="./setting.html" target="_blank">
+                              <i class="ph-duotone  ph-gear pe-1 f-s-20"></i> 设置
+                            </a>
+                          </li>
+
+                          <li class="app-divider-v dotted py-1"></li>
+
+
+                          <li>
+                            <a class="mb-0 text-danger" href="#" target="_blank">
+                              <i class="ph-duotone  ph-sign-out pe-1 f-s-20"></i> 登出
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Header Section ends -->
+
+        <!-- Body main section starts -->
+        <main>
+          <div class="container-fluid">
+            <!-- Breadcrumb start -->
+            <div class="row m-1">
+              <div class="col-12 ">
+                <h4 class="main-title">用户管理</h4>
+                <ul class="app-line-breadcrumbs mb-3">
+                  <li class="">
+                    <a href="#" class="f-s-14 f-w-500">
+                      <span>
+                        <i class="ph-duotone  ph-table f-s-16"></i> 用户
+                      </span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="#" class="f-s-14 f-w-500">用户管理</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Breadcrumb end -->
+
+            <!-- Data Table start -->
+            <div class="row">
+              <!-- Default Datatable start -->
+              <div class="col-12">
+                <div class="card ">
+                  <div class="card-header">
+                    <h5>用户列表</h5>
+                    <p></p>
+
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="app-datatable-default overflow-auto">
+                      <table id="user_list" class="display app-data-table default-data-table">
+                        <thead>
+                          <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Last Login</th>
+                            <th>Last Login IP</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>DZH</td>
+                            <td>dzh@dceducation.com.cn</td>
+                            <td><span class="badge text-light-danger text-upper">superadmin</span></td>
+                            <td><span class="badge text-light-success text-upper">active</span></td>
+
+                            <td>20251226 - 15:34</td>
+                            <td>太原</td>
+                            <td>20251226 - 15:34</td>
+                            <td>
+                              <button type="button" class="btn btn-light-primary icon-btn b-r-4">
+                                <i class="ph-bold  ph-play-pause"></i>
+                              </button>
+                              <button type="button" class="btn btn-light-warning icon-btn b-r-4">
+                                <i class="ph-bold  ph-key"></i>
+                              </button>
+                              <button type="button" class="btn btn-light-danger icon-btn b-r-4 delete-btn">
+                                <i class="ti ti-trash"></i>
+                              </button>
+                            </td>
+                          </tr>
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Default Datatable end -->
+
+            </div>
+            <!-- Data Table end -->
+          </div>
+        </main>
+
+        <!-- Body main section ends -->
+
+
+        <!-- tap on top -->
+        <div class="go-top">
+          <span class="progress-value">
+            <i class="ti ti-arrow-up"></i>
+          </span>
+        </div>
+
+        <!-- Footer Section starts-->
+        <footer>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <ul class="footer-text">
+                  <li>
+                    <p class="mb-0">Copyright © 2025 DCEDUCATION. All rights reserved</p>
+                  </li>
+                  <li> <a> V1.0.0 </a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </footer>
+        <!-- Footer Section ends-->
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- latest jquery-->
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+
+  <!-- data table js -->
+  <script src="assets/vendor/datatable/jquery.dataTables.min.js"></script>
+  <!-- Simple bar js-->
+  <script src="assets/vendor/simplebar/simplebar.js"></script>
+
+  <!-- phosphor js -->
+  <script src="assets/vendor/phosphor/phosphor.js"></script>
+
+  <!-- Bootstrap js-->
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- App js-->
+  <script src="assets/js/script.js"></script>
+
+  <script type="module" src="assets/js/app_user.js"></script>
+
+  <script src="assets/js/HTTPRequest.js"></script>
+
+</body>
+
+</html>

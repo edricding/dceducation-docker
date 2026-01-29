@@ -1,0 +1,128 @@
+[
+ 
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Nanyang Technological University",
+    "name_EN_short": "NTU",
+    "name_CN": "南洋理工大学",
+    "domains": [
+      "ntu.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "National University of Singapore",
+    "name_EN_short": "NUS",
+    "name_CN": "新加坡国立大学",
+    "domains": [
+      "nus.edu",
+      "nus.edu.sg"
+    ]
+  },
+  
+ 
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Singapore Management University",
+    "name_EN_short": "SMU",
+    "name_CN": "新加坡管理大学",
+    "domains": [
+      "smu.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Singapore Institute of Technology",
+    "name_EN_short": "SIT",
+    "name_CN": "新加坡理工大学",
+    "domains": [
+      "singaporetech.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Singapore University of Technology and Design",
+    "name_EN_short": "SUTD",
+    "name_CN": "新加坡科技设计大学",
+    "domains": [
+      "sutd.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Singapore University of Social Sciences",
+    "name_EN_short": "SUSS",
+    "name_CN": "新加坡社科大学",
+    "domains": [
+      "suss.edu.sg"
+    ]
+  },
+  
+  
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Institute of Technical Education",
+    "name_EN_short": "ITE",
+    "name_CN": "新加坡工艺教育学院",
+    "domains": [
+      "ite.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Temasek Polytechnic",
+    "name_EN_short": "TP",
+    "name_CN": "淡马锡理工学院",
+    "domains": [
+      "tp.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Singapore Polytechnic",
+    "name_EN_short": "SP",
+    "name_CN": "新加坡理工学院",
+    "domains": [
+      "sp.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Ngee Ann Polytechnic",
+    "name_EN_short": "NP",
+    "name_CN": "义安理工学院",
+    "domains": [
+      "np.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Nanyang Polytechnic",
+    "name_EN_short": "NYP",
+    "name_CN": "南洋理工学院",
+    "domains": [
+      "nyp.edu.sg"
+    ]
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "name_EN": "Republic Polytechnic",
+    "name_EN_short": "RP",
+    "name_CN": "共和理工学院",
+    "domains": [
+      "rp.edu.sg"
+    ]
+  }
+]

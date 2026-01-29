@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template">
+    <meta name="keywords"
+        content="admin template, ra-admin admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="la-themes">
+    <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+
+    <title>标签录入 | 鼎承教育</title>
+
+    <!--font-awesome-css-->
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatable/jquery.dataTables.min.css">
+
+    <!-- tabler icons-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/tabler-icons/tabler-icons.css">
+
+    <!--animation-css-->
+    <link rel="stylesheet" href="assets/vendor/animation/animate.min.css">
+
+    <!--flag Icon css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/flag-icons-master/flag-icon.css">
+
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+    <!-- Selecrt css -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/select/select2.min.css">
+    <!-- simplebar css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
+
+    <!-- tree-view css  -->
+    <link rel="stylesheet" href="assets/vendor/jstree/style.min.css">
+
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <div class="loader-wrapper">
+            <div class="app-loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Menu Navigation starts -->
+        <nav>
+            <div class="app-logo">
+                <a class="logo d-inline-block" href="index.html">
+                    <img src="assets/images/logo/1.png" alt="#">
+                </a>
+
+                <span class="bg-light-primary toggle-semi-nav">
+                    <i class="ti ti-chevrons-right f-s-20"></i>
+                </span>
+            </div>
+            <div class="app-nav" id="app-simple-bar">
+                <ul class="main-nav p-0 mt-2">
+
+                    <li>
+                        <a class="" data-bs-toggle="collapse" href="#dashboard" aria-expanded="false">
+                            <i class="ph-duotone  ph-house-line"></i>
+                            控制台
+                            <!-- <span class="badge text-bg-success badge-notification ms-2">4</span> -->
+                        </a>
+                        <ul class="collapse" id="dashboard">
+                            <li><a href="dashboard_index.html">主页</a></li>
+                            <li><a href="dashboard_analysis.html">留学分析</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li>
+                        <a class="" data-bs-toggle="collapse" href="#apps" aria-expanded="false">
+                            <i class="ph-duotone  ph-stack"></i>
+                            应用
+                        </a>
+                        <ul class="collapse" id="apps">
+
+
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#Data-page" aria-expanded="false">
+                                    数据
+                                </a>
+                                <ul class="collapse" id="Data-page">
+                                    <li><a href="app_data_upload.html">上传数据</a></li>
+                                    <li><a href="app_data_read.html">读取数据</a></li>
+                                </ul>
+                            </li>
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#Tags-page" aria-expanded="false">
+                                    标签
+                                </a>
+                                <ul class="collapse" id="Tags-page">
+                                    <li><a href="app_tags_update.html">标签录入</a></li>
+                                    <li><a href="app_tags_settings.html">标签设置</a></li>
+                                </ul>
+                            </li>
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#User-page" aria-expanded="false">
+                                    用户
+                                </a>
+                                <ul class="collapse" id="User-page">
+                                    <li><a href="app_user_add.html">新增用户</a></li>
+                                    <li><a href="app_user_list.html">用户管理</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="menu-navs">
+                <span class="menu-previous"><i class="ti ti-chevron-left"></i></span>
+                <span class="menu-next"><i class="ti ti-chevron-right"></i></span>
+            </div>
+
+        </nav>
+        <!-- Menu Navigation ends -->
+
+
+        <div class="app-content">
+            <div class="">
+
+                <!-- Header Section starts -->
+                <header class="header-main">
+                    <div class="container-fluid">
+                        <div class="row">
+
+
+                            <div class="col-12 d-flex align-items-center justify-content-end header-right p-0">
+
+                                <ul class="d-flex align-items-center">
+
+
+
+                                    <li class="header-apps">
+                                        <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#appscanvasRights" aria-controls="appscanvasRights">
+                                            <i class="ph ph-bounding-box"></i>
+
+                                        </a>
+
+                                        <div class="offcanvas offcanvas-end header-apps-canvas" tabindex="-1"
+                                            id="appscanvasRights" aria-labelledby="appscanvasRightsLabel">
+                                            <div class="offcanvas-header">
+                                                <h5 class="offcanvas-title" id="appscanvasRightsLabel">快捷方式</h5>
+
+                                            </div>
+                                            <div class="offcanvas-body app-scroll">
+                                                <div class="row row-cols-3">
+
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="dashboard_analysis.html" target="_blank">
+                                                            <span>
+                                                                <i class="ph-duotone  ph-scroll text-info f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">留学分析</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="app_user_list.html" target="_blank">
+                                                            <span>
+                                                                <i
+                                                                    class="ph ph-user-circle-plus text-success f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">添加用户</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="app_user_list.html" target="_blank">
+                                                            <span>
+                                                                <i class="ph ph-user-gear text-danger f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">用户管理</p>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="header-profile">
+                                        <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#profilecanvasRight" aria-controls="profilecanvasRight">
+                                            <img src="assets/images/avtar/1.jpg" alt="avtar" class="b-r-10 h-35 w-35">
+                                        </a>
+
+                                        <div class="offcanvas offcanvas-end header-profile-canvas" tabindex="-1"
+                                            id="profilecanvasRight" aria-labelledby="profilecanvasRight">
+                                            <div class="offcanvas-body app-scroll">
+                                                <ul class="">
+                                                    <li>
+                                                        <div class="d-flex-center">
+                                                            <span
+                                                                class="h-45 w-45 d-flex-center b-r-10 position-relative">
+                                                                <img src="assets/images/avtar/2.jpg" alt=""
+                                                                    class="img-fluid b-r-10">
+                                                            </span>
+                                                        </div>
+                                                        <div class="text-center mt-2">
+                                                            <h6 class="mb-0"><span class="js-user-name">Admin</span>
+                                                            </h6>
+                                                            <p class="f-s-12 mb-0 text-secondary"><span
+                                                                    class="js-user-email">info@dceducation.com.cn</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="app-divider-v dotted py-1"></li>
+                                                    <li>
+                                                        <a class="f-w-500" href="./profile.html" target="_blank">
+                                                            <i class="ph-duotone  ph-user-circle pe-1 f-s-20"></i> 账号详情
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="f-w-500" href="./setting.html" target="_blank">
+                                                            <i class="ph-duotone  ph-gear pe-1 f-s-20"></i> 设置
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="app-divider-v dotted py-1"></li>
+
+
+                                                    <li>
+                                                        <a class="mb-0 text-danger" href="#" target="_blank">
+                                                            <i class="ph-duotone  ph-sign-out pe-1 f-s-20"></i> 登出
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Header Section ends -->
+
+                <!-- Body main section starts -->
+                <main>
+                    <div class="container-fluid">
+                        <!-- Breadcrumb start -->
+                        <div class="row m-1">
+                            <div class="col-12 ">
+                                <h4 class="main-title">标签</h4>
+                                <ul class="app-line-breadcrumbs mb-3 mt-2">
+                                    <li class="">
+                                        <a href="#" class="f-s-14 f-w-500">
+                                            <span>
+                                                <i class="ph-duotone  ph-stack f-s-16 "></i> 应用
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="f-s-14 f-w-500">标签</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#" class="f-s-14 f-w-500">标签录入</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Breadcrumb end -->
+
+                        <div class="row">
+                            <!-- Default Datatable start -->
+                            <div class="col-12">
+                                <div class="card ">
+                                    <div class="card-header">
+                                        <h5>选择学校</h5>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row app-form">
+                                            <div class="col-12">
+                                                <div class="mt-3">
+                                                    <label class="form-label">国家</label>
+                                                    <select class="form-select" name="state" id="countrySelect">
+                                                        <option value="">Please select ...</option>
+                                                        <option value="UK">英国</option>
+                                                        <option value="AU">澳大利亚</option>
+                                                        <option value="HK">香港</option>
+                                                        <option value="SG">新加坡</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mt-3 mb-3">
+                                                    <label class="form-label">学校</label>
+                                                    <select class="select-university form-select select-basic"
+                                                        name="state" id="universitySelect" disabled>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="mt-3 mb-3">
+                                                    <label class="form-label">学历</label>
+                                                    <select class="form-select" name="state" id="degreeSelect">
+                                                        <option value="all">全部</option>
+                                                        <option value="bachelor">本科</option>
+                                                        <option value="master">研究生</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-sm btn-primary set-tag-btn tag-action-btn"
+                                            title="Set" aria-label="Set" data-program-id="1025"
+                                            data-program-name="丹麦语与乌克兰语（BA）"><i class="ti ti-pencil"></i></button>
+                                        <button type="button" class="btn btn-primary float-end"
+                                            id="btn-search-programs"> <i class="ti ti-search"></i>
+                                            查询</button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>专业列表</h5>
+
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="app-datatable-default overflow-auto">
+                                            <table id="majorsList" class="display app-data-table default-data-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 33%">中文名</th>
+                                                        <th style="width: 33%">英文名</th>
+                                                        <th style="width: 100px">学历</th>
+                                                        <th style="width: 100px">状态</th>
+                                                        <th style="width: 100px">操作</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </main>
+
+                <!-- Body main section ends -->
+
+
+                <!-- tap on top -->
+                <div class="go-top">
+                    <span class="progress-value">
+                        <i class="ti ti-arrow-up"></i>
+                    </span>
+                </div>
+
+                <!-- Footer Section starts-->
+                <footer>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="footer-text">
+                                    <li>
+                                        <p class="mb-0">Copyright © 2025 DCEDUCATION. All rights reserved</p>
+                                    </li>
+                                    <li> <a> V1.0.0 </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer Section ends-->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tag Modal -->
+    <div class="modal fade" id="tagModal" tabindex="-1" aria-labelledby="tagModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-lg-down">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h6 class="modal-title text-black" id="tagModalLabel">打标签</h6>
+                    <button type="button" class="btn-close m-0 fs-5" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="tagForm" class="app-form">
+                        <input type="hidden" id="tagProgramId">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <div class="mb-3">
+                                    <label class="form-label">专业名</label>
+                                    <input type="text" class="form-control" id="tagProgramName" readonly>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">语言门槛 Requirements</label>
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">IELTS 总分最低</label>
+                                                <input type="number" min="0" max="9" step="0.5" class="form-control"
+                                                    id="reqIeltsOverallMin" placeholder="0-9">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">IELTS 单项最低</label>
+                                                <input type="number" min="0" max="9" step="0.5" class="form-control"
+                                                    id="reqIeltsEachMin" placeholder="0-9">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">TOEFL 总分最低</label>
+                                                <input type="number" min="0" max="120" class="form-control"
+                                                    id="reqToeflMin" placeholder="0-120">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">PTE 总分最低</label>
+                                                <input type="number" min="0" max="90" class="form-control"
+                                                    id="reqPteMin" placeholder="0-90">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Duolingo 总分最低</label>
+                                                <input type="number" min="0" max="160" class="form-control"
+                                                    id="reqDuolingoMin" placeholder="0-160">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                             <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">语言推荐 Recommends</label>
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">IELTS 推荐</label>
+                                                <input type="number" min="0" max="9" step="0.5" class="form-control"
+                                                    id="reqIeltsOverallRec" placeholder="0-9">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">TOEFL 推荐</label>
+                                                <input type="number" min="0" max="9" step="0.5" class="form-control"
+                                                    id="reqToeflTotalRec" placeholder="0-9">
+                                            </div>
+                                        </div>
+
+ 
+                                    </div>
+                                    <div class="row">
+                                    
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">PTE 推荐</label>
+                                                <input type="number" min="0" max="90" class="form-control"
+                                                    id="reqPteTotalRec" placeholder="0-90">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Duolingo 推荐</label>
+                                                <input type="number" min="0" max="160" class="form-control"
+                                                    id="reqDuolingoTotalRec" placeholder="0-160">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">标签 Program Tags</label>
+                                    <div class="row">
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <select class="form-select select-1" id="tagMultiSelect"
+                                                    multiple="multiple" data-placeholder="请选择标签">
+                                                    <option value="tag_high_gpa_bar">high_gpa_bar</option>
+                                                    <option value="tag_high_language_bar">high_language_bar</option>
+                                                    <option value="tag_high_curriculum_bar">high_curriculum_bar</option>
+                                                    <option value="tag_research_plus">research_plus</option>
+                                                    <option value="tag_stem">stem</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">权重 Program Weights</label>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Academics</label>
+                                                <input type="number" min="0" max="1" step="0.01" class="form-control"
+                                                    id="weightAcademics" placeholder="0.3">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Language</label>
+                                                <input type="number" min="0" max="1" step="0.01" class="form-control"
+                                                    id="weightLanguage" placeholder="0.3">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Curriculum</label>
+                                                <input type="number" min="0" max="1" step="0.01" class="form-control"
+                                                    id="weightCurriculum" placeholder="0.25">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Profile</label>
+                                                <input type="number" min="0" max="1" step="0.01" class="form-control"
+                                                    id="weightProfile" placeholder="0.15">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-text text-secondary">四项加总应 1.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="btn-save-tags">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.3.min.js"></script>
+
+    <!-- data table js -->
+    <script src="assets/vendor/datatable/jquery.dataTables.min.js"></script>
+    <!-- Simple bar js-->
+    <script src="assets/vendor/simplebar/simplebar.js"></script>
+
+    <!-- phosphor js -->
+    <script src="assets/vendor/phosphor/phosphor.js"></script>
+
+    <!-- select2 -->
+    <script src="assets/vendor/select/select2.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/tags.js"></script>
+
+    <!-- App js-->
+    <script src="assets/js/script.js"></script>
+
+
+    <script src="assets/js/httprequest.js"></script>
+
+</body>
+
+</html>

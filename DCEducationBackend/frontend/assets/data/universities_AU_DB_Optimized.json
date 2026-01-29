@@ -1,0 +1,466 @@
+[
+  
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "acs.edu.au"
+    ],
+    "name_EN": "Australian Correspondence Schools",
+    "name_EN_short": "Australian Correspondence Schools",
+    "name_CN": "澳大利亚函授学校"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "acu.edu.au"
+    ],
+    "name_EN": "Australian Catholic University",
+    "name_EN_short": "Australian Catholic University",
+    "name_CN": "澳大利亚天主教大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "adelaide.edu.au"
+    ],
+    "name_EN": "University of Adelaide",
+    "name_EN_short": "Adelaide",
+    "name_CN": "阿德莱德大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "adfa.oz.au"
+    ],
+    "name_EN": "Australian Defence Force Academy",
+    "name_EN_short": "Australian Defence Force Academy",
+    "name_CN": "澳大利亚国防军官学院"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "alc.edu.au"
+    ],
+    "name_EN": "Australian Lutheran College",
+    "name_EN_short": "Australian Lutheran College",
+    "name_CN": "澳大利亚路德学院"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "amc.edu.au"
+    ],
+    "name_EN": "Australian Maritime College",
+    "name_EN_short": "Australian Maritime College",
+    "name_CN": "澳大利亚海事学院"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "anu.edu.au"
+    ],
+    "name_EN": "Australian National University",
+    "name_EN_short": "ANU",
+    "name_CN": "澳大利亚国立大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "avondale.edu.au"
+    ],
+    "name_EN": "Avondale University",
+    "name_EN_short": "Avondale University",
+    "name_CN": "阿冯代尔大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "federation.edu.au"
+    ],
+    "name_EN": "Federation University Australia",
+    "name_EN_short": "Federation University Australia",
+    "name_CN": "澳大利亚联邦大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "bond.edu.au"
+    ],
+    "name_EN": "Bond University",
+    "name_EN_short": "Bond University",
+    "name_CN": "邦德大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "canberra.edu.au"
+    ],
+    "name_EN": "University of Canberra",
+    "name_EN_short": "UC",
+    "name_CN": "堪培拉大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "cdu.edu.au"
+    ],
+    "name_EN": "Charles Darwin University",
+    "name_EN_short": "Charles Darwin University",
+    "name_CN": "查尔斯·达尔文大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "cqu.edu.au"
+    ],
+    "name_EN": "Central Queensland University",
+    "name_EN_short": "Central Queensland University",
+    "name_CN": "中昆士兰大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "csu.edu.au"
+    ],
+    "name_EN": "Charles Sturt University",
+    "name_EN_short": "Charles Sturt University",
+    "name_CN": "查尔斯·斯图尔特大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "curtin.edu.au"
+    ],
+    "name_EN": "Curtin University",
+    "name_EN_short": "Curtin",
+    "name_CN": "科廷大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "deakin.edu.au"
+    ],
+    "name_EN": "Deakin University",
+    "name_EN_short": "Deakin",
+    "name_CN": "迪肯大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "ecu.edu.au"
+    ],
+    "name_EN": "Edith Cowan University",
+    "name_EN_short": "Edith Cowan University",
+    "name_CN": "伊迪斯·科文大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "flinders.edu.au"
+    ],
+    "name_EN": "Flinders University of South Australia",
+    "name_EN_short": "Flinders University of South Australia",
+    "name_CN": "弗林德斯大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "griffith.edu.au"
+    ],
+    "name_EN": "Griffith University",
+    "name_EN_short": "Griffith",
+    "name_CN": "格里菲斯大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "holmes.edu.au"
+    ],
+    "name_EN": "Holmes Institute",
+    "name_EN_short": "Holmes Institute",
+    "name_CN": "霍姆斯学院"
+  },
+ 
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "iota.edu.au"
+    ],
+    "name_EN": "Institute Of Technology, Australia",
+    "name_EN_short": "Institute Of Technology, Australia",
+    "name_CN": "澳大利亚理工学院"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "jcu.edu.au"
+    ],
+    "name_EN": "James Cook University of North Queensland",
+    "name_EN_short": "James Cook University of North Queensland",
+    "name_CN": "詹姆斯·库克大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "latrobe.edu.au"
+    ],
+    "name_EN": "La Trobe University",
+    "name_EN_short": "LaTrobe",
+    "name_CN": "拉筹伯大学"
+  },
+ 
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "monash.edu",
+      "monash.edu.au"
+    ],
+    "name_EN": "Monash University",
+    "name_EN_short": "Monash",
+    "name_CN": "莫纳什大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "mq.edu.au"
+    ],
+    "name_EN": "Macquarie University",
+    "name_EN_short": "Macquarie",
+    "name_CN": "麦考瑞大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "murdoch.edu.au",
+      "student.murdoch.edu.au"
+    ],
+    "name_EN": "Murdoch University",
+    "name_EN_short": "Murdoch University",
+    "name_CN": "默多克大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "nd.edu.au"
+    ],
+    "name_EN": "University of Notre Dame Australia",
+    "name_EN_short": "University of Notre Dame Australia",
+    "name_CN": "澳大利亚圣母大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "newcastle.edu.au"
+    ],
+    "name_EN": "University of Newcastle",
+    "name_EN_short": "UON",
+    "name_CN": "纽卡斯尔大学"
+  },
+ 
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "qut.edu.au"
+    ],
+    "name_EN": "Queensland University of Technology",
+    "name_EN_short": "Queensland University of Technology",
+    "name_CN": "昆士兰科技大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "rmit.edu.au"
+    ],
+    "name_EN": "Royal Melbourne Institute of Technology",
+    "name_EN_short": "RMIT",
+    "name_CN": "皇家墨尔本理工大学"
+  },
+ 
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "scu.edu.au"
+    ],
+    "name_EN": "Southern Cross University",
+    "name_EN_short": "Southern Cross University",
+    "name_CN": "南十字星大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "swin.edu.au"
+    ],
+    "name_EN": "Swinburne University of Technology",
+    "name_EN_short": "Swinburne University of Technology",
+    "name_CN": "斯威本科技大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "une.edu.au"
+    ],
+    "name_EN": "University of New England",
+    "name_EN_short": "University of New England",
+    "name_CN": "新英格兰大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "unimelb.edu",
+      "unimelb.edu.au"
+    ],
+    "name_EN": "University of Melbourne",
+    "name_EN_short": "UniMelb",
+    "name_CN": "墨尔本大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "unisa.edu.au"
+    ],
+    "name_EN": "University of South Australia",
+    "name_EN_short": "University of South Australia",
+    "name_CN": "南澳大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "unsw.edu.au"
+    ],
+    "name_EN": "University of New South Wales",
+    "name_EN_short": "UNSW",
+    "name_CN": "新南威尔士大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "uow.edu.au",
+      "uowmail.edu.au"
+    ],
+    "name_EN": "University of Wollongong",
+    "name_EN_short": "UOW",
+    "name_CN": "伍伦贡大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "uq.edu.au"
+    ],
+    "name_EN": "University of Queensland",
+    "name_EN_short": "UQ",
+    "name_CN": "昆士兰大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "usc.edu.au"
+    ],
+    "name_EN": "University of the Sunshine Coast",
+    "name_EN_short": "University of the Sunshine Coast",
+    "name_CN": "阳光海岸大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "usq.edu.au"
+    ],
+    "name_EN": "University of Southern Queensland",
+    "name_EN_short": "University of Southern Queensland",
+    "name_CN": "南昆士兰大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "sydney.edu.au",
+      "usyd.edu.au",
+      "uni.sydney.edu.au"
+    ],
+    "name_EN": "University of Sydney",
+    "name_EN_short": "USYD",
+    "name_CN": "悉尼大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "utas.edu.au"
+    ],
+    "name_EN": "University of Tasmania",
+    "name_EN_short": "University of Tasmania",
+    "name_CN": "塔斯马尼亚大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "uts.edu.au",
+      "student.uts.edu.au"
+    ],
+    "name_EN": "University of Technology Sydney",
+    "name_EN_short": "UTS",
+    "name_CN": "悉尼科技大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "uwa.edu.au"
+    ],
+    "name_EN": "University of Western Australia",
+    "name_EN_short": "UWA",
+    "name_CN": "西澳大学"
+  },
+  {
+    "alpha_two_code": "AU",
+    "country": "Australia",
+    "domains": [
+      "uws.edu.au"
+    ],
+    "name_EN": "University of Western Sydney",
+    "name_EN_short": "University of Western Sydney",
+    "name_CN": "西悉尼大学"
+  }
+
+
+]

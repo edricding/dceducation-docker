@@ -1,0 +1,202 @@
+[
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Alabama A & M University",
+    "name_EN_short": "AAMU",
+    "name_CN": "Alabama A & M University",
+    "domains": [
+      "aamu.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "University of Alabama at Birmingham",
+    "name_EN_short": "UAB",
+    "name_CN": "University of Alabama at Birmingham",
+    "domains": [
+      "uab.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Amridge University",
+    "name_EN_short": "Southern Christian University  Regions University",
+    "name_CN": "Amridge University",
+    "domains": [
+      "amridgeuniversity.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "University of Alabama in Huntsville",
+    "name_EN_short": "UAH  University of Alabama Huntsville",
+    "name_CN": "University of Alabama in Huntsville",
+    "domains": [
+      "uah.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Alabama State University",
+    "name_EN_short": "Alabama State University",
+    "name_CN": "Alabama State University",
+    "domains": [
+      "alasu.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "The University of Alabama",
+    "name_EN_short": "The University of Alabama",
+    "name_CN": "The University of Alabama",
+    "domains": [
+      "ua.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Central Alabama Community College",
+    "name_EN_short": "Central Alabama Community College",
+    "name_CN": "Central Alabama Community College",
+    "domains": [
+      "cacc.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Athens State University",
+    "name_EN_short": "Athens State University",
+    "name_CN": "Athens State University",
+    "domains": [
+      "athens.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Auburn University at Montgomery",
+    "name_EN_short": "AUM||Auburn University at Montgomery|Auburn Montgomery",
+    "name_CN": "Auburn University at Montgomery",
+    "domains": [
+      "aum.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Auburn University",
+    "name_EN_short": "Auburn University",
+    "name_CN": "Auburn University",
+    "domains": [
+      "auburn.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Birmingham-Southern College",
+    "name_EN_short": "BSC",
+    "name_CN": "Birmingham-Southern College",
+    "domains": [
+      "bsc.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Chattahoochee Valley Community College",
+    "name_EN_short": "CVCC",
+    "name_CN": "Chattahoochee Valley Community College",
+    "domains": [
+      "cv.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "South University-Montgomery",
+    "name_EN_short": "South University-Montgomery",
+    "name_CN": "South University-Montgomery",
+    "domains": [
+      "southuniversity.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Enterprise State Community College",
+    "name_EN_short": "Enterprise-Ozark Community College   Enterprise State Junior College",
+    "name_CN": "Enterprise State Community College",
+    "domains": [
+      "escc.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Coastal Alabama Community College",
+    "name_EN_short": "Coastal Alabama Community College",
+    "name_CN": "Coastal Alabama Community College",
+    "domains": [
+      "coastalalabama.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Faulkner University",
+    "name_EN_short": "Faulkner",
+    "name_CN": "Faulkner University",
+    "domains": [
+      "faulkner.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "Gadsden State Community College",
+    "name_EN_short": "GSCC | Gadsden State | Gadsden Community College",
+    "name_CN": "Gadsden State Community College",
+    "domains": [
+      "gadsdenstate.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "New Beginning College of Cosmetology",
+    "name_EN_short": "New Beginning College of Cosmetology",
+    "name_CN": "New Beginning College of Cosmetology",
+    "domains": [
+      "nbccosmetology.com"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "George C Wallace Community College-Dothan",
+    "name_EN_short": "WALLACE DOTHAN|WCCD",
+    "name_CN": "George C Wallace Community College-Dothan",
+    "domains": [
+      "wallace.edu"
+    ]
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "name_EN": "George C Wallace State Community College-Hanceville",
+    "name_EN_short": "Wallace State Community College Wallace State - Hanceville",
+    "name_CN": "George C Wallace State Community College-Hanceville",
+    "domains": [
+      "wallacestate.edu"
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+#pre-load {
+  margin: 0;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+.loader-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-svg {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 外轮廓描边渐现（从顶部开始画完整轮廓） */
+.outline-path {
+  fill: none;
+  stroke: #5D5AD6;
+  stroke-width: 15;
+  stroke-linecap: round;
+  stroke-dasharray: 2500; /* 路径总长估算 */
+  stroke-dashoffset: 2500;
+  animation: drawOutline 2s ease-out forwards;
+}
+
+@keyframes drawOutline {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #ffffff; /* 描边完成后变暗灰，不抢眼 */
+  }
+}
+
+/* 完整Logo内部元素渐入 */
+.logo-elements {
+  opacity: 0;
+  animation: fadeInElements 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInElements {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 整体轻微脉冲旋转（循环，微妙不夸张） */
+.logo-svg {
+  animation: gentlePulse 3s ease-in-out infinite 2s;
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    transform: rotate(1deg) scale(1.02);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  }
+}
