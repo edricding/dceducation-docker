@@ -11,6 +11,7 @@ import (
 	"backend/internal/modules/auth"
 	"backend/internal/modules/countries"
 	"backend/internal/modules/programs"
+	"backend/internal/modules/studenttags"
 
 )
 
@@ -77,7 +78,19 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	}
 
 
-		// users module wiring
+	
+	// student tags module wiring
+	stRepo := studenttags.NewRepo(db)
+	stSvc := studenttags.NewService(stRepo)
+	stHandler := studenttags.NewHandler(stSvc)
+
+	stg := v1.Group("/student-tags")
+	{
+		stg.GET("", stHandler.GetLatest)
+		stg.POST("", stHandler.Save)
+	}
+
+	// users module wiring
 	userRepo := users.NewRepo(db)
 	userSvc := users.NewService(userRepo)
 	userHandler := users.NewHandler(userSvc)

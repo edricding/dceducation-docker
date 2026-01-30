@@ -1,6 +1,6 @@
 ﻿# DCEducation Backend API (Current Endpoints)
 
-> Updated: 2026-01-29
+> Updated: 2026-01-30
 > Source: `backend/internal/server/router.go` + module handler/dto files.
 
 ---
@@ -172,7 +172,7 @@ Prefix: `/api/v1/programs`
 **Body (JSON)**
 
 - `university_ids` *(uint64[], optional)*
-- `degree_level` *(string, optional, default "all")*: one of `all`, `bachelor`, `master`
+- `degree_level` *(string, optional, default "bachelor")*: `bachelor` / `master`
 - `q` *(string, optional)*
 - `page` *(int, optional, default 1)*
 - `size` *(int, optional, default 20)*
@@ -181,39 +181,64 @@ Prefix: `/api/v1/programs`
 
 `items[]` fields:
 
-- `match_view` *(object)*
-  - `program_id` *(uint64)*
-  - `university_id` *(uint64)*
-  - `country_code` *(string)*
-  - `country` *(string)*
-  - `university_name_en` *(string)*
-  - `university_name_cn` *(string)*
-  - `major_name_en` *(string)*
-  - `major_name_cn` *(string)*
-  - `degree_level` *(string)*
-  - `tier` *(string)*
-  - `is_active` *(bool)*
-  - `program_tags_set_or_not` *(bool)*
-  - `weights_json` *(object)*
-    - `academics` *(number | null)*
-    - `language` *(number | null)*
-    - `curriculum` *(number | null)*
-    - `profile` *(number | null)*
-  - `requirements_json` *(object)*
-    - `gpaMin` *(number | null)*
-    - `ieltsOverallMin` *(number | null)*
-    - `ieltsEachMin` *(number | null)*
-    - `toeflMin` *(number | null)*
-    - `pteMin` *(number | null)*
-    - `duolingoMin` *(number | null)*
+- `id` *(uint64)*
+- `university_id` *(uint64)*
+- `major_name_cn` *(string)*
+- `degree_level` *(string)*
 
 ---
 
-## 6. Users
+## 6. Student Tags
+
+Prefix: `/api/v1/student-tags`
+
+### 6.1 GET `/api/v1/student-tags`
+
+**Description**: Get latest student tag thresholds.
+
+**Response data**: `StudentTagsResponse`
+
+Fields (all optional except `id`):
+
+- `id` *(uint64)*
+- `high_gpa_operator` *(string)*
+- `high_gpa_value` *(number)*
+- `high_language_ielts_operator` *(string)*
+- `high_language_ielts_value` *(number)*
+- `high_language_toefl_operator` *(string)*
+- `high_language_toefl_value` *(int)*
+- `high_language_pte_operator` *(string)*
+- `high_language_pte_value` *(int)*
+- `high_language_duolingo_operator` *(string)*
+- `high_language_duolingo_value` *(int)*
+- `strong_curriculum_alevel_operator` *(string)*
+- `strong_curriculum_alevel_value` *(string)*
+- `strong_curriculum_ib_operator` *(string)*
+- `strong_curriculum_ib_value` *(int)*
+- `strong_curriculum_ap_operator` *(string)*
+- `strong_curriculum_ap_value` *(int)*
+- `strong_profile_options` *(string)*
+- `strong_profile_options_operator` *(string)*
+- `strong_profile_options_value` *(int)*
+
+---
+
+### 6.2 POST `/api/v1/student-tags`
+
+**Description**: Upsert latest student tag thresholds (update latest row or insert).
+
+**Body (JSON)**: same fields as response (except `id` is optional).
+
+**Response data**: same as GET.
+
+---
+
+## 7. Users
+
 
 Route: `POST /api/v1/users`
 
-### 6.1 POST `/api/v1/users`
+### 7.1 POST `/api/v1/users`
 
 **Description**: Create user.
 
@@ -237,11 +262,11 @@ Route: `POST /api/v1/users`
 
 ---
 
-## 7. Auth
+## 8. Auth
 
 Prefix: `/api/v1/auth`
 
-### 7.1 POST `/api/v1/auth/login`
+### 8.1 POST `/api/v1/auth/login`
 
 **Description**: Login using username or email as `identifier`.
 
@@ -263,7 +288,7 @@ Prefix: `/api/v1/auth`
 
 ---
 
-### 7.2 GET `/api/v1/auth/me`
+### 8.2 GET `/api/v1/auth/me`
 
 **Description**: Get current user (requires bearer token).
 
@@ -280,7 +305,7 @@ Prefix: `/api/v1/auth`
 
 ---
 
-## 8. Common Status Codes
+## 9. Common Status Codes
 
 - `200`: success (`code=0`)
 - `400`: bad request / validation error
