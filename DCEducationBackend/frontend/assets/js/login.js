@@ -94,6 +94,7 @@ async function submitLogin() {
 
     // 存 token
     localStorage.setItem(TOKEN_KEY, token);
+    localStorage.setItem("dc_last_active", String(Date.now()));
     if (payload?.user) {
       try {
         localStorage.setItem(USER_KEY, JSON.stringify(payload.user));

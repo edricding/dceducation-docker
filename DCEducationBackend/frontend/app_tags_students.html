@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template">
+    <meta name="keywords"
+        content="admin template, ra-admin admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="la-themes">
+    <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+
+    <title>标签设置 | 鼎承教育</title>
+
+    <!--font-awesome-css-->
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- tabler icons-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/tabler-icons/tabler-icons.css">
+
+    <!--animation-css-->
+    <link rel="stylesheet" href="assets/vendor/animation/animate.min.css">
+
+    <!--flag Icon css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/flag-icons-master/flag-icon.css">
+
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+    <!-- Selecrt css -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/select/select2.min.css">
+    <!-- simplebar css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
+
+    <!-- tree-view css  -->
+    <link rel="stylesheet" href="assets/vendor/jstree/style.min.css">
+
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <div class="loader-wrapper">
+            <div class="app-loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Menu Navigation starts -->
+        <nav>
+            <div class="app-logo">
+                <a class="logo d-inline-block" href="index">
+                    <img src="assets/images/logo/1.png" alt="#">
+                </a>
+
+                <span class="bg-light-primary toggle-semi-nav">
+                    <i class="ti ti-chevrons-right f-s-20"></i>
+                </span>
+            </div>
+            <div class="app-nav" id="app-simple-bar">
+                <ul class="main-nav p-0 mt-2">
+
+                    <li>
+                        <a class="" data-bs-toggle="collapse" href="#dashboard" aria-expanded="false">
+                            <i class="ph-duotone  ph-house-line"></i>
+                            控制台
+                            <!-- <span class="badge text-bg-success badge-notification ms-2">4</span> -->
+                        </a>
+                        <ul class="collapse" id="dashboard">
+                            <li><a href="dashboard_index">主页</a></li>
+                            <li><a href="dashboard_analysis">留学分析</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li>
+                        <a class="" data-bs-toggle="collapse" href="#apps" aria-expanded="false">
+                            <i class="ph-duotone  ph-stack"></i>
+                            应用
+                        </a>
+                        <ul class="collapse" id="apps">
+
+
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#Data-page" aria-expanded="false">
+                                    数据
+                                </a>
+                                <ul class="collapse" id="Data-page">
+                                    <li><a href="app_data_upload">上传数据</a></li>
+                                    <li><a href="app_data_read">读取数据</a></li>
+                                </ul>
+                            </li>
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#Tags-page" aria-expanded="false">
+                                    标签
+                                </a>
+                                <ul class="collapse" id="Tags-page">
+                                    <li><a href="app_tags_programs">专业侧</a></li>
+                                    <li><a href="app_tags_students">学生侧</a></li>
+                                    <li><a href="app_tags_settings">标签设置</a></li>
+                                </ul>
+                            </li>
+                            <li class="another-level">
+                                <a class="" data-bs-toggle="collapse" href="#User-page" aria-expanded="false">
+                                    用户
+                                </a>
+                                <ul class="collapse" id="User-page">
+                                    <li><a href="app_user_add">新增用户</a></li>
+                                    <li><a href="app_user_list">用户管理</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="menu-navs">
+                <span class="menu-previous"><i class="ti ti-chevron-left"></i></span>
+                <span class="menu-next"><i class="ti ti-chevron-right"></i></span>
+            </div>
+
+        </nav>
+        <!-- Menu Navigation ends -->
+
+
+        <div class="app-content">
+            <div class="">
+
+                <!-- Header Section starts -->
+                <header class="header-main">
+                    <div class="container-fluid">
+                        <div class="row">
+
+
+                            <div class="col-12 d-flex align-items-center justify-content-end header-right p-0">
+
+                                <ul class="d-flex align-items-center">
+
+
+
+                                    <li class="header-apps">
+                                        <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#appscanvasRights" aria-controls="appscanvasRights">
+                                            <i class="ph ph-bounding-box"></i>
+
+                                        </a>
+
+                                        <div class="offcanvas offcanvas-end header-apps-canvas" tabindex="-1"
+                                            id="appscanvasRights" aria-labelledby="appscanvasRightsLabel">
+                                            <div class="offcanvas-header">
+                                                <h5 class="offcanvas-title" id="appscanvasRightsLabel">快捷方式</h5>
+
+                                            </div>
+                                            <div class="offcanvas-body app-scroll">
+                                                <div class="row row-cols-3">
+
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="dashboard_analysis" target="_blank">
+                                                            <span>
+                                                                <i class="ph-duotone  ph-scroll text-info f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">留学分析</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="app_user_list" target="_blank">
+                                                            <span>
+                                                                <i
+                                                                    class="ph ph-user-circle-plus text-success f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">添加用户</p>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="d-flex-center text-light text-center mb-3">
+                                                        <a href="app_user_list" target="_blank">
+                                                            <span>
+                                                                <i class="ph ph-user-gear text-danger f-s-30"></i>
+                                                            </span>
+                                                            <p class="mb-0 f-w-500 text-secondary">用户管理</p>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="header-profile">
+                                        <a href="#" class="d-block head-icon" role="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#profilecanvasRight" aria-controls="profilecanvasRight">
+                                            <img src="assets/images/avtar/1.jpg" alt="avtar" class="b-r-10 h-35 w-35">
+                                        </a>
+
+                                        <div class="offcanvas offcanvas-end header-profile-canvas" tabindex="-1"
+                                            id="profilecanvasRight" aria-labelledby="profilecanvasRight">
+                                            <div class="offcanvas-body app-scroll">
+                                                <ul class="">
+                                                    <li>
+                                                        <div class="d-flex-center">
+                                                            <span
+                                                                class="h-45 w-45 d-flex-center b-r-10 position-relative">
+                                                                <img src="assets/images/avtar/2.jpg" alt=""
+                                                                    class="img-fluid b-r-10">
+                                                            </span>
+                                                        </div>
+                                                        <div class="text-center mt-2">
+                                                            <h6 class="mb-0"><span class="js-user-name">Admin</span>
+                                                            </h6>
+                                                            <p class="f-s-12 mb-0 text-secondary"><span
+                                                                    class="js-user-email">info@dceducation.com.cn</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="app-divider-v dotted py-1"></li>
+                                                    <li>
+                                                        <a class="f-w-500" href="./profile" target="_blank">
+                                                            <i class="ph-duotone  ph-user-circle pe-1 f-s-20"></i> 账号详情
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="f-w-500" href="./setting" target="_blank">
+                                                            <i class="ph-duotone  ph-gear pe-1 f-s-20"></i> 设置
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="app-divider-v dotted py-1"></li>
+
+
+                                                    <li>
+                                                        <a class="mb-0 text-danger" href="#" target="_blank">
+                                                            <i class="ph-duotone  ph-sign-out pe-1 f-s-20"></i> 登出
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Header Section ends -->
+
+                <!-- Body main section starts -->
+                <main>
+                    <div class="container-fluid">
+                        <!-- Breadcrumb start -->
+                        <div class="row m-1">
+                            <div class="col-12 ">
+                                <h4 class="main-title">标签</h4>
+                                <ul class="app-line-breadcrumbs mb-3 mt-2">
+                                    <li class="">
+                                        <a href="#" class="f-s-14 f-w-500">
+                                            <span>
+                                                <i class="ph-duotone  ph-stack f-s-16 "></i> 应用
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="f-s-14 f-w-500">标签</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#" class="f-s-14 f-w-500">学生侧</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Breadcrumb end -->
+
+                        <!-- setting-app start -->
+                        <div class="row">
+                            <div class="col-lg-3 col-xxl-2">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>学生侧</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="vertical-tab setting-tab">
+                                            <ul class="nav nav-tabs app-tabs-primary " id="v-bg" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="options-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#thresholds-tab-pane"
+                                                        type="button" role="tab" aria-controls="thresholds-tab-pane"
+                                                        aria-selected="true"> <i class="ph-bold  ph-gear pe-2"></i>
+                                                        阈值设定</button>
+                                                </li>
+
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="overview-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#overview-tab-pane" type="button" role="tab"
+                                                        aria-controls="overview-tab-pane" aria-selected="false"><i
+                                                            class="ph-bold  ph-presentation-chart pe-2"></i>算法说明</button>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                            <div class="col-lg-8 col-xxl-9">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="thresholds-tab-pane" role="tabpanel"
+                                        aria-labelledby="thresholds-tab" tabindex="0">
+                                        <div class="card setting-thresholds-tab">
+                                            <div class="card-header">
+                                                <h5>阈值设定</h5>
+                                            </div>
+                                            <div class="card-body">
+
+
+                                                <div class="thresholds-tab thresholds-container">
+
+
+
+                                                    <form class="app-form">
+
+                                                        <div class="row security-box-card align-items-center mt-2">
+                                                            <div class="col-3 position-relative">
+                                                                <span
+                                                                    class="bg-primary h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                                    <i class="ph-duotone  ph-tag"></i></span>
+                                                                <p
+                                                                    class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                                    stem_interest</p>
+                                                            </div>
+                                                            <div class="col-9 security-discription">
+                                                                <p class="text-secondary f-s-16">
+                                                                    若学生选择了目标专业，根据专业是否有stem标签，<br />若有stem，自动给学生加上stem_interest标签。
+                                                                </p>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="app-divider-v dashed"></div>
+                                                        </div>
+
+                                                        <div class="row security-box-card align-items-center">
+                                                            <div class="col-3 position-relative">
+                                                                <span
+                                                                    class="bg-success h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                                    <i class="ph-duotone  ph-tag"></i></span>
+                                                                <p
+                                                                    class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                                    high_gpa</p>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <div class="row">
+                                                                    <div class="col-4">
+
+                                                                        <label class="form-label">Operator</label>
+                                                                        <select class="form-select"
+                                                                            name="select_high_gpa_0"
+                                                                            id="select_high_gpa_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-8">
+                                                                        <label class="form-label">Value</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_gpa_1" placeholder="GPA">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="app-divider-v dashed"></div>
+                                                        </div>
+
+
+                                                        <div class="row security-box-card align-items-center">
+                                                            <div class="col-3 position-relative">
+                                                                <span
+                                                                    class="bg-warning h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                                    <i class="ph-duotone  ph-tag"></i></span>
+                                                                <p
+                                                                    class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                                    high_language</p>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+                                                                        <label class="form-label">Language Test</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_ielts_00"
+                                                                            value="IELTS" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <label class="form-label">Operator</label>
+                                                                        <select class="form-select"
+                                                                            name="select_high_language_ielts_0"
+                                                                            id="select_high_language_ielts_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <label class="form-label">Value</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_ielts_1"
+                                                                            placeholder="Overall">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_toefl_00"
+                                                                            value="TOEFL" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+
+                                                                        <select class="form-select"
+                                                                            name="select_high_language_toefl_0"
+                                                                            id="select_high_language_toefl_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_toefl_1"
+                                                                            placeholder="Total">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_pte_00" value="PTE"
+                                                                            disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+
+                                                                        <select class="form-select"
+                                                                            name="select_high_language_pte_0"
+                                                                            id="select_high_language_pte_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_pte_1"
+                                                                            placeholder="Total">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_duolingo_00"
+                                                                            value="DUOLINGO" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+
+                                                                        <select class="form-select"
+                                                                            name="select_high_language_duolingo_0"
+                                                                            id="select_high_language_duolingo_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_high_language_duolingo_1"
+                                                                            placeholder="Total">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-12">
+                                                            <div class="app-divider-v dashed"></div>
+                                                        </div>
+
+
+                                                        <div class="row security-box-card align-items-center">
+                                                            <div class="col-3 position-relative">
+                                                                <span
+                                                                    class="bg-danger h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                                    <i class="ph-duotone  ph-tag"></i></span>
+                                                                <p
+                                                                    class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                                    strong_curriculum</p>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+                                                                        <label class="form-label">Curriculum</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_strong_curriculum_alevel_00"
+                                                                            value="A-LEVEL" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <label class="form-label">Operator</label>
+                                                                        <select class="form-select"
+                                                                            name="select_strong_curriculum_alevel_0"
+                                                                            id="select_strong_curriculum_alevel_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <label class="form-label">Value</label>
+                                                                        <select class="form-select"
+                                                                            name="select_strong_curriculum_alevel_1"
+                                                                            id="select_strong_curriculum_alevel_1">
+                                                                            <option value="A*A*A*">A*A*A*</option>
+                                                                            <option value="A*A*A">A*A*A</option>
+                                                                            <option value="A*AA">A*AA</option>
+                                                                            <option value="AAA">AAA</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_strong_curriculum_ib_00"
+                                                                            value="IB" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+
+                                                                        <select class="form-select"
+                                                                            name="select_strong_curriculum_ib_0"
+                                                                            id="select_strong_curriculum_ib_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_strong_curriculum_ib_1"
+                                                                            placeholder="Total">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-4">
+
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_strong_curriculum_ap_00"
+                                                                            value="AP（4分以上）" disabled>
+                                                                    </div>
+                                                                    <div class="col-4">
+
+
+                                                                        <select class="form-select"
+                                                                            name="select_strong_curriculum_ap_0"
+                                                                            id="select_strong_curriculum_ap_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <select class="form-select"
+                                                                            name="select_strong_curriculum_ap_1"
+                                                                            id="select_strong_curriculum_ap_1">
+                                                                            <option value="0">0</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-12">
+                                                            <div class="app-divider-v dashed"></div>
+                                                        </div>
+
+                                                          <div class="row security-box-card align-items-center">
+                                                            <div class="col-3 position-relative">
+                                                                <span
+                                                                    class="bg-primary h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                                    <i class="ph-duotone  ph-tag"></i></span>
+                                                                <p
+                                                                    class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                                    strong_profile</p>
+                                                            </div>
+                                                            <div class="col-9 mb-3">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <label class="form-label">Options</label>
+                                                                        <select class="form-select"
+                                                                            name="select_strong_profile_00"
+                                                                            id="select_strong_profile_00">
+                                                                            <option value="and">活动 && 科研 && 获奖</option>
+                                                                            <option value="or">活动 || 科研 || 获奖</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-3">
+
+                                                                        <label class="form-label">Operator</label>
+                                                                        <select class="form-select"
+                                                                            name="select_strong_profile_0"
+                                                                            id="select_strong_profile_0">
+                                                                            <option value="min">MIN</option>
+                                                                            <option value="min_inclusive">MIN Inclusive
+                                                                            </option>
+                                                                            <option value="max">MAX</option>
+                                                                            <option value="max_inclusive">MAX Inclusive
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-3">
+                                                                        <label class="form-label">Value</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="select_strong_profile_1" placeholder="Value">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="overview-tab-pane" role="tabpanel"
+                                        aria-labelledby="overview-tab" tabindex="0">
+
+
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row security-box-card align-items-center">
+                                                    <div class="col-md-3 position-relative">
+                                                        <span
+                                                            class="bg-primary h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                            <i class="ph-duotone  ph-tag"></i></span>
+                                                        <p
+                                                            class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                            Tags</p>
+                                                    </div>
+                                                    <div class="col-md-6 security-discription">
+                                                        <p class="text-secondary f-s-16">An anti-phishing code is a
+                                                            security feature used by various online platforms,<br>
+                                                            especially in financial and cryptocurrency services,
+                                                        </p>
+                                                        <span class="badge text-light-secondary p-2"> <i
+                                                                class="ph-fill  ph-x-circle me-1 text-primary"></i>secondary</span>
+                                                    </div>
+                                                    <div class="col-md-3 text-end">
+                                                        <button type="button" class="btn btn-primary">Turn On</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row security-box-card align-items-center">
+                                                    <div class="col-md-3 position-relative">
+                                                        <span
+                                                            class="bg-success h-35 w-35 d-flex-center b-r-50 anti-code">
+                                                            <i class="ph-light  ph-file-archive f-s-18"></i></span>
+                                                        <p
+                                                            class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
+                                                            Whitelist
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 security-discription">
+                                                        <p class="text-secondary f-s-16">An anti-phishing code is a
+                                                            security feature used by various online platforms,<br>
+                                                            especially in financial and cryptocurrency services,
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="col-md-3 text-end">
+                                                        <p>In development</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-xxl-6">
+                                                <ul class="active-device-session active-device-list" id="shareMenuLeft">
+                                                    <li>
+                                                        <div class="card share-menu-active">
+                                                            <div class="card-body">
+                                                                <div class="device-menu-item " draggable="false">
+                                                                    <span class="device-menu-img">
+                                                                        <i
+                                                                            class="ph-duotone  ph-user-circle f-s-40 text-primary"></i>
+
+                                                                    </span>
+                                                                    <div class="device-menu-content">
+                                                                        <h6 class="mb-0 txt-ellipsis-1">TagsAdmin - 1
+                                                                        </h6>
+                                                                        <p class="mb-0 txt-ellipsis-1 text-secondary">
+                                                                            Authority:1</p>
+                                                                    </div>
+                                                                    <div class="device-menu-icons tags-setting-switch">
+                                                                        <div class="form-check form-switch d-flex">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" checked>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="device-menu-item " draggable="false">
+                                                                    <span class="device-menu-img">
+                                                                        <i
+                                                                            class="ph-duotone  ph-user-circle f-s-40 text-secondary"></i>
+
+                                                                    </span>
+                                                                    <div class="device-menu-content">
+                                                                        <h6 class="mb-0 txt-ellipsis-1">TagsAdmin - 2
+                                                                        </h6>
+                                                                        <p class="mb-0 txt-ellipsis-1 text-secondary">
+                                                                            Authority:1</p>
+                                                                    </div>
+                                                                    <div class="device-menu-icons tags-setting-switch">
+                                                                        <div class="form-check form-switch d-flex">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--setting app end -->
+                    </div>
+                </main>
+
+                <!-- Body main section ends -->
+
+
+                <!-- tap on top -->
+                <div class="go-top">
+                    <span class="progress-value">
+                        <i class="ti ti-arrow-up"></i>
+                    </span>
+                </div>
+
+                <!-- Footer Section starts-->
+                <footer>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="footer-text">
+                                    <li>
+                                        <p class="mb-0">Copyright © 2025 DCEDUCATION. All rights reserved</p>
+                                    </li>
+                                    <li> <a> V1.0.0 </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer Section ends-->
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.3.min.js"></script>
+
+
+    <!-- Simple bar js-->
+    <script src="assets/vendor/simplebar/simplebar.js"></script>
+
+    <!-- phosphor js -->
+    <script src="assets/vendor/phosphor/phosphor.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- select2 -->
+    <script src="assets/vendor/select/select2.min.js"></script>
+
+    <!-- App js-->
+    <script src="assets/js/script.js"></script>
+
+
+    <script src="assets/js/httprequest.js"></script>
+
+</body>
+
+</html>

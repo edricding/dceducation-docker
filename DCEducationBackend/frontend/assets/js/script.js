@@ -93,7 +93,8 @@ async function loadUserProfile() {
     const data = await resp.json().catch(() => null);
     if (!resp.ok) {
       if (resp.status === 401) {
-        redirectToLogin();
+        // One retry after a short delay to avoid flaky first-time auth
+        setTimeout(loadUserProfile, 800);
       }
       return;
     }
