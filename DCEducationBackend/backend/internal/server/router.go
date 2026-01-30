@@ -95,7 +95,9 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	userSvc := users.NewService(userRepo)
 	userHandler := users.NewHandler(userSvc)
 
+	v1.GET("/users", userHandler.List)
 	v1.POST("/users", userHandler.Create)
+	v1.PATCH("/users/:id/status", userHandler.UpdateStatus)
 
 
 	return r

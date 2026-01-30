@@ -2,6 +2,7 @@ package users
 
 import (
 	"context"
+	"errors"
 	"strings"
 	"time"
 
@@ -57,3 +58,19 @@ func (s *Service) Create(ctx context.Context, req CreateUserRequest) (CreateUser
 		CreatedAt:       now,
 	}, nil
 }
+
+func (s *Service) ListAll(ctx context.Context) ([]ListUsersItem, error) {
+	return s.repo.ListAll(ctx)
+}
+
+func (s *Service) UpdateStatus(ctx context.Context, id uint64, status string) (UpdateUserStatusResponse, error) {
+	status = strings.ToLower(strings.TrimSpace(status))
+	if status != "active" && status != "disabled" {
+		return UpdateUserStatusResponse{}, errors.New("invalid status")
+	}
+	if err := s.repo.UpdateStatus(ctx, UpdateStatusParams{ID: id, Status: status}); err != nil {
+		return UpdateUserStatusResponse{}, err
+	}
+	return UpdateUserStatusResponse{ID: id, Status: status}, nil
+}
+

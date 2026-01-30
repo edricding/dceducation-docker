@@ -85,6 +85,20 @@ function extractApiError(data, resp) {
   );
 }
 
+function showCenterToast(message, type) {
+  if (typeof Toastify !== "function") return;
+  var bg = type === "success" ? "#22c55e" : type === "error" ? "#ef4444" : "#3b82f6";
+  Toastify({
+    text: message,
+    duration: 2500,
+    gravity: "top",
+    position: "center",
+    close: true,
+    backgroundColor: bg,
+  }).showToast();
+}
+
+
 // ====== 提交逻辑 ======
 async function submitAddUser() {
   const result = validateAddUser();
@@ -139,12 +153,25 @@ async function submitAddUser() {
         // 兜底：直接弹出或打印
         console.log(msg);
       }
+      showCenterToast("Failed to create user", "error");
       return;
     }
 
     // ✅ 成功：你说统一格式 + data(CreateUserResponse)
     // 兼容：后端可能是 {data:{...}} 或直接 {...}
     const u = data?.data || data;
+
+    showCenterToast("User created successfully", "success");
+
+    // clear all inputs after success
+    $("#add_username").val("");
+    $("#add_email").val("");
+    $("#add_password").val("");
+    $("#add_confirm_password").val("");
+    $("#add_role").prop("selectedIndex", 0);
+    $("#add_permission").prop("selectedIndex", 0);
+    $("#add_usernameError, #add_emailError, #add_passwordError, #add_confirm_passwordError, #add_roleError").text("");
+
 
     console.log("创建成功：", {
       id: u?.id,
@@ -161,6 +188,7 @@ async function submitAddUser() {
     $("#add_confirm_password").val("");
   } catch (err) {
     console.error(err);
+    showCenterToast("Network error. Please try again.", "error");
     console.log("网络错误或服务器不可达");
   } finally {
     $btn.prop("disabled", false).text(oldText);

@@ -36,3 +36,52 @@ VALUES
 	}
 	return res.LastInsertId()
 }
+
+type ListUsersParams struct {
+	Limit  int
+	Offset int
+}
+
+func (r *Repo) ListUsers(ctx context.Context, p ListUsersParams) ([]ListUsersItem, error) {
+	rows := []ListUsersItem{}
+	err := r.db.SelectContext(ctx, &rows, `
+SELECT
+  id, username, email, role, permission_level, status, email_verified, created_at, updated_at
+FROM user_center.users
+ORDER BY id DESC
+LIMIT ? OFFSET ?
+`, p.Limit, p.Offset)
+	if err != nil {
+		return nil, err
+	}
+	return rows, nil
+}
+
+func (r *Repo) ListAll(ctx context.Context) ([]ListUsersItem, error) {
+	rows := []ListUsersItem{}
+	err := r.db.SelectContext(ctx, &rows, `
+SELECT
+  id, username, email, role, permission_level, status, email_verified, created_at, updated_at
+FROM user_center.users
+ORDER BY id DESC
+`)
+	if err != nil {
+		return nil, err
+	}
+	return rows, nil
+}
+
+type UpdateStatusParams struct {
+	ID     uint64
+	Status string
+}
+
+func (r *Repo) UpdateStatus(ctx context.Context, p UpdateStatusParams) error {
+	_, err := r.db.ExecContext(ctx, `
+UPDATE user_center.users
+SET status = ?, updated_at = NOW()
+WHERE id = ?
+`, p.Status, p.ID)
+	return err
+}
+

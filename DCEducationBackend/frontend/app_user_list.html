@@ -37,7 +37,9 @@
 
   <!-- Data Table css-->
   <link rel="stylesheet" type="text/css" href="assets/vendor/datatable/jquery.dataTables.min.css">
-  <!-- simplebar css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/toastify/toastify.css">
+
+<!-- simplebar css-->
   <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
 
   <!-- tree-view css  -->
@@ -48,6 +50,19 @@
 
   <!-- Responsive css-->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+
+  <style>
+    #user_list {
+      table-layout: fixed;
+    }
+    #user_list th.actions-col,
+    #user_list td.actions-col {
+      width: 200px;
+      min-width: 200px;
+      max-width: 200px;
+    }
+  </style>
 
 </head>
 
@@ -305,14 +320,14 @@
                       <table id="user_list" class="display app-data-table default-data-table">
                         <thead>
                           <tr>
-                            <th>Username</th>
-                            <th>Email</th>
+                            <th style="max-width: 200px;">Username</th>
+                            <th style="min-width: 300px;">Email</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Last Login</th>
                             <th>Last Login IP</th>
                             <th>Created At</th>
-                            <th>Actions</th>
+                            <th style="min-width: 150px;">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -325,9 +340,9 @@
                             <td>20251226 - 15:34</td>
                             <td>太原</td>
                             <td>20251226 - 15:34</td>
-                            <td>
+                            <td class="actions-col">
                               <button type="button" class="btn btn-light-primary icon-btn b-r-4">
-                                <i class="ph-bold  ph-play-pause"></i>
+                                <i class="ph-bold  ph-pause"></i>
                               </button>
                               <button type="button" class="btn btn-light-warning icon-btn b-r-4">
                                 <i class="ph-bold  ph-key"></i>
@@ -399,6 +414,8 @@
 
   <!-- Bootstrap js-->
   <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/vendor/toastify/toastify.js"></script>
 
   <!-- App js-->
   <script src="assets/js/script.js"></script>

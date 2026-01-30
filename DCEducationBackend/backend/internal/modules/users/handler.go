@@ -2,6 +2,7 @@ package users
 
 import (
 	"errors"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-sql-driver/mysql"
@@ -38,3 +39,36 @@ func (h *Handler) Create(c *gin.Context) {
 
 	response.OK(c, resp)
 }
+
+func (h *Handler) List(c *gin.Context) {
+	items, err := h.svc.ListAll(c.Request.Context())
+	if err != nil {
+		response.ServerError(c, err.Error())
+		return
+	}
+	response.OK(c, items)
+}
+
+func (h *Handler) UpdateStatus(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseUint(idStr, 10, 64)
+	if err != nil {
+		response.BadRequest(c, "invalid id")
+		return
+	}
+
+	var req UpdateUserStatusRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.BadRequest(c, err.Error())
+		return
+	}
+
+	resp, err := h.svc.UpdateStatus(c.Request.Context(), id, req.Status)
+	if err != nil {
+		response.BadRequest(c, err.Error())
+		return
+	}
+
+	response.OK(c, resp)
+}
+
