@@ -52,6 +52,8 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.1/github-markdown.min.css">
+
 </head>
 
 <body>
@@ -118,8 +120,8 @@
                                     标签
                                 </a>
                                 <ul class="collapse" id="Tags-page">
-                                    <li><a href="app_tags_programs">专业侧</a></li>
                                     <li><a href="app_tags_students">学生侧</a></li>
+                                    <li><a href="app_tags_programs">专业侧</a></li>
                                     <li><a href="app_tags_settings">标签设置</a></li>
                                 </ul>
                             </li>
@@ -725,117 +727,18 @@
 
 
                                         <div class="card">
+                                            <div class="card-header">
+                                                <h5>算法说明</h5>
+                                            </div>
                                             <div class="card-body">
-                                                <div class="row security-box-card align-items-center">
-                                                    <div class="col-md-3 position-relative">
-                                                        <span
-                                                            class="bg-primary h-35 w-35 d-flex-center b-r-50 anti-code">
-                                                            <i class="ph-duotone  ph-tag"></i></span>
-                                                        <p
-                                                            class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
-                                                            Tags</p>
-                                                    </div>
-                                                    <div class="col-md-6 security-discription">
-                                                        <p class="text-secondary f-s-16">An anti-phishing code is a
-                                                            security feature used by various online platforms,<br>
-                                                            especially in financial and cryptocurrency services,
-                                                        </p>
-                                                        <span class="badge text-light-secondary p-2"> <i
-                                                                class="ph-fill  ph-x-circle me-1 text-primary"></i>secondary</span>
-                                                    </div>
-                                                    <div class="col-md-3 text-end">
-                                                        <button type="button" class="btn btn-primary">Turn On</button>
-                                                    </div>
+                                                <div class="row security-box-card align-items-center markdown-body" id="markdown-container">
+                                                    
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row security-box-card align-items-center">
-                                                    <div class="col-md-3 position-relative">
-                                                        <span
-                                                            class="bg-success h-35 w-35 d-flex-center b-r-50 anti-code">
-                                                            <i class="ph-light  ph-file-archive f-s-18"></i></span>
-                                                        <p
-                                                            class="security-box-title text-dark f-w-500 f-s-16 ms-5 security-code">
-                                                            Whitelist
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-md-6 security-discription">
-                                                        <p class="text-secondary f-s-16">An anti-phishing code is a
-                                                            security feature used by various online platforms,<br>
-                                                            especially in financial and cryptocurrency services,
-                                                        </p>
+                                       
 
-                                                    </div>
-                                                    <div class="col-md-3 text-end">
-                                                        <p>In development</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-12 col-xxl-6">
-                                                <ul class="active-device-session active-device-list" id="shareMenuLeft">
-                                                    <li>
-                                                        <div class="card share-menu-active">
-                                                            <div class="card-body">
-                                                                <div class="device-menu-item " draggable="false">
-                                                                    <span class="device-menu-img">
-                                                                        <i
-                                                                            class="ph-duotone  ph-user-circle f-s-40 text-primary"></i>
-
-                                                                    </span>
-                                                                    <div class="device-menu-content">
-                                                                        <h6 class="mb-0 txt-ellipsis-1">TagsAdmin - 1
-                                                                        </h6>
-                                                                        <p class="mb-0 txt-ellipsis-1 text-secondary">
-                                                                            Authority:1</p>
-                                                                    </div>
-                                                                    <div class="device-menu-icons tags-setting-switch">
-                                                                        <div class="form-check form-switch d-flex">
-                                                                            <input class="form-check-input"
-                                                                                type="checkbox" checked>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="device-menu-item " draggable="false">
-                                                                    <span class="device-menu-img">
-                                                                        <i
-                                                                            class="ph-duotone  ph-user-circle f-s-40 text-secondary"></i>
-
-                                                                    </span>
-                                                                    <div class="device-menu-content">
-                                                                        <h6 class="mb-0 txt-ellipsis-1">TagsAdmin - 2
-                                                                        </h6>
-                                                                        <p class="mb-0 txt-ellipsis-1 text-secondary">
-                                                                            Authority:1</p>
-                                                                    </div>
-                                                                    <div class="device-menu-icons tags-setting-switch">
-                                                                        <div class="form-check form-switch d-flex">
-                                                                            <input class="form-check-input"
-                                                                                type="checkbox">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
-
-
-                                                </ul>
-                                            </div>
-
-                                        </div>
-
+                                      
 
                                     </div>
                                 </div>
@@ -902,6 +805,8 @@
 
     <script src="assets/js/httprequest.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
     <script src="assets/js/app_tags_students.js"></script>
 </body>
 

@@ -43,6 +43,92 @@ function weightedMean(parts, weights) {
   return vSum / wSum;
 }
 
+function compareOp(value, op, threshold) {
+  if (value === null || value === undefined) return false;
+  if (threshold === null || threshold === undefined) return false;
+  const v = Number(value);
+  const t = Number(threshold);
+  if (!Number.isFinite(v) || !Number.isFinite(t)) return false;
+  switch (String(op || "").trim()) {
+    case "min":
+      return v > t;
+    case "min_inclusive":
+      return v >= t;
+    case "max":
+      return v < t;
+    case "max_inclusive":
+      return v <= t;
+    case "eq":
+      return v == t;
+    default:
+      return false;
+  }
+}
+
+function alevelScoreFromGrade(grade) {
+  if (!grade) return null;
+  const g = String(grade).trim();
+  return ALEVEL_MAP[g] ?? null;
+}
+
+function alevelValueToScore(value) {
+  if (!value) return null;
+  // handle patterns like A*A*A, A*AA, AAA
+  let grades = [];
+  if (String(value).includes("*")) {
+    const tmp = String(value).replace(/\s+/g, "");
+    const tokens = tmp.split("*");
+    for (let i = 0; i < tokens.length; i++) {
+      const base = tokens[i];
+      if (!base) continue;
+      if (base == "A") grades.push("A*");
+      else grades.push(base);
+    }
+  } else {
+    grades = String(value).split("");
+  }
+  const scores = grades.map(alevelScoreFromGrade).filter((v) => v !== null);
+  if (!scores.length) return null;
+  return scores.reduce((s, v) => s + v, 0) / scores.length;
+}
+
+function applyStudentTagThresholds(bachelorData, parts, thresholds, tags) {
+  if (!thresholds) return;
+
+  // high_gpa based on raw GPA
+  const gpaRaw = safeNumber(bachelorData.highschool_gpa);
+  if (compareOp(gpaRaw, thresholds.high_gpa_operator, thresholds.high_gpa_value)) {
+    tags.push("high_gpa");
+  }
+
+  // high_language: any test meets its threshold
+  const ieltsOverall = safeNumber(bachelorData.language_scores?.ielts?.overall);
+  const toeflTotal = safeNumber(bachelorData.language_scores?.toefl?.total);
+  const pteTotal = safeNumber(bachelorData.language_scores?.pte?.total);
+  const duoTotal = safeNumber(bachelorData.language_scores?.duolingo);
+
+  const langHit =
+    compareOp(ieltsOverall, thresholds.high_language_ielts_operator, thresholds.high_language_ielts_value) ||
+    compareOp(toeflTotal, thresholds.high_language_toefl_operator, thresholds.high_language_toefl_value) ||
+    compareOp(pteTotal, thresholds.high_language_pte_operator, thresholds.high_language_pte_value) ||
+    compareOp(duoTotal, thresholds.high_language_duolingo_operator, thresholds.high_language_duolingo_value);
+
+  if (langHit) tags.push("high_language");
+
+  // strong_curriculum
+  const alevelScore = scoreALevel(bachelorData.international_courses?.alevel || []);
+  const alevelThresholdScore = alevelValueToScore(thresholds.strong_curriculum_alevel_value);
+  const alevelHit = compareOp(alevelScore, thresholds.strong_curriculum_alevel_operator, alevelThresholdScore);
+  const ibHit = compareOp(safeNumber(bachelorData.international_courses?.ib), thresholds.strong_curriculum_ib_operator, thresholds.strong_curriculum_ib_value);
+  const apHit = compareOp(safeNumber(bachelorData.international_courses?.ap), thresholds.strong_curriculum_ap_operator, thresholds.strong_curriculum_ap_value);
+  if (alevelHit || ibHit || apHit) tags.push("strong_curriculum");
+
+  // strong_profile: count filled sections
+  const count = [bachelorData.activities, bachelorData.research, bachelorData.awards].filter((v) => String(v || "").trim() !== "").length;
+  const profileHit = compareOp(count, thresholds.strong_profile_options_operator, thresholds.strong_profile_options_value);
+  if (profileHit) tags.push("strong_profile");
+}
+
 /***********************
  * 1) GPA -> 0~100
  ***********************/
@@ -216,15 +302,23 @@ function buildStudentVector(bachelorData, options = {}) {
 
   // tags
   const tags = [];
-  if (parts.academics !== null && parts.academics >= 88) tags.push("high_gpa");
-  if (parts.language !== null && parts.language >= 85) tags.push("high_language");
-  if (parts.curriculum !== null && parts.curriculum >= 85) tags.push("strong_curriculum");
-  if (parts.profile !== null && parts.profile >= 75) tags.push("strong_profile");
+  if (options.studentTagsThresholds) {
+    applyStudentTagThresholds(bachelorData, parts, options.studentTagsThresholds, tags);
+  } else {
+    if (parts.academics !== null && parts.academics >= 88) tags.push("high_gpa");
+    if (parts.language !== null && parts.language >= 85) tags.push("high_language");
+    if (parts.curriculum !== null && parts.curriculum >= 85) tags.push("strong_curriculum");
+    if (parts.profile !== null && parts.profile >= 75) tags.push("strong_profile");
+  }
 
-  // ⭐补上 stem_interest：你原来 tagBonus 依赖它，但未生成
-  const majorsText = (bachelorData.target_majors || []).join(" ").toLowerCase();
-  if (/(cs|computer|data|ai|engineer|math|physics|biology|chem|计算机|数据|人工智能|工程|数学|物理|生物|化学)/.test(majorsText)) {
+  // stem interest from selected target majors (program stem tag)
+  if (options.stemSelected === true) {
     tags.push("stem_interest");
+  } else if (options.stemSelected === null || options.stemSelected === undefined) {
+    const majorsText = (bachelorData.target_majors || []).join(" ").toLowerCase();
+    if (/(cs|computer|data|ai|engineer|math|physics|biology|chem)/.test(majorsText)) {
+      tags.push("stem_interest");
+    }
   }
 
   return { parts, total: total ?? 0, tags, raw: bachelorData };
@@ -346,13 +440,21 @@ function scoreProgramFit(student, program) {
  * 7) Main: match bachelor programs
  ***********************/
 export function matchBachelorPrograms(bachelorData, programs, options = {}) {
-  const student = buildStudentVector(bachelorData, options);
+  const targetMajors = (bachelorData.target_majors || []).map((s) => String(s).toLowerCase());
+  const hasStemSelected =
+    targetMajors.length &&
+    Array.isArray(programs) &&
+    programs.some((p) => {
+      if (!Array.isArray(p.tags) || !p.tags.includes("stem")) return false;
+      const mj = `${p.major || ""} ${p.id || ""}`.toLowerCase();
+      return targetMajors.some((k) => k && mj.includes(k));
+    });
 
-  const allowedCountries = options.allowedCountries || ["英国", "澳大利亚", "香港", "新加坡"];
+  const student = buildStudentVector(bachelorData, { ...options, stemSelected: hasStemSelected });
+
+  const allowedCountries = options.allowedCountries || ["???", "??????", "???", "?????"];
   const targetCountries = (bachelorData.target_countries || []).filter((c) => allowedCountries.includes(c));
   const countryFilter = targetCountries.length ? targetCountries : allowedCountries;
-
-  const targetMajors = (bachelorData.target_majors || []).map((s) => String(s).toLowerCase());
 
   const majorBonusValue = options.majorBonus ?? 3;
 

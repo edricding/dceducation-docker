@@ -153,5 +153,27 @@ $(function () {
   });
 });
 
+function initMarkdownDoc() {
+  var container = document.getElementById("markdown-container");
+  if (!container) return;
+  fetch("assets/js/calc/matchBachelor.md")
+    .then(function (res) {
+      if (!res.ok) throw new Error("Failed to load markdown");
+      return res.text();
+    })
+    .then(function (md) {
+      var html = marked.parse(md);
+      container.innerHTML = DOMPurify.sanitize(html);
+    })
+    .catch(function () {
+      container.innerHTML = '<div class="text-muted">Markdown load failed.</div>';
+    });
+}
 
+// Load markdown once DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMarkdownDoc);
+} else {
+  initMarkdownDoc();
+}
 
