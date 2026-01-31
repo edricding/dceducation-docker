@@ -1,13 +1,22 @@
+
+function initCleave(selector, options) {
+  var els = document.querySelectorAll(selector);
+  if (!els || !els.length) return;
+  els.forEach(function (el) {
+    new Cleave(el, options);
+  });
+}
+
 // bachelor
 
-new Cleave(".bachelor-highSchool-gpa-input", {
+initCleave(".bachelor-highSchool-gpa-input", {
   numericOnly: true,
   delimiters: ["."],
   blocks: [1, 1],
 });
 
 // IB 总分（25-45，整数）
-new Cleave(".bachelor-IB-input", {
+initCleave(".bachelor-IB-input", {
   numeral: true,
   numeralThousandsGroupStyle: "none", // 不加千位逗号
   numeralDecimalScale: 0,             // 强制整数
@@ -16,7 +25,8 @@ new Cleave(".bachelor-IB-input", {
   numericOnly: true,
 });
 
-document.querySelector(".bachelor-IB-input").addEventListener("blur", function () {
+var _ib = document.querySelector(".bachelor-IB-input");
+if (_ib) _ib.addEventListener("blur", function () {
   let value = this.value.trim();
   if (value === "") return;
 
@@ -34,7 +44,7 @@ document.querySelector(".bachelor-IB-input").addEventListener("blur", function (
 });
 
 // AP（4分以上，整数，假设最多99）
-new Cleave(".bachelor-AP-input", {
+initCleave(".bachelor-AP-input", {
   numeral: true,
   numeralThousandsGroupStyle: "none",
   numeralDecimalScale: 0,
@@ -44,7 +54,7 @@ new Cleave(".bachelor-AP-input", {
 });
 
 // 雅思 Overall（0-9，支持 .5）
-new Cleave(".bachelor-IELTS-overall-input", {
+initCleave(".bachelor-IELTS-overall-input", {
   numericOnly: true,
   delimiters: ["."],
   blocks: [1, 1],
@@ -60,28 +70,28 @@ document.querySelectorAll(".bachelor-IELTS-section-input").forEach((el) => {
 });
 
 // 托福总分（0-120）
-new Cleave(".bachelor-TOEFL-total-input", {
+initCleave(".bachelor-TOEFL-total-input", {
   numeral: true,
   numeralIntegerScale: 3,
   numeralDecimalScale: 0,
 });
 
 // 托福单项（0-30）
-new Cleave(".bachelor-TOEFL-section-input", {
+initCleave(".bachelor-TOEFL-section-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
 });
 
 // 多邻国（10-160）
-new Cleave(".bachelor-DUOLINGO-input", {
+initCleave(".bachelor-DUOLINGO-input", {
   numeral: true,
   numeralIntegerScale: 3,
   numeralDecimalScale: 0,
 });
 
 // 活动/科研/获奖/实习（整数，1-999）
-new Cleave('.bachelor-activity-input, .bachelor-research-input, .bachelor-award-input', {
+initCleave('.bachelor-activity-input, .bachelor-research-input, .bachelor-award-input', {
   numeral: true,
   numeralThousandsGroupStyle: 'none',
   numeralDecimalScale: 0,
@@ -102,13 +112,13 @@ document.querySelectorAll('.bachelor-activity-input, .bachelor-research-input, .
   });
 });
 
-new Cleave(".bachelor-PTE-total-input", {
+initCleave(".bachelor-PTE-total-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
 });
 
-new Cleave(".bachelor-PTE-section-input", {
+initCleave(".bachelor-PTE-section-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
@@ -120,7 +130,7 @@ new Cleave(".bachelor-PTE-section-input", {
 
 
 // 雅思 Overall（0-9，支持 .5）
-new Cleave(".master-IELTS-overall-input", {
+initCleave(".master-IELTS-overall-input", {
   numericOnly: true,
   delimiters: ["."],
   blocks: [1, 1],
@@ -137,42 +147,42 @@ document.querySelectorAll(".master-IELTS-section-input").forEach((el) => {
 });
 
 // 托福总分（0-120）
-new Cleave(".master-TOEFL-total-input", {
+initCleave(".master-TOEFL-total-input", {
   numeral: true,
   numeralIntegerScale: 3,
   numeralDecimalScale: 0,
 });
 
 // 托福单项（0-30）
-new Cleave(".master-TOEFL-section-input", {
+initCleave(".master-TOEFL-section-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
 });
 
 // PTE 总分（10-90）
-new Cleave(".master-PTE-total-input", {
+initCleave(".master-PTE-total-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
 });
 
 // PTE 单项（10-90）
-new Cleave(".master-PTE-section-input", {
+initCleave(".master-PTE-section-input", {
   numeral: true,
   numeralIntegerScale: 2,
   numeralDecimalScale: 0,
 });
 
 // 多邻国（10-160）
-new Cleave(".master-DUOLINGO-input", {
+initCleave(".master-DUOLINGO-input", {
   numeral: true,
   numeralIntegerScale: 3,
   numeralDecimalScale: 0,
 });
 
 // 活动/科研/获奖（整数，1-999）
-new Cleave('.master-activity-input, .master-research-input, .master-award-input', {
+initCleave('.master-activity-input, .master-research-input, .master-award-input', {
   numeral: true,
   numeralThousandsGroupStyle: 'none',
   numeralDecimalScale: 0,

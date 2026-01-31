@@ -1,3 +1,18 @@
+
+function activateTab(tabId) {
+  var el = document.getElementById(tabId);
+  if (!el || !window.bootstrap) return;
+  var tab = window.bootstrap.Tab.getOrCreateInstance(el);
+  tab.show();
+}
+
+
+function safeAddListener(id, handler) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener("change", handler);
+}
+
 import { matchBachelorPrograms } from "./calc/matchBachelor.js";
 
 // ------------------ bachelor start ------------------
@@ -432,12 +447,11 @@ $(document).on("click", "#btn-modal-bachelor-confirm", function () {
 
   renderBachelorSummary(data);
   showBachelorCards();
+  $("#btn-generate-result").prop("disabled", false);
 });
 
 // A-Level：勾选时显示并启用四个下拉框，取消时隐藏并清�?
-document
-  .getElementById("checkbox_bachelor_alevel")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_alevel", function () {
     const container = document.getElementById(
       "bachelor_alevel_scores_container"
     );
@@ -456,9 +470,7 @@ document
   });
 
 // IB
-document
-  .getElementById("checkbox_bachelor_ib")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_ib", function () {
     const input = document.getElementById("input_bachelor_score_ib");
     if (this.checked) {
       input.disabled = false;
@@ -469,9 +481,7 @@ document
   });
 
 // AP
-document
-  .getElementById("checkbox_bachelor_ap")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_ap", function () {
     const input = document.getElementById("input_bachelor_score_ap");
     if (this.checked) {
       input.disabled = false;
@@ -482,9 +492,7 @@ document
   });
 
 // 雅思
-document
-  .getElementById("checkbox_bachelor_ielts")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_ielts", function () {
     const container = document.getElementById("bachelor_ielts_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -501,9 +509,7 @@ document
   });
 
 // 托福 TOEFL
-document
-  .getElementById("checkbox_bachelor_toefl")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_toefl", function () {
     const container = document.getElementById("bachelor_toefl_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -520,9 +526,7 @@ document
   });
 
 // PTE
-document
-  .getElementById("checkbox_bachelor_pte")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_pte", function () {
     const container = document.getElementById("bachelor_pte_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -539,9 +543,7 @@ document
   });
 
 // 多邻�?Duolingo
-document
-  .getElementById("checkbox_bachelor_duolingo")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_duolingo", function () {
     const input = document.getElementById("score_duolingo");
     if (this.checked) {
       input.disabled = false;
@@ -555,9 +557,7 @@ document
   });
 
 // 活动
-document
-  .getElementById("checkbox_bachelor_activity")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_activity", function () {
     const input = document.getElementById("input_bachelor_activity");
     if (this.checked) {
       input.disabled = false;
@@ -568,9 +568,7 @@ document
   });
 
 // 科研/论文
-document
-  .getElementById("checkbox_bachelor_research")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_research", function () {
     const input = document.getElementById("input_bachelor_research");
     if (this.checked) {
       input.disabled = false;
@@ -581,9 +579,7 @@ document
   });
 
 // 获奖
-document
-  .getElementById("checkbox_bachelor_award")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_bachelor_award", function () {
     const input = document.getElementById("input_bachelor_award");
     if (this.checked) {
       input.disabled = false;
@@ -611,9 +607,7 @@ $(function () {
 });
 
 // 雅�?IELTS
-document
-  .getElementById("checkbox_master_ielts")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_ielts", function () {
     const container = document.getElementById("master_ielts_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -630,9 +624,7 @@ document
   });
 
 // 托福 TOEFL
-document
-  .getElementById("checkbox_master_toefl")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_toefl", function () {
     const container = document.getElementById("master_toefl_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -649,9 +641,7 @@ document
   });
 
 // PTE
-document
-  .getElementById("checkbox_master_pte")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_pte", function () {
     const container = document.getElementById("master_pte_score_container");
     const inputs = container.querySelectorAll("input");
 
@@ -668,9 +658,7 @@ document
   });
 
 // 多邻�?Duolingo
-document
-  .getElementById("checkbox_master_duolingo")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_duolingo", function () {
     const input = document.getElementById("score_duolingo");
     if (this.checked) {
       input.disabled = false;
@@ -681,9 +669,7 @@ document
   });
 
 // 活动
-document
-  .getElementById("checkbox_master_activity")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_activity", function () {
     const input = document.getElementById("input_master_activity");
     if (this.checked) {
       input.disabled = false;
@@ -694,9 +680,7 @@ document
   });
 
 // 科研/论文
-document
-  .getElementById("checkbox_master_research")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_research", function () {
     const input = document.getElementById("input_master_research");
     if (this.checked) {
       input.disabled = false;
@@ -707,9 +691,7 @@ document
   });
 
 // 获奖
-document
-  .getElementById("checkbox_master_award")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_award", function () {
     const input = document.getElementById("input_master_award");
     if (this.checked) {
       input.disabled = false;
@@ -720,9 +702,7 @@ document
   });
 
 // 国外专业相关
-document
-  .getElementById("checkbox_master_work_abroad_related")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_work_abroad_related", function () {
     const input = document.getElementById("input_master_work_abroad_related");
     if (this.checked) {
       input.disabled = false;
@@ -733,9 +713,7 @@ document
   });
 
 // 国外专业不相�?
-document
-  .getElementById("checkbox_master_work_abroad_unrelated")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_work_abroad_unrelated", function () {
     const input = document.getElementById("input_master_work_abroad_unrelated");
     if (this.checked) {
       input.disabled = false;
@@ -746,9 +724,7 @@ document
   });
 
 // 国内专业相关
-document
-  .getElementById("checkbox_master_work_domestic_related")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_work_domestic_related", function () {
     const input = document.getElementById("input_master_work_domestic_related");
     if (this.checked) {
       input.disabled = false;
@@ -759,9 +735,7 @@ document
   });
 
 // 国内专业不相�?
-document
-  .getElementById("checkbox_master_work_domestic_unrelated")
-  .addEventListener("change", function () {
+safeAddListener("checkbox_master_work_domestic_unrelated", function () {
     const input = document.getElementById(
       "input_master_work_domestic_unrelated"
     );
@@ -1703,3 +1677,27 @@ function resetMasterFormUI() {
 //       : "";
 //   }
 // }
+
+
+$(document).on("click", "#btn-summary-reset", function () {
+  resetSummaryUI();
+  resetBachelorFormUI();
+  resetMasterFormUI();
+  $("#btn-generate-result").prop("disabled", true);
+  // clear result tree if exists
+  var tree = document.getElementById("result_tree");
+  if (tree) tree.innerHTML = "";
+  activateTab("review-tab");
+});
+
+
+$(document).on("click", "#btn-generate-result", function () {
+  if ($(this).prop("disabled")) return;
+  if (window.bootstrap) {
+    var el = document.getElementById("finish-tab");
+    if (el) {
+      var tab = window.bootstrap.Tab.getOrCreateInstance(el);
+      tab.show();
+    }
+  }
+});
