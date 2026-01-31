@@ -39,7 +39,9 @@
 
     <!-- Selecrt css -->
     <link rel="stylesheet" type="text/css" href="assets/vendor/select/select2.min.css">
-    <!-- simplebar css-->
+      <link rel="stylesheet" type="text/css" href="assets/vendor/toastify/toastify.css">
+
+<!-- simplebar css-->
     <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
 
     <!-- tree-view css  -->
@@ -432,7 +434,7 @@
                             <div class="col-12 mb-3">
                                 <div class="mb-3">
                                     <label class="form-label">专业名</label>
-                                    <input type="text" class="form-control" id="tagProgramName" readonly>
+                                    <input type="text" class="form-control" id="tagProgramName" readonly disabled>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -584,6 +586,22 @@
                                     <div class="form-text text-secondary">四项加总应 1.00</div>
                                 </div>
                             </div>
+
+                             <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">系数 Tier</label>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <input type="number" min="0.00" max="10.00" step="0.01" class="form-control"
+                                                    id="tierValue" placeholder="1.00">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-text text-secondary">基础系数为 1.00</div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -613,6 +631,8 @@
 
     <!-- Bootstrap js-->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendor/toastify/toastify.js"></script>
 
     <script src="assets/js/tags.js"></script>
 

@@ -2,6 +2,7 @@ package programs
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"strings"
 
@@ -255,3 +256,65 @@ WHERE id IN (?)
 	}
 	return nil
 }
+
+func (r *Repo) GetRequirementsByProgramID(ctx context.Context, programID uint64) (*ProgramRequirementRow, error) {
+	var row ProgramRequirementRow
+	err := r.db.GetContext(ctx, &row, `
+SELECT program_id, gpa_min_score, ielts_overall_min, ielts_each_min, ielts_overall_rec,
+       toefl_min, toefl_rec, pte_min, pte_rec, duolingo_min, duolingo_rec, requirement_note, updated_at
+FROM program_requirements
+WHERE program_id = ?
+`, programID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+	return &row, nil
+}
+
+func (r *Repo) GetWeightsByProgramID(ctx context.Context, programID uint64) (*ProgramWeightRow, error) {
+	var row ProgramWeightRow
+	err := r.db.GetContext(ctx, &row, `
+SELECT program_id, academics_weight, language_weight, curriculum_weight, profile_weight, updated_at
+FROM program_weights
+WHERE program_id = ?
+`, programID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+	return &row, nil
+}
+
+func (r *Repo) GetTagsByProgramID(ctx context.Context, programID uint64) ([]ProgramTagRow, error) {
+	rows := []ProgramTagRow{}
+	err := r.db.SelectContext(ctx, &rows, `
+SELECT program_id, tag_key, tag_high_gpa_bar, tag_high_language_bar, tag_high_curriculum_bar, tag_research_plus, tag_stem
+FROM program_tags
+WHERE program_id = ?
+ORDER BY tag_key
+`, programID)
+	if err != nil {
+		return nil, err
+	}
+	return rows, nil
+}
+
+func (r *Repo) GetKeywordsByProgramID(ctx context.Context, programID uint64) ([]ProgramKeywordRow, error) {
+	rows := []ProgramKeywordRow{}
+	err := r.db.SelectContext(ctx, &rows, `
+SELECT program_id, tier, program_tags_set_or_not
+FROM program_keywords
+WHERE program_id = ?
+ORDER BY tier
+`, programID)
+	if err != nil {
+		return nil, err
+	}
+	return rows, nil
+}
+

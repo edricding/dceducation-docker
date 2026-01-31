@@ -1,3 +1,17 @@
+
+function showCenterToast(message, type) {
+  if (typeof Toastify !== "function") return;
+  var bg = type === "success" ? "#22c55e" : type === "error" ? "#ef4444" : "#3b82f6";
+  Toastify({
+    text: message,
+    duration: 2500,
+    gravity: "top",
+    position: "center",
+    close: true,
+    backgroundColor: bg,
+  }).showToast();
+}
+
 ﻿// ==============================
 // tags.js锛堣瀺鍚堢増锛?
 // - 淇濈暀浣犲師鏉ョ殑锛歴elect2 鍒濆鍖?+ DataTable + delete 琛屽垹闄?
@@ -74,7 +88,7 @@ $(function() {
         const rows = items.map((it) => {
           const mv = it.match_view || {};
           const nameText = mv.major_name_cn || mv.major_name_en || "";
-          const statusText = mv.program_tags_set_or_not ? "已设置" : "未设置";
+          const statusText = mv.program_tags_set_or_not ? '<span class="badge text-light-primary">已更新</span>' : '<span class="badge text-light-danger">默认</span>';
           return [
             mv.major_name_cn || "",
             mv.major_name_en || "",
@@ -103,7 +117,8 @@ $(function() {
     }
   });
 
-  $(document).on("click", ".set-tag-btn", function () {
+  
+  $(document).on("click", ".set-tag-btn", async function () {
     const $btn = $(this);
     currentTagRow = $btn.closest("tr");
 
@@ -116,26 +131,87 @@ $(function() {
     }
     $("#tagProgramId").val(programId);
     $("#tagProgramName").val(programName);
-    $("#tagKeywords").val("");
-    $("#reqGpaMin").val("");
     $("#reqIeltsOverallMin").val("");
     $("#reqIeltsEachMin").val("");
     $("#reqToeflMin").val("");
     $("#reqPteMin").val("");
     $("#reqDuolingoMin").val("");
-    $("#reqNote").val("");
+    $("#reqIeltsOverallRec").val("");
+    $("#reqToeflTotalRec").val("");
+    $("#reqPteTotalRec").val("");
+    $("#reqDuolingoTotalRec").val("");
     $("#weightAcademics").val("");
     $("#weightLanguage").val("");
     $("#weightCurriculum").val("");
     $("#weightProfile").val("");
-    $("#tagRows").html(buildTagRow());
+    $("#tierValue").val("");
 
-    const modalEl = document.getElementById("tagModal");
-    if (modalEl && window.bootstrap) {
-      const modal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
-      modal.show();
+    try {
+      const resp = await fetch(`/api/v1/programs/${programId}/meta`);
+      const data = await resp.json().catch(function () { return null; });
+      if (!resp.ok || !data || data.code !== 0) {
+        showCenterToast("Load failed", "error");
+        return;
+      }
+      const meta = data.data || {};
+      const req = meta.requirements || {};
+      const weights = meta.weights || {};
+      const tags = Array.isArray(meta.tags) ? meta.tags : [];
+      const keywords = Array.isArray(meta.keywords) ? meta.keywords : [];
+
+      // requirements
+      $("#reqIeltsOverallMin").val(req.ielts_overall_min ?? "");
+      $("#reqIeltsEachMin").val(req.ielts_each_min ?? "");
+      $("#reqToeflMin").val(req.toefl_min ?? "");
+      $("#reqPteMin").val(req.pte_min ?? "");
+      $("#reqDuolingoMin").val(req.duolingo_min ?? "");
+      $("#reqIeltsOverallRec").val(req.ielts_overall_rec ?? "");
+      $("#reqToeflTotalRec").val(req.toefl_rec ?? "");
+      $("#reqPteTotalRec").val(req.pte_rec ?? "");
+      $("#reqDuolingoTotalRec").val(req.duolingo_rec ?? "");
+
+      // weights
+      $("#weightAcademics").val(weights.academics_weight ?? "");
+      $("#weightLanguage").val(weights.language_weight ?? "");
+      $("#weightCurriculum").val(weights.curriculum_weight ?? "");
+      $("#weightProfile").val(weights.profile_weight ?? "");
+
+      // tier (from keywords tier if exists)
+      if (keywords.length) {
+        $("#tierValue").val(keywords[0].tier ?? "");
+      }
+
+      // tags selection
+      const selected = new Set();
+      tags.forEach(function (t) {
+        if (t.tag_key) selected.add(t.tag_key);
+        if (t.tag_high_gpa_bar && Number(t.tag_high_gpa_bar) > 0) selected.add("tag_high_gpa_bar");
+        if (t.tag_high_language_bar && Number(t.tag_high_language_bar) > 0) selected.add("tag_high_language_bar");
+        if (t.tag_high_curriculum_bar && Number(t.tag_high_curriculum_bar) > 0) selected.add("tag_high_curriculum_bar");
+        if (t.tag_research_plus && Number(t.tag_research_plus) > 0) selected.add("tag_research_plus");
+        if (t.tag_stem && Number(t.tag_stem) > 0) selected.add("tag_stem");
+      });
+
+      const modalEl = document.getElementById("tagModal");
+      if (modalEl && window.bootstrap) {
+        const modal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.show();
+      }
+
+      // apply selection (after modal shown)
+      setTimeout(function () {
+        const $select = $("#tagMultiSelect");
+        if ($select.length) {
+          $select.val(Array.from(selected));
+          $select.trigger("change");
+        }
+      }, 0);
+    } catch (e) {
+      console.error(e);
+      showCenterToast("Network error", "error");
     }
   });
+
 
   function initTagMultiSelect() {
     const $select = $("#tagMultiSelect");

@@ -2,6 +2,7 @@ package programs
 
 import (
 	"database/sql"
+	"strconv"
 	"net/http"
 	"strings"
 
@@ -102,3 +103,21 @@ func rawJSON(ns sql.NullString) []byte {
 	}
 	return nil
 }
+
+func (h *Handler) GetMeta(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseUint(idStr, 10, 64)
+	if err != nil {
+		response.BadRequest(c, "invalid id")
+		return
+	}
+
+	resp, err := h.svc.GetMeta(c.Request.Context(), id)
+	if err != nil {
+		response.ServerError(c, err.Error())
+		return
+	}
+
+	response.OK(c, resp)
+}
+

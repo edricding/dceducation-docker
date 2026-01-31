@@ -75,6 +75,7 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	pg := v1.Group("/programs")
 	{
 		pg.POST("/search", pHandler.SearchPost)
+		pg.GET("/:id/meta", pHandler.GetMeta)
 	}
 
 

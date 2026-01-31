@@ -32,7 +32,7 @@ type ProgramSearchView struct {
 
 type ProgramRequirement struct {
 	ProgramID       uint64          `db:"program_id"`
-	GPAMinScore     sql.NullInt64   `db:"gpa_min_score"`
+	GPAMinScore     sql.NullString  `db:"gpa_min_score"`
 	IELTSOverallMin sql.NullFloat64 `db:"ielts_overall_min"`
 	IELTSEachMin    sql.NullFloat64 `db:"ielts_each_min"`
 	TOEFLMin        sql.NullInt64   `db:"toefl_min"`
@@ -83,3 +83,45 @@ type University struct {
 	UpdatedAt   sql.NullTime   `db:"updated_at"`
 	CountryID   uint64         `db:"country_id"`
 }
+
+type ProgramRequirementRow struct {
+	ProgramID       uint64          `db:"program_id"`
+	GPAMinScore     sql.NullString  `db:"gpa_min_score"`
+	IELTSOverallMin sql.NullFloat64 `db:"ielts_overall_min"`
+	IELTSEachMin    sql.NullFloat64 `db:"ielts_each_min"`
+	IELTSOverallRec sql.NullFloat64 `db:"ielts_overall_rec"`
+	TOEFLMin        sql.NullInt64   `db:"toefl_min"`
+	TOEFLRec        sql.NullInt64   `db:"toefl_rec"`
+	PTEMin          sql.NullInt64   `db:"pte_min"`
+	PTERec          sql.NullInt64   `db:"pte_rec"`
+	DuolingoMin     sql.NullInt64   `db:"duolingo_min"`
+	DuolingoRec     sql.NullInt64   `db:"duolingo_rec"`
+	RequirementNote sql.NullString  `db:"requirement_note"`
+	UpdatedAt       sql.NullTime    `db:"updated_at"`
+}
+
+type ProgramWeightRow struct {
+	ProgramID        uint64          `db:"program_id"`
+	AcademicsWeight  sql.NullFloat64 `db:"academics_weight"`
+	LanguageWeight   sql.NullFloat64 `db:"language_weight"`
+	CurriculumWeight sql.NullFloat64 `db:"curriculum_weight"`
+	ProfileWeight    sql.NullFloat64 `db:"profile_weight"`
+	UpdatedAt        sql.NullTime    `db:"updated_at"`
+}
+
+type ProgramTagRow struct {
+	ProgramID            uint64 `db:"program_id"`
+	TagKey               string `db:"tag_key"`
+	TagHighGpaBar        int    `db:"tag_high_gpa_bar"`
+	TagHighLanguageBar   int    `db:"tag_high_language_bar"`
+	TagHighCurriculumBar int    `db:"tag_high_curriculum_bar"`
+	TagResearchPlus      int    `db:"tag_research_plus"`
+	TagStem              int    `db:"tag_stem"`
+}
+
+type ProgramKeywordRow struct {
+	ProgramID          uint64  `db:"program_id"`
+	Tier               float64 `db:"tier"`
+	ProgramTagsSetOrNot int    `db:"program_tags_set_or_not"`
+}
+
