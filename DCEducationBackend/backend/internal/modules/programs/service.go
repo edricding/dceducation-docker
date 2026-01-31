@@ -145,3 +145,7 @@ func nullTimeToPtr(v sql.NullTime) *string {
 	return &out
 }
 
+func (s *Service) SaveMeta(ctx context.Context, programID uint64, req ProgramMetaSaveRequest) error {
+	return s.repo.SaveMeta(ctx, programID, req)
+}
+

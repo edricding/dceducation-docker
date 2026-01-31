@@ -186,6 +186,79 @@ Prefix: `/api/v1/programs`
 - `major_name_cn` *(string)*
 - `degree_level` *(string)*
 
+
+
+### 5.2 GET `/api/v1/programs/:id/meta`
+
+**Description**: Get program meta (requirements, weights, tags, keywords).
+
+**Path params**
+
+- `id` *(uint64, required)*: program id
+
+**Response data**: `ProgramMetaResponse`
+
+- `program_id` *(uint64)*
+- `requirements` *(object, optional)*
+  - `gpa_min_score` *(number)*
+  - `ielts_overall_min` *(number)*
+  - `ielts_each_min` *(number)*
+  - `ielts_overall_rec` *(number)*
+  - `toefl_min` *(int)*
+  - `toefl_rec` *(int)*
+  - `pte_min` *(int)*
+  - `pte_rec` *(int)*
+  - `duolingo_min` *(int)*
+  - `duolingo_rec` *(int)*
+  - `requirement_note` *(string)*
+- `weights` *(object, optional)*
+  - `academics_weight` *(number)*
+  - `language_weight` *(number)*
+  - `curriculum_weight` *(number)*
+  - `profile_weight` *(number)*
+- `tags` *(array)*
+  - `tag_key` *(string)*
+  - `tag_high_gpa_bar` *(0/1)*
+  - `tag_high_language_bar` *(0/1)*
+  - `tag_high_curriculum_bar` *(0/1)*
+  - `tag_research_plus` *(0/1)*
+  - `tag_stem` *(0/1)*
+- `keywords` *(array)*
+  - `tier` *(number)*
+  - `program_tags_set_or_not` *(0/1)*
+
+---
+
+### 5.3 POST `/api/v1/programs/:id/meta`
+
+**Description**: Upsert program meta (requirements, weights, tags, tier).
+
+**Body (JSON)**
+
+- `program_id` *(uint64, optional, must match path if provided)*
+- `requirements` *(object)*
+  - `gpa_min_score` *(number)*
+  - `ielts_overall_min` *(number)*
+  - `ielts_each_min` *(number)*
+  - `ielts_overall_rec` *(number)*
+  - `toefl_min` *(int)*
+  - `toefl_rec` *(int)*
+  - `pte_min` *(int)*
+  - `pte_rec` *(int)*
+  - `duolingo_min` *(int)*
+  - `duolingo_rec` *(int)*
+  - `requirement_note` *(string)*
+- `weights` *(object)*
+  - `academics_weight` *(number)*
+  - `language_weight` *(number)*
+  - `curriculum_weight` *(number)*
+  - `profile_weight` *(number)*
+- `tags` *(string[])*: selected tags, others will be set to 0
+- `tier` *(number)*: saved into `program_keywords.tier`
+
+**Notes**
+- `program_keywords.program_tags_set_or_not` is always set to 1 on save.
+
 ---
 
 ## 6. Student Tags
@@ -238,7 +311,27 @@ Fields (all optional except `id`):
 
 Route: `POST /api/v1/users`
 
-### 7.1 POST `/api/v1/users`
+
+### 7.1 GET `/api/v1/users`
+
+**Description**: List all users.
+
+**Response data**: array of users
+
+- `id` *(uint64)*
+- `username` *(string)*
+- `email` *(string)*
+- `role` *(string)*
+- `permission_level` *(int)*
+- `status` *(string)*
+- `email_verified` *(int)*
+- `created_at` *(time string)*
+- `updated_at` *(time string)*
+
+---
+
+### 7.2 POST `/api/v1/users`
+
 
 **Description**: Create user.
 
@@ -259,6 +352,21 @@ Route: `POST /api/v1/users`
 - `permission_level` *(int)*
 - `status` *(string)*
 - `created_at` *(time string)*
+
+
+
+### 7.3 PATCH `/api/v1/users/:id/status`
+
+**Description**: Toggle user status.
+
+**Body (JSON)**
+
+- `status` *(string, required)*: `active` or `disabled`
+
+**Response data**
+
+- `id` *(uint64)*
+- `status` *(string)*
 
 ---
 

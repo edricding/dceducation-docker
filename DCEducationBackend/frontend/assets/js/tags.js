@@ -231,6 +231,68 @@ $(function() {
     initTagMultiSelect();
   });
 
+
+
+  async function saveProgramMeta() {
+    const programId = $("#tagProgramId").val();
+    if (!programId) {
+      showCenterToast("Missing program id", "error");
+      return;
+    }
+
+    const tags = $("#tagMultiSelect").val() || [];
+    const payload = {
+      program_id: Number(programId),
+      requirements: {
+        gpa_min_score: parseFloat($("#reqGpaMin").val()) || null,
+        ielts_overall_min: parseFloat($("#reqIeltsOverallMin").val()) || null,
+        ielts_each_min: parseFloat($("#reqIeltsEachMin").val()) || null,
+        ielts_overall_rec: parseFloat($("#reqIeltsOverallRec").val()) || null,
+        toefl_min: parseInt($("#reqToeflMin").val(), 10) || null,
+        toefl_rec: parseInt($("#reqToeflTotalRec").val(), 10) || null,
+        pte_min: parseInt($("#reqPteMin").val(), 10) || null,
+        pte_rec: parseInt($("#reqPteTotalRec").val(), 10) || null,
+        duolingo_min: parseInt($("#reqDuolingoMin").val(), 10) || null,
+        duolingo_rec: parseInt($("#reqDuolingoTotalRec").val(), 10) || null,
+        requirement_note: $("#reqNote").val() || "",
+      },
+      weights: {
+        academics_weight: parseFloat($("#weightAcademics").val()) || null,
+        language_weight: parseFloat($("#weightLanguage").val()) || null,
+        curriculum_weight: parseFloat($("#weightCurriculum").val()) || null,
+        profile_weight: parseFloat($("#weightProfile").val()) || null,
+      },
+      tags: tags,
+      tier: parseFloat($("#tierValue").val()) || null,
+    };
+
+    try {
+      const resp = await fetch(`/api/v1/programs/${programId}/meta`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await resp.json().catch(function () { return null; });
+      if (!resp.ok || !data || data.code !== 0) {
+        showCenterToast("Save failed", "error");
+        return;
+      }
+      showCenterToast("Saved", "success");
+
+      // close modal
+      const modalEl = document.getElementById("tagModal");
+      if (modalEl && window.bootstrap) {
+        const modal = window.bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+      }
+
+      // refresh list
+      $("#btn-search-programs").trigger("click");
+    } catch (e) {
+      console.error(e);
+      showCenterToast("Network error", "error");
+    }
+  }
   $(document).on("click", "#btn-add-tag-row", function () {
     $("#tagRows").append(buildTagRow());
   });
@@ -242,14 +304,7 @@ $(function() {
   });
 
   $(document).on("click", "#btn-save-tags", function () {
-    if (currentTagRow) {
-      currentTagRow.find("td").eq(2).text("已设置");
-    }
-    const modalEl = document.getElementById("tagModal");
-    if (modalEl && window.bootstrap) {
-      const modal = window.bootstrap.Modal.getInstance(modalEl);
-      if (modal) modal.hide();
-    }
+    saveProgramMeta();
   });
 });
 

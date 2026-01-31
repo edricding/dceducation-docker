@@ -11,7 +11,7 @@
  Target Server Version : 80036 (8.0.36)
  File Encoding         : 65001
 
- Date: 29/01/2026 13:42:17
+ Date: 31/01/2026 14:41:38
 */
 
 SET NAMES utf8mb4;
@@ -39,9 +39,11 @@ CREATE TABLE `country`  (
 DROP TABLE IF EXISTS `program_keywords`;
 CREATE TABLE `program_keywords`  (
   `program_id` bigint UNSIGNED NOT NULL,
-  `keyword` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  PRIMARY KEY (`program_id`, `keyword`) USING BTREE,
-  INDEX `idx_program_keywords_keyword`(`keyword` ASC) USING BTREE,
+  `tier` decimal(3, 2) NOT NULL DEFAULT 1.00,
+  `program_tags_set_or_not` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0=not set, 1=set',
+  PRIMARY KEY (`program_id`, `tier`) USING BTREE,
+  UNIQUE INDEX `uk_program_id`(`program_id` ASC) USING BTREE,
+  INDEX `idx_program_keywords_keyword`(`tier` ASC) USING BTREE,
   CONSTRAINT `fk_program_keywords_program` FOREIGN KEY (`program_id`) REFERENCES `programs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
@@ -51,12 +53,16 @@ CREATE TABLE `program_keywords`  (
 DROP TABLE IF EXISTS `program_requirements`;
 CREATE TABLE `program_requirements`  (
   `program_id` bigint UNSIGNED NOT NULL,
-  `gpa_min_score` tinyint UNSIGNED NULL DEFAULT NULL,
+  `gpa_min_score` decimal(2, 1) UNSIGNED NULL DEFAULT NULL,
   `ielts_overall_min` decimal(2, 1) NULL DEFAULT NULL,
   `ielts_each_min` decimal(2, 1) NULL DEFAULT NULL,
+  `ielts_overall_rec` decimal(2, 1) NULL DEFAULT NULL,
   `toefl_min` smallint UNSIGNED NULL DEFAULT NULL,
+  `toefl_rec` smallint NULL DEFAULT NULL,
   `pte_min` smallint UNSIGNED NULL DEFAULT NULL,
+  `pte_rec` smallint NULL DEFAULT NULL,
   `duolingo_min` smallint UNSIGNED NULL DEFAULT NULL,
+  `duolingo_rec` smallint NULL DEFAULT NULL,
   `requirement_note` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`program_id`) USING BTREE,
@@ -74,12 +80,20 @@ DROP TABLE IF EXISTS `program_tags`;
 CREATE TABLE `program_tags`  (
   `program_id` bigint UNSIGNED NOT NULL,
   `tag_key` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `tag_value` tinyint UNSIGNED NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tag_high_gpa_bar` tinyint(1) NOT NULL DEFAULT 0,
+  `tag_high_language_bar` tinyint(1) NOT NULL DEFAULT 0,
+  `tag_high_curriculum_bar` tinyint(1) NOT NULL DEFAULT 0,
+  `tag_research_plus` tinyint(1) NOT NULL DEFAULT 0,
+  `tag_stem` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`program_id`, `tag_key`) USING BTREE,
-  INDEX `idx_program_tags_key_value`(`tag_key` ASC, `tag_value` ASC) USING BTREE,
+  INDEX `idx_program_tags_key_value`(`tag_key` ASC) USING BTREE,
   CONSTRAINT `fk_program_tags_program` FOREIGN KEY (`program_id`) REFERENCES `programs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_program_tags_tag` FOREIGN KEY (`tag_key`) REFERENCES `tag_definitions` (`tag_key`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `fk_program_tags_tag` FOREIGN KEY (`tag_key`) REFERENCES `tag_definitions` (`tag_key`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `chk_tag_high_curriculum_bar` CHECK (`tag_high_curriculum_bar` in (0,1)),
+  CONSTRAINT `chk_tag_high_gpa_bar` CHECK (`tag_high_gpa_bar` in (0,1)),
+  CONSTRAINT `chk_tag_high_language_bar` CHECK (`tag_high_language_bar` in (0,1)),
+  CONSTRAINT `chk_tag_research_plus` CHECK (`tag_research_plus` in (0,1)),
+  CONSTRAINT `chk_tag_stem` CHECK (`tag_stem` in (0,1))
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -120,6 +134,36 @@ CREATE TABLE `programs`  (
   INDEX `idx_programs_major_en`(`major_name_en` ASC) USING BTREE,
   CONSTRAINT `fk_programs_university` FOREIGN KEY (`university_id`) REFERENCES `universities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 18765 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for student_tags
+-- ----------------------------
+DROP TABLE IF EXISTS `student_tags`;
+CREATE TABLE `student_tags`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `high_gpa_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `high_gpa_value` decimal(2, 1) NULL DEFAULT NULL,
+  `high_language_ielts_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `high_language_ielts_value` decimal(2, 1) NULL DEFAULT NULL,
+  `high_language_toefl_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `high_language_toefl_value` int NULL DEFAULT NULL,
+  `high_language_pte_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `high_language_pte_value` int NULL DEFAULT NULL,
+  `high_language_duolingo_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `high_language_duolingo_value` int NULL DEFAULT NULL,
+  `strong_curriculum_alevel_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_curriculum_alevel_value` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_curriculum_ib_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_curriculum_ib_value` int NULL DEFAULT NULL,
+  `strong_curriculum_ap_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_curriculum_ap_value` smallint NULL DEFAULT NULL,
+  `strong_profile_options` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_profile_options_operator` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `strong_profile_options_value` smallint NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tag_definitions

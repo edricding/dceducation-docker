@@ -318,3 +318,143 @@ ORDER BY tier
 	return rows, nil
 }
 
+func (r *Repo) SaveMeta(ctx context.Context, programID uint64, req ProgramMetaSaveRequest) error {
+	tx, err := r.db.BeginTxx(ctx, nil)
+	if err != nil {
+		return err
+	}
+	defer func() {
+		if err != nil {
+			_ = tx.Rollback()
+		}
+	}()
+
+	// requirements
+	_, err = tx.ExecContext(ctx, `
+INSERT INTO program_requirements
+  (program_id, gpa_min_score, ielts_overall_min, ielts_each_min, ielts_overall_rec,
+   toefl_min, toefl_rec, pte_min, pte_rec, duolingo_min, duolingo_rec, requirement_note)
+VALUES
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ON DUPLICATE KEY UPDATE
+  gpa_min_score = VALUES(gpa_min_score),
+  ielts_overall_min = VALUES(ielts_overall_min),
+  ielts_each_min = VALUES(ielts_each_min),
+  ielts_overall_rec = VALUES(ielts_overall_rec),
+  toefl_min = VALUES(toefl_min),
+  toefl_rec = VALUES(toefl_rec),
+  pte_min = VALUES(pte_min),
+  pte_rec = VALUES(pte_rec),
+  duolingo_min = VALUES(duolingo_min),
+  duolingo_rec = VALUES(duolingo_rec),
+  requirement_note = VALUES(requirement_note)
+`,
+		programID,
+		req.Requirements.GPAMinScore,
+		req.Requirements.IELTSOverallMin,
+		req.Requirements.IELTSEachMin,
+		req.Requirements.IELTSOverallRec,
+		req.Requirements.TOEFLMin,
+		req.Requirements.TOEFLRec,
+		req.Requirements.PTEMin,
+		req.Requirements.PTERec,
+		req.Requirements.DuolingoMin,
+		req.Requirements.DuolingoRec,
+		req.Requirements.RequirementNote,
+	)
+	if err != nil {
+		_ = tx.Rollback()
+		return err
+	}
+
+	// weights
+	_, err = tx.ExecContext(ctx, `
+INSERT INTO program_weights
+  (program_id, academics_weight, language_weight, curriculum_weight, profile_weight)
+VALUES
+  (?, ?, ?, ?, ?)
+ON DUPLICATE KEY UPDATE
+  academics_weight = VALUES(academics_weight),
+  language_weight = VALUES(language_weight),
+  curriculum_weight = VALUES(curriculum_weight),
+  profile_weight = VALUES(profile_weight)
+`,
+		programID,
+		req.Weights.AcademicsWeight,
+		req.Weights.LanguageWeight,
+		req.Weights.CurriculumWeight,
+		req.Weights.ProfileWeight,
+	)
+	if err != nil {
+		_ = tx.Rollback()
+		return err
+	}
+
+	// tags
+	selected := map[string]bool{}
+	for _, t := range req.Tags {
+		selected[strings.TrimSpace(strings.ToLower(t))] = true
+	}
+	tagHighGpa := 0
+	tagHighLang := 0
+	tagHighCurr := 0
+	tagResearch := 0
+	tagStem := 0
+	if selected["tag_high_gpa_bar"] || selected["high_gpa_bar"] {
+		tagHighGpa = 1
+	}
+	if selected["tag_high_language_bar"] || selected["high_language_bar"] {
+		tagHighLang = 1
+	}
+	if selected["tag_high_curriculum_bar"] || selected["high_curriculum_bar"] {
+		tagHighCurr = 1
+	}
+	if selected["tag_research_plus"] || selected["research_plus"] {
+		tagResearch = 1
+	}
+	if selected["tag_stem"] || selected["stem"] {
+		tagStem = 1
+	}
+
+	_, err = tx.ExecContext(ctx, `
+INSERT INTO program_tags
+  (program_id, tag_key, tag_high_gpa_bar, tag_high_language_bar, tag_high_curriculum_bar, tag_research_plus, tag_stem)
+VALUES
+  (?, 'default', ?, ?, ?, ?, ?)
+ON DUPLICATE KEY UPDATE
+  tag_high_gpa_bar = VALUES(tag_high_gpa_bar),
+  tag_high_language_bar = VALUES(tag_high_language_bar),
+  tag_high_curriculum_bar = VALUES(tag_high_curriculum_bar),
+  tag_research_plus = VALUES(tag_research_plus),
+  tag_stem = VALUES(tag_stem)
+`, programID, tagHighGpa, tagHighLang, tagHighCurr, tagResearch, tagStem)
+	if err != nil {
+		_ = tx.Rollback()
+		return err
+	}
+
+	// keywords (tier + program_tags_set_or_not)
+	tier := 1.0
+	if req.Tier != nil {
+		tier = *req.Tier
+	}
+	_, err = tx.ExecContext(ctx, `
+INSERT INTO program_keywords
+  (program_id, tier, program_tags_set_or_not)
+VALUES
+  (?, ?, 1)
+ON DUPLICATE KEY UPDATE
+  tier = VALUES(tier),
+  program_tags_set_or_not = 1
+`, programID, tier)
+	if err != nil {
+		_ = tx.Rollback()
+		return err
+	}
+
+	if err = tx.Commit(); err != nil {
+		return err
+	}
+	return nil
+}
+

@@ -121,3 +121,29 @@ func (h *Handler) GetMeta(c *gin.Context) {
 	response.OK(c, resp)
 }
 
+func (h *Handler) SaveMeta(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseUint(idStr, 10, 64)
+	if err != nil {
+		response.BadRequest(c, "invalid id")
+		return
+	}
+
+	var req ProgramMetaSaveRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.BadRequest(c, "invalid json body")
+		return
+	}
+	if req.ProgramID != nil && *req.ProgramID != id {
+		response.BadRequest(c, "program_id mismatch")
+		return
+	}
+
+	if err := h.svc.SaveMeta(c.Request.Context(), id, req); err != nil {
+		response.ServerError(c, err.Error())
+		return
+	}
+
+	response.OK(c, gin.H{"program_id": id})
+}
+

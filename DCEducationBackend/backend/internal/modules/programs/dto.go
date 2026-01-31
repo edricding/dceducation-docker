@@ -87,3 +87,32 @@ type ProgramMetaResponse struct {
 	Keywords     []ProgramKeywordDTO    `json:"keywords"`
 }
 
+type ProgramRequirementsInput struct {
+	GPAMinScore     *float64 `json:"gpa_min_score"`
+	IELTSOverallMin *float64 `json:"ielts_overall_min"`
+	IELTSEachMin    *float64 `json:"ielts_each_min"`
+	IELTSOverallRec *float64 `json:"ielts_overall_rec"`
+	TOEFLMin        *int     `json:"toefl_min"`
+	TOEFLRec        *int     `json:"toefl_rec"`
+	PTEMin          *int     `json:"pte_min"`
+	PTERec          *int     `json:"pte_rec"`
+	DuolingoMin     *int     `json:"duolingo_min"`
+	DuolingoRec     *int     `json:"duolingo_rec"`
+	RequirementNote *string  `json:"requirement_note"`
+}
+
+type ProgramWeightsInput struct {
+	AcademicsWeight  *float64 `json:"academics_weight"`
+	LanguageWeight   *float64 `json:"language_weight"`
+	CurriculumWeight *float64 `json:"curriculum_weight"`
+	ProfileWeight    *float64 `json:"profile_weight"`
+}
+
+type ProgramMetaSaveRequest struct {
+	ProgramID    *uint64                 `json:"program_id"`
+	Requirements ProgramRequirementsInput `json:"requirements"`
+	Weights      ProgramWeightsInput      `json:"weights"`
+	Tags         []string                 `json:"tags"`
+	Tier         *float64                 `json:"tier"`
+}
+
