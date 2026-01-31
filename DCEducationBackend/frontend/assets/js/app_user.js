@@ -49,9 +49,6 @@ function renderUsers(items) {
         <td>${u.email || "-"}</td>
         <td>${roleBadge(u.role)}</td>
         <td>${statusBadge(u.status)}</td>
-        <td>-</td>
-        <td>-</td>
-        <td>${formatDateTime(u.created_at)}</td>
         <td class="actions-col">
           <button type="button" class="btn btn-light-primary icon-btn b-r-4 toggle-status-btn" data-user-id="${u.id}" data-user-status="${statusLower}">
             <i class="ph-bold ${statusLower === "active" ? "ph-pause" : "ph-play"}"></i>
@@ -118,8 +115,46 @@ $(function () {
     }
   });
 
-  // Delete button (UI only)
+  
+  var pendingDeleteId = null;
+
+  // Open delete modal
   $("#user_list").on("click", ".delete-btn", function () {
-    $(this).closest("tr").remove();
+    var $row = $(this).closest("tr");
+    pendingDeleteId = $(this).closest("tr").find(".toggle-status-btn").data("user-id") || null;
+    var modalEl = document.getElementById("deleteUserModal");
+    if (modalEl && window.bootstrap) {
+      var modal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
+      modal.show();
+    }
   });
+
+  // Confirm delete
+  $("#btn-delete-user-confirm").on("click", async function () {
+    if (!pendingDeleteId) {
+      showCenterToast("Missing user id", "error");
+      return;
+    }
+    try {
+      var resp = await fetch(`/api/v1/users/${pendingDeleteId}`, { method: "DELETE" });
+      var data = await resp.json().catch(function () { return null; });
+      if (!resp.ok || !data || data.code !== 0) {
+        showCenterToast("Delete failed", "error");
+        return;
+      }
+      showCenterToast("Deleted", "success");
+      // remove row
+      $("#user_list").find(`.toggle-status-btn[data-user-id="${pendingDeleteId}"]`).closest("tr").remove();
+      pendingDeleteId = null;
+      var modalEl = document.getElementById("deleteUserModal");
+      if (modalEl && window.bootstrap) {
+        var modal = window.bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+      }
+    } catch (e) {
+      console.error(e);
+      showCenterToast("Network error", "error");
+    }
+  });
+
 });

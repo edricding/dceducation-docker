@@ -74,3 +74,7 @@ func (s *Service) UpdateStatus(ctx context.Context, id uint64, status string) (U
 	return UpdateUserStatusResponse{ID: id, Status: status}, nil
 }
 
+func (s *Service) DeleteByID(ctx context.Context, id uint64) (int64, error) {
+	return s.repo.DeleteByID(ctx, id)
+}
+

@@ -100,6 +100,7 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	v1.GET("/users", userHandler.List)
 	v1.POST("/users", userHandler.Create)
 	v1.PATCH("/users/:id/status", userHandler.UpdateStatus)
+	v1.DELETE("/users/:id", userHandler.DeleteByID)
 
 
 	return r

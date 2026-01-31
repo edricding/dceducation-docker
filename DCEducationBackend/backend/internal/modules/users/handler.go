@@ -72,3 +72,24 @@ func (h *Handler) UpdateStatus(c *gin.Context) {
 	response.OK(c, resp)
 }
 
+func (h *Handler) DeleteByID(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseUint(idStr, 10, 64)
+	if err != nil {
+		response.BadRequest(c, "invalid id")
+		return
+	}
+
+	affected, err := h.svc.DeleteByID(c.Request.Context(), id)
+	if err != nil {
+		response.ServerError(c, err.Error())
+		return
+	}
+	if affected == 0 {
+		response.NotFound(c, "user not found")
+		return
+	}
+
+	response.OK(c, gin.H{"id": id})
+}
+

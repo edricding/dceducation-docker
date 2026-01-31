@@ -320,13 +320,11 @@
                       <table id="user_list" class="display app-data-table default-data-table">
                         <thead>
                           <tr>
-                            <th style="max-width: 200px;">Username</th>
+                            <th style="max-width: 350px;">Username</th>
                             <th style="min-width: 300px;">Email</th>
                             <th>Role</th>
                             <th>Status</th>
-                            <th>Last Login</th>
-                            <th>Last Login IP</th>
-                            <th>Created At</th>
+                            
                             <th style="min-width: 150px;">Actions</th>
                           </tr>
                         </thead>
@@ -337,9 +335,7 @@
                             <td><span class="badge text-light-danger text-upper">superadmin</span></td>
                             <td><span class="badge text-light-success text-upper">active</span></td>
 
-                            <td>20251226 - 15:34</td>
-                            <td>太原</td>
-                            <td>20251226 - 15:34</td>
+                            
                             <td class="actions-col">
                               <button type="button" class="btn btn-light-primary icon-btn b-r-4">
                                 <i class="ph-bold  ph-pause"></i>
@@ -399,6 +395,38 @@
     </div>
   </div>
 
+
+       <!--small/default-modal-start -->
+                      <div class="modal fade" id="deleteUserModal" tabindex="-1" 
+                        aria-hidden="true">
+                        <div class="modal-dialog app_modal_sm">
+                          <div class="modal-content">
+                            <div class="modal-header bg-danger">
+                              <h1 class="modal-title fs-5 text-white">删除用户</h1>
+                              <button type="button" class="fs-5 border-0 bg-none  text-white" data-bs-dismiss="modal"
+                                aria-label="Close"><i class="fa-solid fa-xmark fs-3"></i></button>
+                            </div>
+                            <div class="modal-body text-center">
+                              <div class="d-flex gap-2">
+                                
+                                <div class="text-start d-flex flex-column gap-2">
+                                  <h5>请确认</h5>
+                                  <p class="m-0">删除用户后将无法恢复！</p>
+                                </div>
+                              </div>
+
+                              <!-- <h5 class="mb-0 mt-3">Good Morning!</h5> -->
+                              <!-- <p>Hi, Aaron Gish ! Congratulations.</p> -->
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-light-secondary"
+                                data-bs-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-danger" id="btn-delete-user-confirm">删除</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--small/default-modal-end -->
 
 
   <!-- latest jquery-->

@@ -85,3 +85,14 @@ WHERE id = ?
 	return err
 }
 
+func (r *Repo) DeleteByID(ctx context.Context, id uint64) (int64, error) {
+	res, err := r.db.ExecContext(ctx, `
+DELETE FROM user_center.users
+WHERE id = ?
+`, id)
+	if err != nil {
+		return 0, err
+	}
+	return res.RowsAffected()
+}
+
