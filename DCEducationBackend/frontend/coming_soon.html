@@ -13,7 +13,7 @@
     <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
 
-    <title>新增用户 | 鼎承教育</title>
+    <title>用户管理 | 鼎承教育</title>
 
     <!--font-awesome-css-->
     <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
@@ -35,10 +35,11 @@
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
 
+    <!-- Data Table css-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatable/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/toastify/toastify.css">
 
-        <link rel="stylesheet" type="text/css" href="assets/vendor/toastify/toastify.css">
-
-<!-- simplebar css-->
+    <!-- simplebar css-->
     <link rel="stylesheet" type="text/css" href="assets/vendor/simplebar/simplebar.css">
 
     <!-- tree-view css  -->
@@ -49,6 +50,20 @@
 
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+
+    <style>
+        #user_list {
+            table-layout: fixed;
+        }
+
+        #user_list th.actions-col,
+        #user_list td.actions-col {
+            width: 200px;
+            min-width: 200px;
+            max-width: 200px;
+        }
+    </style>
 
 </head>
 
@@ -78,7 +93,7 @@
             </div>
             <div class="app-nav" id="app-simple-bar">
                 <ul class="main-nav p-0 mt-2">
-                    
+
                     <li>
                         <a class="" data-bs-toggle="collapse" href="#dashboard" aria-expanded="false">
                             <i class="ph-duotone  ph-house-line"></i>
@@ -118,7 +133,7 @@
                                 <ul class="collapse" id="Tags-page">
                                     <li><a href="app_tags_students">学生侧</a></li>
                                     <li><a href="app_tags_programs">专业侧</a></li>
-                                    
+
                                 </ul>
                             </li>
                             <li class="another-level">
@@ -278,17 +293,17 @@
                         <!-- Breadcrumb start -->
                         <div class="row m-1">
                             <div class="col-12 ">
-                                <h4 class="main-title mb-2">用户管理</h4>
+                                <h4 class="main-title mb-2">Coming soon</h4>
                                 <ul class="app-line-breadcrumbs mb-3">
                                     <li class="">
                                         <a href="#" class="f-s-14 f-w-500">
                                             <span>
-                                                <i class="ph-duotone  ph-table f-s-16"></i> 用户
+                                                <i class="ph-duotone  ph-table f-s-16"></i> Other pages
                                             </span>
                                         </a>
                                     </li>
                                     <li class="active">
-                                        <a href="#" class="f-s-14 f-w-500">用户新增</a>
+                                        <a href="#" class="f-s-14 f-w-500">Coming soon</a>
                                     </li>
                                 </ul>
                             </div>
@@ -300,96 +315,18 @@
                         <div class="row">
                             <!-- Default Datatable start -->
                             <div class="col-12">
-                                <div class="card setting-profile-tab">
-                                    <div class="card-header">
-                                        <h5>添加新用户</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="profile-tab profile-container">
-                                            <div class="image-details">
-                                                <div class="profile-image"></div>
-                                                <div class="profile-pic">
-                                                    <div class="avatar-upload">
-                                                        <div class="avatar-edit">
-
-                                                        </div>
-                                                        <div class="avatar-preview">
-                                                            <div id="imgPreview">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="person-details">
-                                                <h5 class="f-w-600">Creat New User</h5>
-                                                <p>Superadmin / Admin / User</p>
-                                            </div>
-
-                                            <form class="app-form">
-                                                <h5 class="mb-2 text-dark f-w-600">用户信息</h5>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">用户名</label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Username" id="add_username">
-                                                            <div id="add_usernameError" class="text-danger small mt-1">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">邮箱</label>
-                                                            <input type="email" class="form-control"
-                                                                placeholder="Email address" id="add_email">
-                                                            <div id="add_emailError" class="text-danger small mt-1">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">密码</label>
-                                                            <input type="password" class="form-control"
-                                                                placeholder="*******" id="add_password">
-                                                            <div id="add_passwordError" class="text-danger small mt-1">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">确认密码</label>
-                                                            <input type="password" class="form-control"
-                                                                placeholder="*******" id="add_confirm_password">
-                                                            <div id="add_confirm_passwordError"
-                                                                class="text-danger small mt-1"></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-xl-4">
-                                                        <div class="">
-                                                            <label class="form-label">权限</label>
-                                                            <select class="select-langauge form-select select-basic"
-                                                                name="state" id="add_role">
-                                                                <option value="user">USER</option>
-                                                                <option value="admin">ADMIN</option>
-                                                                <option value="superadmin">SUPERADMIN</option>
-
-                                                            </select>
-                                                            <div id="add_roleError" class="text-danger small mt-1">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="text-end">
-                                                            <button type="button" class="btn btn-primary"
-                                                                id="add_submit">提交</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                <div class="card milestones-card">
+                                    <div class="card-body"  style="height: 300px;">
+                                        <div class="milestones-image">
+                                            <img src="./assets/images/rocket.png" alt="">
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <h4 class="text-black mb-2">页面正在开发中...</h4>
+                                            <p class="text-black mb-0">敬请期待</p>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- Default Datatable end -->
 
@@ -432,26 +369,26 @@
 
 
 
+
     <!-- latest jquery-->
     <script src="assets/js/jquery-3.6.3.min.js"></script>
 
-
-    <!-- Simple bar js-->
     <script src="assets/vendor/simplebar/simplebar.js"></script>
+    <!-- Customizer js-->
+    <script src="../assets/js/customizer.js"></script>
 
     <!-- phosphor js -->
-    <script src="assets/vendor/phosphor/phosphor.js"></script>
-
+    <script src="../assets/vendor/phosphor/phosphor.js"></script>
     <!-- Bootstrap js-->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/vendor/toastify/toastify.js"></script>
-
-    <!-- App js-->
     <script src="assets/js/script.js"></script>
 
 
-    <script src="assets/js/httprequest.js"></script>
+
+
+
+    <script src="assets/js/HTTPRequest.js"></script>
 
 </body>
 
