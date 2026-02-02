@@ -15,6 +15,261 @@ function safeAddListener(id, handler) {
 
 import { matchBachelorPrograms } from "./calc/matchBachelor.js";
 
+const DEEPSEEK_DEFAULT_MODEL = "deepseek-chat";
+const DEEPSEEK_ANALYSIS_ENDPOINT = "/api/v1/ai/deepseek/analyze";
+let lastStudentData = null;
+let lastSchoolsTreeData = null;
+
+function setGenerateLoading(isLoading) {
+  const btn = document.getElementById("btn-generate-result");
+  if (!btn) return;
+
+  if (isLoading) {
+    if (!btn.dataset.originalHtml) {
+      btn.dataset.originalHtml = btn.innerHTML;
+    }
+    btn.dataset.prevDisabled = btn.disabled ? "1" : "0";
+    btn.disabled = true;
+    btn.classList.add("dc-btn-loading");
+    btn.innerHTML = "Loading";
+    return;
+  }
+
+  const prevDisabled = btn.dataset.prevDisabled === "1";
+  if (btn.dataset.originalHtml) {
+    btn.innerHTML = btn.dataset.originalHtml;
+  }
+  btn.classList.remove("dc-btn-loading");
+  btn.disabled = prevDisabled ? true : false;
+}
+
+function setResultLoading(isLoading) {
+  const card = document.getElementById("result-card");
+  if (!card) return;
+  if (isLoading) {
+    card.classList.add("dc-loading-active");
+  } else {
+    card.classList.remove("dc-loading-active");
+  }
+}
+
+function buildDeepSeekPayload(studentData, promptType) {
+  return {
+    student_data_json: JSON.stringify(studentData, null, 2),
+    model: window.DEEPSEEK_MODEL || DEEPSEEK_DEFAULT_MODEL,
+    prompt_type: promptType || "analysis",
+  };
+}
+
+function renderMarkdownTo(elId, content) {
+  const container = document.getElementById(elId);
+  if (!container) return;
+  const text = String(content || "").trim();
+  if (!text) {
+    container.innerHTML = "";
+    return;
+  }
+  const safeText = text.replace(/A\*(?=[A-Z]|$)/g, "A\\*");
+  if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
+    container.textContent = safeText;
+    return;
+  }
+  const html = marked.parse(safeText);
+  container.innerHTML = DOMPurify.sanitize(html);
+}
+
+function clearDeepSeekSections() {
+  [
+    "analysis_student_background_advantages",
+    "analysis_student_background_improve",
+    "analysis_student_advice_target",
+    "analysis_student_advice_competitiveness",
+    "analysis_student_advice_notes",
+    "analysis_student_conclusion_content",
+  ].forEach((id) => renderMarkdownTo(id, ""));
+  clearSchoolTree();
+}
+
+function clearSchoolTree() {
+  const $tree = $("#result_tree");
+  if ($tree.length && $tree.data("jstree")) {
+    $tree.jstree("destroy");
+  }
+  if ($tree.length) {
+    $tree.empty();
+  }
+  lastSchoolsTreeData = null;
+}
+
+function renderSchoolTree(treeData) {
+  lastSchoolsTreeData = Array.isArray(treeData) ? treeData : null;
+  const $tree = $("#result_tree");
+  if (!$tree.length) return;
+  if (!$tree.jstree) {
+    console.warn("[deepseek] jstree not available");
+    return;
+  }
+  if ($tree.data("jstree")) {
+    $tree.jstree("destroy");
+  }
+  if (!Array.isArray(treeData) || treeData.length === 0) {
+    console.warn("[deepseek] schools_tree empty or invalid", treeData);
+    $tree.empty();
+    return;
+  }
+  const initTree = function () {
+    if ($tree.data("jstree")) {
+      $tree.jstree("destroy");
+    }
+    $tree.empty();
+    $tree.jstree({
+      core: {
+        themes: { variant: "large" },
+        data: treeData,
+      },
+    });
+  };
+  if ($tree.is(":visible")) {
+    initTree();
+  } else {
+    setTimeout(initTree, 150);
+  }
+}
+
+$(document).on("shown.bs.tab", "#finish-tab", function () {
+  if (lastSchoolsTreeData && $("#result_tree").length) {
+    renderSchoolTree(lastSchoolsTreeData);
+  }
+});
+
+function parseDeepSeekJSON(content) {
+  if (!content) return null;
+  let text = String(content).trim();
+  if (!text) return null;
+  if (text.startsWith("```")) {
+    const first = text.indexOf("\n");
+    const last = text.lastIndexOf("```");
+    if (first !== -1 && last > first) {
+      text = text.slice(first + 1, last).trim();
+    }
+  }
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    return null;
+  }
+}
+
+function renderDeepSeekSections(content) {
+  const parsed = parseDeepSeekJSON(content);
+  if (!parsed) {
+    renderMarkdownTo("analysis_student_conclusion_content", content || "");
+    return;
+  }
+
+  renderMarkdownTo(
+    "analysis_student_background_advantages",
+    parsed?.student_background?.advantages
+  );
+  renderMarkdownTo(
+    "analysis_student_background_improve",
+    parsed?.student_background?.to_improve
+  );
+  renderMarkdownTo(
+    "analysis_student_advice_target",
+    parsed?.application_advice?.target_adjustments
+  );
+  renderMarkdownTo(
+    "analysis_student_advice_competitiveness",
+    parsed?.application_advice?.competitiveness
+  );
+  renderMarkdownTo(
+    "analysis_student_advice_notes",
+    parsed?.application_advice?.notes
+  );
+  renderMarkdownTo("analysis_student_conclusion_content", parsed?.summary);
+
+  if (parsed?.recommended_schools_tree) {
+    console.log("[deepseek] recommended_schools_tree", parsed.recommended_schools_tree);
+  }
+}
+
+function buildTreeFromRecommendedSchools(data) {
+  if (!Array.isArray(data)) return [];
+  return data.map((country) => {
+    const countryText = String(country?.country || "").trim();
+    const schools = Array.isArray(country?.schools) ? country.schools : [];
+    return {
+      text: countryText || "未命名国家",
+      icon: "fa fa-flag text-warning",
+      state: { selected: false },
+      type: "demo",
+      children: schools
+        .map((school) => {
+          const name = String(school?.name || "").trim();
+          const tier = String(school?.tier || "").trim();
+          const majors = Array.isArray(school?.majors) ? school.majors : [];
+          const schoolText = tier ? `${name} - ${tier}` : name;
+          return {
+            text: schoolText || "未命名学校",
+            icon: "fa fa-book text-warning",
+            state: { selected: true },
+            a_attr: {
+              "data-bs-toggle": "modal",
+              "data-bs-target": "#ModalAnalysisResult",
+            },
+            children: majors
+              .map((m) => String(m || "").trim())
+              .filter(Boolean)
+              .map((m) => ({
+                text: m,
+                icon: "fa fa-chevron-right text-light",
+                state: { selected: true },
+                a_attr: {
+                  "data-bs-toggle": "modal",
+                  "data-bs-target": "#ModalAnalysisResult",
+                },
+              })),
+          };
+        })
+        .filter((s) => s.text),
+    };
+  });
+}
+
+async function requestDeepSeekAnalysis(studentData, promptType) {
+  const payload = buildDeepSeekPayload(studentData, promptType);
+
+  try {
+    const res = await fetch(DEEPSEEK_ANALYSIS_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.error("[deepseek] request failed", res.status, errText);
+      return null;
+    }
+
+    const data = await res.json();
+    const content = data?.content || "";
+    console.log(`[deepseek] ${promptType || "analysis"} result`, content || data);
+    if (promptType === "schools") {
+      if (data?.schools_tree) {
+        return JSON.stringify({ schools_tree: data.schools_tree });
+      }
+    }
+    return content || data;
+  } catch (err) {
+    console.error("[deepseek] request error", err);
+    return null;
+  }
+}
+
 // ------------------ bachelor start ------------------
 
 $(function () {
@@ -425,6 +680,11 @@ $(document).on("click", "#btn-modal-master-confirm", function () {
   data.graduated_school = getSelect2SingleText($("#select_master_graduated_school"));
   data.graduated_major = getSelect2SingleText($("#select_master_graduated_major"));
 
+  lastStudentData = {
+    apply_type: "master",
+    ...data,
+  };
+
   renderMasterSummary(data);
   showMasterCards();
 });
@@ -444,6 +704,11 @@ $(document).on("click", "#btn-modal-bachelor-confirm", function () {
   // Replace select2 values with display text
   data.target_schools = getSelect2Texts($("#select_bachelor_to_school"));
   data.target_majors = getSelect2Texts($("#select_bachelor_to_major"));
+
+  lastStudentData = {
+    apply_type: "bachelor",
+    ...data,
+  };
 
   renderBachelorSummary(data);
   showBachelorCards();
@@ -1684,14 +1949,12 @@ $(document).on("click", "#btn-summary-reset", function () {
   resetBachelorFormUI();
   resetMasterFormUI();
   $("#btn-generate-result").prop("disabled", true);
-  // clear result tree if exists
-  var tree = document.getElementById("result_tree");
-  if (tree) tree.innerHTML = "";
+  clearDeepSeekSections();
   activateTab("review-tab");
 });
 
 
-$(document).on("click", "#btn-generate-result", function () {
+$(document).on("click", "#btn-generate-result", async function () {
   if ($(this).prop("disabled")) return;
   if (window.bootstrap) {
     var el = document.getElementById("finish-tab");
@@ -1699,5 +1962,34 @@ $(document).on("click", "#btn-generate-result", function () {
       var tab = window.bootstrap.Tab.getOrCreateInstance(el);
       tab.show();
     }
+  }
+
+  if (!lastStudentData) {
+    console.warn("[deepseek] no student data found. Please confirm the form first.");
+    return;
+  }
+
+  setGenerateLoading(true);
+  setResultLoading(true);
+  clearDeepSeekSections();
+  try {
+    const schoolsContent = await requestDeepSeekAnalysis(lastStudentData, "schools");
+    const schoolsParsed = parseDeepSeekJSON(schoolsContent);
+    if (schoolsParsed?.schools_tree) {
+      console.log("[deepseek] schools_tree", schoolsParsed.schools_tree);
+      renderSchoolTree(schoolsParsed.schools_tree);
+    } else if (schoolsParsed?.recommended_schools) {
+      console.log("[deepseek] recommended_schools", schoolsParsed.recommended_schools);
+      const treeData = buildTreeFromRecommendedSchools(schoolsParsed.recommended_schools);
+      renderSchoolTree(treeData);
+    } else if (schoolsContent) {
+      console.log("[deepseek] schools raw", schoolsContent);
+    }
+
+    const analysisContent = await requestDeepSeekAnalysis(lastStudentData, "analysis");
+    renderDeepSeekSections(analysisContent);
+  } finally {
+    setGenerateLoading(false);
+    setResultLoading(false);
   }
 });

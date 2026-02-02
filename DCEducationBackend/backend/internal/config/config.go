@@ -20,6 +20,10 @@ type Config struct {
 	DBMaxLifetimeMin time.Duration
 
 	CORSAllowOrigins string
+
+	DeepSeekAPIKey  string
+	DeepSeekBaseURL string
+	DeepSeekModel   string
 }
 
 func getEnv(key, def string) string {
@@ -57,5 +61,9 @@ func Load() Config {
 		DBMaxLifetimeMin: time.Duration(getEnvInt("DB_MAX_LIFETIME_MIN", 30)) * time.Minute,
 
 		CORSAllowOrigins: getEnv("CORS_ALLOW_ORIGINS", "*"),
+
+		DeepSeekAPIKey:  getEnv("DEEPSEEK_API_KEY", "sk-03bb5997f68a41128f7061ac0d4d9a92"),
+		DeepSeekBaseURL: getEnv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
+		DeepSeekModel:   getEnv("DEEPSEEK_MODEL", "deepseek-chat"),
 	}
 }

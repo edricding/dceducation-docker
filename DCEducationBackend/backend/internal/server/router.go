@@ -12,6 +12,7 @@ import (
 	"backend/internal/modules/countries"
 	"backend/internal/modules/programs"
 	"backend/internal/modules/studenttags"
+	"backend/internal/modules/deepseek"
 
 )
 
@@ -91,6 +92,10 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 		stg.GET("", stHandler.GetLatest)
 		stg.POST("", stHandler.Save)
 	}
+
+	// deepseek proxy
+	deepseekHandler := deepseek.NewHandler(cfg)
+	v1.POST("/ai/deepseek/analyze", deepseekHandler.Analyze)
 
 	// users module wiring
 	userRepo := users.NewRepo(db)

@@ -48,6 +48,41 @@
 
   <!-- Responsive css-->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.1/github-markdown.min.css">
+
+  <style>
+    .dc-loading-target {
+      position: relative;
+    }
+
+    .dc-loading-overlay {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(var(--primary), 0.4);
+      border-radius: var(--app-border-radius);
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    .dc-loading-active .dc-loading-overlay {
+      display: flex;
+    }
+
+    .dc-btn-loading {
+      pointer-events: none;
+    }
+
+    .dc-btn-loading .loader-container-box .loader {
+      width: 18px;
+    }
+
+    .text-weight-500 {
+      font-weight: bold;
+    }
+  </style>
 
 </head>
 
@@ -371,8 +406,8 @@
 
                     <div class="tab-content" id="justify-LightContent">
 
-                      <div class="tab-pane fade show active" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab"
-                        tabindex="-1">
+                      <div class="tab-pane fade show active" id="review-tab-pane" role="tabpanel"
+                        aria-labelledby="review-tab" tabindex="-1">
                         <div class="row">
                           <div class="col-12 col-lg-4 ">
                             <div class="wallet-card mt-0 mb-3 card-bachelor card-master">
@@ -516,19 +551,79 @@
 
                       <div class="tab-pane fade" id="results-tab-pane" role="tabpanel" aria-labelledby="results-tab"
                         tabindex="-1">
+
                         <div class="row">
                           <div class="col-12">
-                            <div class="wallet-card mt-0 mb-3">
-                              <div class="position-relative">
-                                <div>
-                                  <h6 class="mb-0 text-secondary mb-1">Results</h6>
-                                  <div class="nestable">
+                            <div class="wallet-card mt-0 mb-3 dc-loading-target" id="result-card"
+                              style="display: block;width: 100%;min-height: 300px;background-color: white;">
+                              <div class="position-relative" style="margin: 20px;">
+
+
+
+                                <div id="analysis_student_background">
+                                  <h4 class="text-weight-500">学校专业推荐</h4>
+                                  <div class="nestable mt-2">
                                     <div id="result_tree"></div>
                                   </div>
                                 </div>
+
+                                <div class="col-12">
+                                  <div class="app-divider-v dashed"></div>
+                                </div>
+
+                                <div id="analysis_student_background">
+                                  <h4 class="text-weight-500">学生背景分析</h4>
+                                  <div class="mt-2">
+                                    <h6 class="mb-1 text-weight-500">优势</h6>
+                                    <div id="analysis_student_background_advantages" class="markdown-body"
+                                      style="width: 100%;"></div>
+                                  </div>
+                                  <div class="mt-3">
+                                    <h6 class="mb-1 text-weight-500">待提升</h6>
+                                    <div id="analysis_student_background_improve" class="markdown-body"
+                                      style="width: 100%;"></div>
+                                  </div>
+                                </div>
+
+                                <div class="col-12">
+                                  <div class="app-divider-v dashed"></div>
+                                </div>
+                                <div id="analysis_student_advices">
+                                  <h4 class="text-weight-500">申请建议</h4>
+                                  <div class="mt-2 text-weight-500">
+                                    <h6 class="mb-1 text-weight-500">目标院校与专业调整</h6>
+                                    <div id="analysis_student_advice_target" class="markdown-body" style="width: 100%;">
+                                    </div>
+                                  </div>
+                                  <div class="mt-3 text-weight-500">
+                                    <h6 class="mb-1 text-weight-500">提升申请竞争力</h6>
+                                    <div id="analysis_student_advice_competitiveness" class="markdown-body"
+                                      style="width: 100%;"></div>
+                                  </div>
+                                  <div class="mt-3">
+                                    <h6 class="mb-1 text-weight-500">注意事项</h6>
+                                    <div id="analysis_student_advice_notes" class="markdown-body" style="width: 100%;">
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                <div class="col-12">
+                                  <div class="app-divider-v dashed"></div>
+                                </div>
+                                <div id="analysis_student_conclusion">
+                                  <h4 class="text-weight-500">总结</h4>
+                                  <div id="analysis_student_conclusion_content" class="markdown-body"
+                                    style="width: 100%;"></div>
+                                </div>
+
+                              </div>
+                              <div class="dc-loading-overlay" aria-hidden="true">
+                                <div class="loader-container-box">
+                                  <div class="loader"></div>
+                                </div>
                               </div>
                             </div>
-
                           </div>
 
 
@@ -541,11 +636,12 @@
                   </div>
                   <div class="card-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-outline-danger" id="btn-summary-reset">重置</button>
-                    <button type="button" class="btn btn-outline-primary" id="btn-generate-result" disabled>生成结果</button>
+                    <button type="button" class="btn btn-outline-primary" id="btn-generate-result"
+                      disabled>生成结果</button>
                   </div>
                 </div>
 
-               
+
 
                 <!-- <div class="card">
                   <div class="card-header">
@@ -1459,11 +1555,13 @@
     <script src="assets/js/select.js"></script> -->
 
   <script src="assets/vendor/jstree/jstree.min.js"></script>
-  <!-- tree-view-custom-js  -->
-  <script src="assets/js/tree-view.js"></script>
+
 
   <!-- App js-->
   <script src="assets/js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
 
   <script type="module" src="assets/js/dashboard_analysis.js"></script>
 
