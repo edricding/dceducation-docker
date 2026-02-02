@@ -13,6 +13,7 @@ import (
 	"backend/internal/modules/programs"
 	"backend/internal/modules/studenttags"
 	"backend/internal/modules/deepseek"
+	"backend/internal/modules/stats"
 
 )
 
@@ -97,6 +98,11 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	deepseekHandler := deepseek.NewHandler(cfg)
 	v1.POST("/ai/deepseek/analyze", deepseekHandler.Analyze)
 	v1.GET("/ai/deepseek/balance", deepseekHandler.Balance)
+
+	// stats
+	statsRepo := stats.NewRepo(db)
+	statsHandler := stats.NewHandler(statsRepo)
+	v1.GET("/stats/overview", statsHandler.Overview)
 
 	// users module wiring
 	userRepo := users.NewRepo(db)
