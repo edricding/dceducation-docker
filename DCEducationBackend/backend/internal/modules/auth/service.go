@@ -6,6 +6,7 @@ import (
 	"errors"
 	"os"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -14,7 +15,7 @@ import (
 
 const (
 	maxFailedAttempts = 5
-	lockMinutes       = 15
+	lockDuration      = time.Hour
 	tokenHours        = 24
 )
 
@@ -27,54 +28,66 @@ var (
 )
 
 type Service struct {
-	repo *Repo
+	repo     *Repo
+	ipMu     sync.Mutex
+	ipStates map[string]*ipLockState
 }
 
 func NewService(repo *Repo) *Service {
-	return &Service{repo: repo}
+	return &Service{
+		repo:     repo,
+		ipStates: make(map[string]*ipLockState),
+	}
+}
+
+type ipLockState struct {
+	failed      int
+	lockedUntil time.Time
 }
 
 func (s *Service) Login(ctx context.Context, req LoginRequest, clientIP string) (LoginResponse, error) {
 	ident := strings.TrimSpace(req.Identifier)
 	pass := req.Password
 
+	if s.isIPLocked(clientIP, time.Now()) {
+		return LoginResponse{}, ErrLocked
+	}
+
 	u, err := s.repo.GetByIdentifier(ctx, ident)
 	if err != nil {
-		// 不暴露“账号是否存在”
+		// Do not reveal whether the account exists.
+		s.onFailedIPLogin(clientIP, time.Now())
 		return LoginResponse{}, ErrInvalidCreds
 	}
 
-	// 状态检查
 	if u.Status != "" && u.Status != "active" {
 		return LoginResponse{}, ErrInactive
 	}
-	// 如果你想强制邮箱验证再允许登录，打开下面两行
+	// If you want to enforce email verification, uncomment below.
 	// if !u.EmailVerified {
 	// 	return LoginResponse{}, ErrNeedVerify
 	// }
 
-	// 锁定检查
 	if u.LockedUntil.Valid && u.LockedUntil.Time.After(time.Now()) {
 		return LoginResponse{}, ErrLocked
 	}
 
-	// 校验密码
 	if err := bcrypt.CompareHashAndPassword([]byte(u.PasswordHash), []byte(pass)); err != nil {
+		s.onFailedIPLogin(clientIP, time.Now())
 		newCount := u.FailedCount + 1
 		var lockUntil *time.Time
 		if newCount >= maxFailedAttempts {
-			t := time.Now().Add(lockMinutes * time.Minute)
+			t := time.Now().Add(lockDuration)
 			lockUntil = &t
 		}
 		_ = s.repo.OnFailedLogin(ctx, u.ID, newCount, lockUntil)
 		return LoginResponse{}, ErrInvalidCreds
 	}
 
-	// 成功登录：清零失败次数 + 记录 last_login
 	now := time.Now()
+	s.resetIPState(clientIP)
 	_ = s.repo.OnSuccessLogin(ctx, u.ID, clientIP, now)
 
-	// JWT
 	secret := strings.TrimSpace(os.Getenv("JWT_SECRET"))
 	if secret == "" {
 		return LoginResponse{}, ErrNoJWTSecret
@@ -108,7 +121,60 @@ func (s *Service) Login(ctx context.Context, req LoginRequest, clientIP string) 
 	}, nil
 }
 
-// 兼容 sqlx.Get 的 sql.ErrNoRows 识别（有些版本不会直接用到）
+func (s *Service) isIPLocked(ip string, now time.Time) bool {
+	if strings.TrimSpace(ip) == "" {
+		return false
+	}
+	s.ipMu.Lock()
+	defer s.ipMu.Unlock()
+	state, ok := s.ipStates[ip]
+	if !ok {
+		return false
+	}
+	if state.lockedUntil.IsZero() {
+		return false
+	}
+	if now.After(state.lockedUntil) {
+		delete(s.ipStates, ip)
+		return false
+	}
+	return true
+}
+
+func (s *Service) onFailedIPLogin(ip string, now time.Time) {
+	if strings.TrimSpace(ip) == "" {
+		return
+	}
+	s.ipMu.Lock()
+	defer s.ipMu.Unlock()
+	state, ok := s.ipStates[ip]
+	if !ok {
+		state = &ipLockState{}
+		s.ipStates[ip] = state
+	}
+	if !state.lockedUntil.IsZero() && now.Before(state.lockedUntil) {
+		return
+	}
+	if !state.lockedUntil.IsZero() && now.After(state.lockedUntil) {
+		state.failed = 0
+		state.lockedUntil = time.Time{}
+	}
+	state.failed++
+	if state.failed >= maxFailedAttempts {
+		state.lockedUntil = now.Add(lockDuration)
+	}
+}
+
+func (s *Service) resetIPState(ip string) {
+	if strings.TrimSpace(ip) == "" {
+		return
+	}
+	s.ipMu.Lock()
+	defer s.ipMu.Unlock()
+	delete(s.ipStates, ip)
+}
+
+// Compatible with sqlx.Get ErrNoRows checks (some versions wrap it).
 func isNoRows(err error) bool {
 	return errors.Is(err, sql.ErrNoRows)
 }
