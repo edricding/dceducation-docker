@@ -1,0 +1,19 @@
+.dashboard-index .flag-icon {
+  position: relative;
+  display: block;
+  width: 60px;
+  line-height: 50px;
+}
+
+.dashboard-index .flag-icon-background, .dashboard-index .flag-icon {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.dashboard-index .d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

@@ -43,10 +43,11 @@
 
   <!-- Responsive css-->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dashboard_index.css">
 
 </head>
 
-<body>
+<body class="dashboard-index">
   <div class="app-wrapper">
 
     <div class="loader-wrapper">
@@ -264,11 +265,116 @@
         <main>
   <div class="container-fluid">
     <div class="row">
+      <div class="col-md-7 col-lg-8 col-xxl-9 ">
+                <div class="card equal-card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-9">
+                        <h5 class="header-title-text">学校统计</h5>
+
+                        <div class="project-status-box">
+                          <div class="project-status-card bg-primary">
+                            <span class="bg-light-light h-45 w-45 d-flex-center b-r-50">
+                              <i class="flag-icon flag-icon-gbr"></i>
+                            </span>
+                            <p class="mb-0 mt-2" data-country-code="UK">英国</p>
+                            <h5 class="text-white f-w-600"><span>Loading...</span>所</h5>
+                          </div>
+                          <div class="project-status-card bg-dark">
+                            <span class="bg-light-light h-45 w-45 d-flex-center b-r-50">
+                              <i class="flag-icon flag-icon-aus"></i>
+                            </span>
+                            <p class="mb-0 mt-2" data-country-code="AU">澳大利亚</p>
+                            <h5 class="text-white f-w-600"><span>Loading...</span>所</h5>
+                          </div>
+                          <div class="project-status-card bg-warning">
+                            <span class="bg-light-dark h-45 w-45 d-flex-center b-r-50">
+                              <i class="flag-icon flag-icon-hkg"></i>
+                            </span>
+                            <p class="mb-0 mt-2" data-country-code="HK">香港</p>
+                            <h5 class="text-white f-w-600"><span>Loading...</span>所</h5>
+                          </div>
+                          <div class="project-status-card">
+                            <span class="bg-light-secondary h-45 w-45 d-flex-center b-r-50">
+                              <i class="flag-icon flag-icon-sgp"></i>
+                            </span>
+                            <p class="mb-0 mt-2" data-country-code="SG">新加坡</p>
+                            <h5 class="f-w-600"><span>Loading...</span>所</h5>
+                          </div>
+                        </div>
+
+
+                     
+                       
+                      </div>
+                      <div class="col-sm-3 pt-3 pt-sm-0">
+                        <h5 class="header-title-text txt-ellipsis-1">专业统计</h5>
+
+                        <div class="mt-3">
+
+                          <ul class="avatar-group justify-content-start mt-3">
+                            <li class="text-bg-danger h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Everlee Lambert">
+                              CS
+                            </li>
+                            <li class="text-bg-dark h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              AI
+                            </li>
+                            <li class="text-bg-warning h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              EE
+                            </li>
+                            <li class="text-bg-success h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              DS
+                            </li>
+                            <li class="text-bg-primary h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              BA
+                            </li>
+                            <li class="text-bg-secondary h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              JD
+                            </li>
+                            <li class="text-bg-light h-45 w-45 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="Hunter Scott">
+                              ECO
+                            </li>
+                            <li class="text-bg-secondary h-40 w-40 d-flex-center b-r-50" data-bs-toggle="tooltip"
+                              data-bs-title="2 More">
+                              1387+
+                            </li>
+                          </ul>
+
+                        </div>
+
+                        <div class="project-hour-box">
+                          <div class="flex-grow-1">
+                            <p class="f-s-18 f-w-500 text-secondary mb-0">所有学校总计专业数量: <span class="f-w-600 text-primary">Loading...</span></p>
+                          </div>
+                          <div>
+                            <div id="hoursRedial"></div>
+                          </div>
+                        </div>
+                        <div class="project-hour-box">
+                          <div class="flex-grow-1 ">
+                            <p class="f-s-18 f-w-500 text-secondary mb-0">去重后专业数量: <span class="f-w-600 text-success">1394</span></p>
+                          </div>
+                          <div>
+                            <div id="spendhoursRedial"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
       <div class="col-md-5 col-lg-4 col-xxl-3">
         <div class="card active-user-card">
           <div class="card-body">
             <div>
-              <h5 class="text-dark">DeepSeek用量</h5>
+              <h5 class="header-title-text txt-ellipsis-1">DeepSeek用量</h5>
             </div>
             <div class="d-flex gap-2 mt-3">
               <div class="active-user-content">
