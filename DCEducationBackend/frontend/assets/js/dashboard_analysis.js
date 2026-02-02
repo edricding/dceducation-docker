@@ -44,13 +44,15 @@ function setGenerateLoading(isLoading) {
 }
 
 function setResultLoading(isLoading) {
-  const card = document.getElementById("result-card");
-  if (!card) return;
-  if (isLoading) {
-    card.classList.add("dc-loading-active");
-  } else {
-    card.classList.remove("dc-loading-active");
-  }
+  const targets = document.querySelectorAll(".dc-loading-target");
+  if (!targets.length) return;
+  targets.forEach((el) => {
+    if (isLoading) {
+      el.classList.add("dc-loading-active");
+    } else {
+      el.classList.remove("dc-loading-active");
+    }
+  });
 }
 
 function buildDeepSeekPayload(studentData, promptType) {
