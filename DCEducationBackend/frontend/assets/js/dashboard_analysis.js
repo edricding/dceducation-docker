@@ -43,6 +43,12 @@ function setGenerateLoading(isLoading) {
   btn.disabled = prevDisabled ? true : false;
 }
 
+function setGenerateButtonVisible(visible) {
+  const btn = document.getElementById("btn-generate-result");
+  if (!btn) return;
+  btn.style.display = visible ? "" : "none";
+}
+
 function setTabEnabled(tabId, enabled) {
   const el = document.getElementById(tabId);
   if (!el) return;
@@ -62,16 +68,22 @@ function setTabsEnabled(enabled) {
   setTabEnabled("finish-tab", enabled);
 }
 
-function setResultLoading(isLoading) {
-  const targets = document.querySelectorAll(".dc-loading-target");
-  if (!targets.length) return;
-  targets.forEach((el) => {
-    if (isLoading) {
-      el.classList.add("dc-loading-active");
-    } else {
-      el.classList.remove("dc-loading-active");
-    }
-  });
+function setCardLoading(cardId, isLoading) {
+  const el = document.getElementById(cardId);
+  if (!el) return;
+  if (isLoading) {
+    el.classList.add("dc-loading-active");
+  } else {
+    el.classList.remove("dc-loading-active");
+  }
+}
+
+function setSchoolsLoading(isLoading) {
+  setCardLoading("result-card-schools", isLoading);
+}
+
+function setAnalysisLoading(isLoading) {
+  setCardLoading("result-card-analysis", isLoading);
 }
 
 function buildDeepSeekPayload(studentData, promptType) {
@@ -1972,6 +1984,7 @@ $(document).on("click", "#btn-summary-reset", function () {
   $("#btn-generate-result").prop("disabled", true);
   clearDeepSeekSections();
   setTabsEnabled(false);
+  setGenerateButtonVisible(true);
   activateTab("review-tab");
 });
 
@@ -1992,7 +2005,8 @@ $(document).on("click", "#btn-generate-result", async function () {
   }
 
   setGenerateLoading(true);
-  setResultLoading(true);
+  setSchoolsLoading(true);
+  setAnalysisLoading(true);
   clearDeepSeekSections();
   try {
     const schoolsContent = await requestDeepSeekAnalysis(lastStudentData, "schools");
@@ -2007,20 +2021,26 @@ $(document).on("click", "#btn-generate-result", async function () {
     } else if (schoolsContent) {
       console.log("[deepseek] schools raw", schoolsContent);
     }
+    setSchoolsLoading(false);
 
     const analysisContent = await requestDeepSeekAnalysis(lastStudentData, "analysis");
     renderDeepSeekSections(analysisContent);
     setTabsEnabled(true);
+    setGenerateButtonVisible(false);
+    setAnalysisLoading(false);
   } finally {
     setGenerateLoading(false);
-    setResultLoading(false);
+    setSchoolsLoading(false);
+    setAnalysisLoading(false);
   }
 });
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
     setTabsEnabled(false);
+    setGenerateButtonVisible(true);
   });
 } else {
   setTabsEnabled(false);
+  setGenerateButtonVisible(true);
 }

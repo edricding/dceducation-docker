@@ -49,40 +49,7 @@
   <!-- Responsive css-->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.1/github-markdown.min.css">
-
-  <style>
-    .dc-loading-target {
-      position: relative;
-    }
-
-    .dc-loading-overlay {
-      position: absolute;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(var(--primary), 0.4);
-      border-radius: var(--app-border-radius);
-      opacity: 0.8;
-      z-index: 2;
-    }
-
-    .dc-loading-active .dc-loading-overlay {
-      display: flex;
-    }
-
-    .dc-btn-loading {
-      pointer-events: none;
-    }
-
-    .dc-btn-loading .loader-container-box .loader {
-      width: 18px;
-    }
-
-    .text-weight-500 {
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/dashboard_analysis.css">
 
 </head>
 
@@ -553,8 +520,8 @@
                         tabindex="-1">
 
                         <div class="row">
-                           <div class="col-xl-4 col-12">
-                            <div class="wallet-card mt-0 mb-3 dc-loading-target" id="result-card"
+                          <div class="col-xl-4 col-12">
+                            <div class="wallet-card mt-0 mb-3 dc-loading-target" id="result-card-schools"
                               style="display: block;width: 100%;min-height: 100%;background-color: white;">
                               <div class="position-relative" style="margin: 20px;">
                                 <div id="analysis_student_background">
@@ -572,7 +539,7 @@
                             </div>
                           </div>
                           <div class="col-xl-8 col-12">
-                            <div class="wallet-card mt-0 mb-3 dc-loading-target" id="result-card"
+                            <div class="wallet-card mt-0 mb-3 dc-loading-target" id="result-card-analysis"
                               style="display: block;width: 100%;min-height: 100%;background-color: white;">
                               <div class="position-relative" style="margin: 20px;">
                                 <div id="analysis_student_background">
@@ -1539,7 +1506,7 @@
 
   <!-- latest jquery-->
   <script src="assets/js/jquery-3.6.3.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+ 
   <!-- Simple bar js-->
   <script src="assets/vendor/simplebar/simplebar.js"></script>
 
@@ -1555,13 +1522,8 @@
   <!-- js -->
   <script src="assets/js/input_masks.js"></script>
 
-  <!-- js
-    <script src="assets/js/select.js"></script> -->
-
   <script src="assets/vendor/jstree/jstree.min.js"></script>
 
-
-  <!-- App js-->
   <script src="assets/js/script.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

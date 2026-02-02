@@ -1,0 +1,34 @@
+.dc-loading-target {
+  position: relative;
+}
+
+.dc-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--primary), 0.4);
+  border-radius: var(--app-border-radius);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dc-loading-active .dc-loading-overlay {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.dc-btn-loading {
+  pointer-events: none;
+}
+
+.dc-btn-loading .loader-container-box .loader {
+  width: 18px;
+}
+
+.text-weight-500 {
+  font-weight: bold;
+}
