@@ -35423,9 +35423,9 @@ input[type=range]::-webkit-slider-thumb {
   flex-direction: column;
   box-shadow: var(--box-shadow);
 }
-.project-status-box .project-status-card:hover i {
-  animation: flash 1s ease-in-out infinite;
-}
+/* .project-status-box .project-status-card:hover i {
+  animation: pulse 1s ease-in-out infinite;
+} */
 
 .project-hour-box {
   display: flex;
