@@ -43,6 +43,25 @@ function setGenerateLoading(isLoading) {
   btn.disabled = prevDisabled ? true : false;
 }
 
+function setTabEnabled(tabId, enabled) {
+  const el = document.getElementById(tabId);
+  if (!el) return;
+  if (enabled) {
+    el.removeAttribute("disabled");
+    el.classList.remove("disabled");
+    el.setAttribute("aria-disabled", "false");
+  } else {
+    el.setAttribute("disabled", "disabled");
+    el.classList.add("disabled");
+    el.setAttribute("aria-disabled", "true");
+  }
+}
+
+function setTabsEnabled(enabled) {
+  setTabEnabled("review-tab", enabled);
+  setTabEnabled("finish-tab", enabled);
+}
+
 function setResultLoading(isLoading) {
   const targets = document.querySelectorAll(".dc-loading-target");
   if (!targets.length) return;
@@ -1952,6 +1971,7 @@ $(document).on("click", "#btn-summary-reset", function () {
   resetMasterFormUI();
   $("#btn-generate-result").prop("disabled", true);
   clearDeepSeekSections();
+  setTabsEnabled(false);
   activateTab("review-tab");
 });
 
@@ -1990,8 +2010,17 @@ $(document).on("click", "#btn-generate-result", async function () {
 
     const analysisContent = await requestDeepSeekAnalysis(lastStudentData, "analysis");
     renderDeepSeekSections(analysisContent);
+    setTabsEnabled(true);
   } finally {
     setGenerateLoading(false);
     setResultLoading(false);
   }
 });
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    setTabsEnabled(false);
+  });
+} else {
+  setTabsEnabled(false);
+}
