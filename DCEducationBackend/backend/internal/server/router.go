@@ -96,6 +96,7 @@ func NewRouter(cfg config.Config, db *sqlx.DB) *gin.Engine {
 	// deepseek proxy
 	deepseekHandler := deepseek.NewHandler(cfg)
 	v1.POST("/ai/deepseek/analyze", deepseekHandler.Analyze)
+	v1.GET("/ai/deepseek/balance", deepseekHandler.Balance)
 
 	// users module wiring
 	userRepo := users.NewRepo(db)

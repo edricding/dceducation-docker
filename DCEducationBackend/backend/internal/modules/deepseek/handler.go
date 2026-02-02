@@ -244,3 +244,64 @@ func (h *Handler) Analyze(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"ok": true, "content": content})
 }
+
+type balanceResponse struct {
+	IsAvailable  bool `json:"is_available"`
+	BalanceInfos []struct {
+		Currency       string `json:"currency"`
+		TotalBalance   string `json:"total_balance"`
+		GrantedBalance string `json:"granted_balance"`
+		ToppedUpBalance string `json:"topped_up_balance"`
+	} `json:"balance_infos"`
+}
+
+func (h *Handler) Balance(c *gin.Context) {
+	if strings.TrimSpace(h.cfg.DeepSeekAPIKey) == "" {
+		c.JSON(http.StatusInternalServerError, gin.H{"ok": false, "error": "deepseek api key not configured"})
+		return
+	}
+
+	baseURL := strings.TrimRight(h.cfg.DeepSeekBaseURL, "/")
+	if strings.HasSuffix(baseURL, "/v1") {
+		baseURL = strings.TrimSuffix(baseURL, "/v1")
+	}
+	url := baseURL + "/user/balance"
+
+	httpReq, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"ok": false, "error": "failed to build request"})
+		return
+	}
+	httpReq.Header.Set("Accept", "application/json")
+	httpReq.Header.Set("Authorization", "Bearer "+h.cfg.DeepSeekAPIKey)
+
+	resp, err := h.httpClient.Do(httpReq)
+	if err != nil {
+		c.JSON(http.StatusBadGateway, gin.H{"ok": false, "error": "deepseek request failed"})
+		return
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		c.JSON(http.StatusBadGateway, gin.H{"ok": false, "error": "deepseek request failed", "status": resp.StatusCode})
+		return
+	}
+
+	rawBody, _ := io.ReadAll(resp.Body)
+	if len(rawBody) == 0 {
+		c.JSON(http.StatusBadGateway, gin.H{"ok": false, "error": "empty deepseek response", "status": resp.StatusCode})
+		return
+	}
+
+	var br balanceResponse
+	if err := json.Unmarshal(rawBody, &br); err != nil {
+		preview := string(rawBody)
+		if len(preview) > 800 {
+			preview = preview[:800]
+		}
+		c.JSON(http.StatusBadGateway, gin.H{"ok": false, "error": "invalid deepseek response", "preview": preview})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"ok": true, "data": br})
+}
