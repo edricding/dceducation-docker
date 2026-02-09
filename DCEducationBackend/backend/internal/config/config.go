@@ -62,7 +62,7 @@ func Load() Config {
 
 		CORSAllowOrigins: getEnv("CORS_ALLOW_ORIGINS", "*"),
 
-		DeepSeekAPIKey:  getEnv("DEEPSEEK_API_KEY", "sk-03bb5997f68a41128f7061ac0d4d9a92"),
+		DeepSeekAPIKey:  getEnv("DEEPSEEK_API_KEY", ""),
 		DeepSeekBaseURL: getEnv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
 		DeepSeekModel:   getEnv("DEEPSEEK_MODEL", "deepseek-chat"),
 	}

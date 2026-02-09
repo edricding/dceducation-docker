@@ -52,15 +52,15 @@ Illustrator*.tmp
 # *.pdf        # 有时候设计师会把 pdf 当图片用，如果你的项目需要上传 pdf，请删掉这行
 
 
-# ---- env files (secrets) ----
+# ---- env files (secrets/templates) ----
 .env
 .env.*
-!/\.env\.example
-!/\.env\.template
-
-# systemd / deploy env (if you ever put copies in repo)
 *.env
 *.env.*
+.env.example
+*.env.example
+.env-examp*
+*.env-examp*
 
 # ---- logs / temp ----
 *.log
