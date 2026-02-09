@@ -260,11 +260,32 @@
 
 
         // Menu Active
-        const currentPath = window.location.pathname.split('/').pop();
+        const staticPageRoutes = new Set([
+            'index',
+            'about',
+            'program',
+            'program-ielts',
+            'program-toefl',
+            'program-alevel',
+            'program-ket',
+            'program-sm',
+            'program-application-bachelor-direct',
+            'program-application-bachelor-transfer-us',
+            'program-application-master',
+            'login',
+            '404'
+        ]);
+        const currentPathRaw = window.location.pathname.split('/').pop();
+        if (currentPathRaw && !currentPathRaw.includes('.') && staticPageRoutes.has(currentPathRaw)) {
+            const basePath = window.location.pathname.slice(0, -currentPathRaw.length);
+            window.location.replace(`${basePath}${currentPathRaw}.html${window.location.search}${window.location.hash}`);
+            return;
+        }
+        const currentPath = currentPathRaw === '' ? 'index.html' : currentPathRaw;
         const menuLinks = document.querySelectorAll('.multipage-menu a');
         menuLinks.forEach(link => {
             const linkPath = link.getAttribute('href');
-            if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+            if (linkPath === currentPath) {
                 link.classList.add('active');
                 let parentLi = link.parentElement;
                 while (parentLi) {
