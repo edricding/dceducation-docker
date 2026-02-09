@@ -306,7 +306,7 @@ async function requestDeepSeekAnalysis(studentData, promptType) {
 // ------------------ bachelor start ------------------
 
 $(function () {
-  // 初始化多选下拉框（目标院校和目标专业�?
+  // 初始化多选下拉框（目标院校和目标专业）
     const $bachelorSchool = $("#select_bachelor_to_school");
   const $bachelorMajor = $("#select_bachelor_to_major");
 
@@ -748,7 +748,7 @@ $(document).on("click", "#btn-modal-bachelor-confirm", function () {
   $("#btn-generate-result").prop("disabled", false);
 });
 
-// A-Level：勾选时显示并启用四个下拉框，取消时隐藏并清�?
+// A-Level：勾选时显示并启用四个下拉框，取消时隐藏并清空
 safeAddListener("checkbox_bachelor_alevel", function () {
     const container = document.getElementById(
       "bachelor_alevel_scores_container"
@@ -840,7 +840,7 @@ safeAddListener("checkbox_bachelor_pte", function () {
     }
   });
 
-// 多邻�?Duolingo
+// 多邻国 Duolingo
 safeAddListener("checkbox_bachelor_duolingo", function () {
     const input = document.getElementById("score_duolingo");
     if (this.checked) {
@@ -892,7 +892,7 @@ safeAddListener("checkbox_bachelor_award", function () {
 // ------------------ master start ------------------
 
 $(function () {
-  // 初始化多选下拉框（目标院校和目标专业�?
+  // 初始化多选下拉框（目标院校和目标专业）
   $("#select_master_to_school").select2({
     placeholder: "请选择目标院校（可多选）",
     allowClear: true,
@@ -904,7 +904,7 @@ $(function () {
   });
 });
 
-// 雅�?IELTS
+// 雅思 IELTS
 safeAddListener("checkbox_master_ielts", function () {
     const container = document.getElementById("master_ielts_score_container");
     const inputs = container.querySelectorAll("input");
@@ -955,7 +955,7 @@ safeAddListener("checkbox_master_pte", function () {
     }
   });
 
-// 多邻�?Duolingo
+// 多邻国 Duolingo
 safeAddListener("checkbox_master_duolingo", function () {
     const input = document.getElementById("score_duolingo");
     if (this.checked) {
@@ -1010,7 +1010,7 @@ safeAddListener("checkbox_master_work_abroad_related", function () {
     }
   });
 
-// 国外专业不相�?
+// 国外专业不相关
 safeAddListener("checkbox_master_work_abroad_unrelated", function () {
     const input = document.getElementById("input_master_work_abroad_unrelated");
     if (this.checked) {
@@ -1032,7 +1032,7 @@ safeAddListener("checkbox_master_work_domestic_related", function () {
     }
   });
 
-// 国内专业不相�?
+// 国内专业不相关
 safeAddListener("checkbox_master_work_domestic_unrelated", function () {
     const input = document.getElementById(
       "input_master_work_domestic_unrelated"
@@ -1054,13 +1054,13 @@ const PROGRAMS = [
     country: "英国",
     school: "UCL",
     major: "Computer Science BSc",
-    tier: "top", // top / strong / match / safe (你自己定�?
+    tier: "top", // top / strong / match / safe (你自己定)
     requirements: {
-      gpaMin: 85, // 0-100 体系门槛（或后面你换成更细的�?
+      gpaMin: 85, // 0-100 体系门槛（或后面你换成更细的规则）
       ieltsOverallMin: 7.0,
       ieltsEachMin: 6.5,
       toeflTotalMin: 100,
-      alevelPreferred: ["A*", "A*", "A"], // 可�?
+      alevelPreferred: ["A*", "A*", "A"], // 可选
       apMinCount4: 3,
     },
     weights: {
@@ -1117,14 +1117,14 @@ function collectBachelorFormData() {
       ap: null,
     },
 
-    // 5. 活动及获�?
+    // 5. 活动及获奖
     activities: "",
     research: "",
     awards: "",
   };
 
   // ========================
-  // 1. 留学目标国家（多�?checkbox�?
+  // 1. 留学目标国家（多选 checkbox）
   // ========================
   const countries = [
     { id: "checkbox_bachelor_uk", value: "英国" },
@@ -1146,7 +1146,7 @@ function collectBachelorFormData() {
   // ========================
   const schoolSelect = $("#select_bachelor_to_school");
   if (schoolSelect.length) {
-    data.target_schools = schoolSelect.val() || []; // Select2 �?val() 返回数组
+    data.target_schools = schoolSelect.val() || []; // Select2 的 val() 返回数组
   }
 
   // ========================
@@ -1184,7 +1184,7 @@ function collectBachelorFormData() {
   // ========================
   // 5. 语言成绩
   // ========================
-  // 雅�?
+  // 雅思
   if (document.getElementById("checkbox_bachelor_ielts").checked) {
     data.language_scores.ielts = {
       overall:
@@ -1250,7 +1250,7 @@ function collectBachelorFormData() {
     };
   }
 
-  // 多邻�?
+  // 多邻国
   if (document.getElementById("checkbox_bachelor_duolingo").checked) {
     data.language_scores.duolingo =
       document.getElementById("input_bachelor_Duolingo_total")?.value.trim() ||
@@ -1287,7 +1287,7 @@ function collectBachelorFormData() {
   }
 
   // ========================
-  // 7. 活动及获�?
+  // 7. 活动及获奖
   // ========================
   if (document.getElementById("checkbox_bachelor_activity").checked) {
     data.activities =
@@ -1328,12 +1328,12 @@ function collectMasterFormData() {
       duolingo: null,
     },
 
-    // 4. 活动及获�?- 高质�?
+    // 4. 活动及获奖 - 高质量
     activities: "",
     research: "",
     awards: "",
 
-    // 5. 工作经历 - 高质�?
+    // 5. 工作经历 - 高质量
     work_experience: {
       abroad_related: "",
       abroad_unrelated: "",
@@ -1343,7 +1343,7 @@ function collectMasterFormData() {
   };
 
   // ========================
-  // 1. 留学目标国家（多�?checkbox�?
+  // 1. 留学目标国家（多选 checkbox）
   // ========================
   const countries = [
     { id: "checkbox_master_uk", value: "英国" },
@@ -1376,7 +1376,7 @@ function collectMasterFormData() {
   // ========================
   // 3. 本科经历
   // ========================
-  // 类型（国�?国外本科�?
+  // 类型（国内/国外本科）
   const undergradRadios = document.querySelectorAll(
     'input[name="radio_undergraduate_domestic_or_abroad"]'
   );
@@ -1395,13 +1395,13 @@ function collectMasterFormData() {
     data.undergraduate_gpa = gpaInput.value.trim();
   }
 
-  // 毕业院校（单�?Select2�?
+  // 毕业院校（单选 Select2）
   const schoolSelectGrad = $("#select_master_graduated_school");
   if (schoolSelectGrad.length) {
     data.graduated_school = schoolSelectGrad.val() || "";
   }
 
-  // 毕业专业（单�?Select2�?
+  // 毕业专业（单选 Select2）
   const majorSelectGrad = $("#select_master_graduated_major");
   if (majorSelectGrad.length) {
     data.graduated_major = majorSelectGrad.val() || "";
@@ -1410,7 +1410,7 @@ function collectMasterFormData() {
   // ========================
   // 4. 语言成绩
   // ========================
-  // 雅�?
+  // 雅思
   if (document.getElementById("checkbox_master_ielts")?.checked) {
     data.language_scores.ielts = {
       overall:
@@ -1454,14 +1454,14 @@ function collectMasterFormData() {
     };
   }
 
-  // 多邻�?
+  // 多邻国
   if (document.getElementById("checkbox_master_duolingo")?.checked) {
     data.language_scores.duolingo =
       document.getElementById("score_duolingo")?.value.trim() || "";
   }
 
   // ========================
-  // 5. 活动及获�?
+  // 5. 活动及获奖
   // ========================
   if (document.getElementById("checkbox_master_activity")?.checked) {
     data.activities =
@@ -1530,13 +1530,13 @@ function formatScore5(s) {
   const r = s.reading || "-";
   const w = s.writing || "-";
   const sp = s.speaking || "-";
-  // 保持你原来展示格�?
+  // 保持你原来展示格式
   return `${o} - ${l} - ${r} - ${w} - ${sp}`;
 }
 
 function formatAlevel(scores) {
   if (!Array.isArray(scores) || scores.length === 0) return "-";
-  // 你原来是多个 <a>，这里用空格分隔；想�?tag 也可以再升级
+  // 你原来是多个 <a>，这里用空格分隔；想做 tag 也可以再升级
   return scores.join(" ");
 }
 
@@ -1566,7 +1566,7 @@ function renderBachelorSummary(data) {
   renderList("summary_master_target_schools", []);
   renderList("summary_master_target_majors", []);
 
-  // 中间：高�?国际课程/语言
+  // 中间：高中国际课程/语言
   setText("summary_highschool_type", data.highschool_type, "-");
   setText("summary_highschool_gpa", data.highschool_gpa, "-");
 
@@ -1605,7 +1605,7 @@ function renderBachelorSummary(data) {
   );
   setText("summary_duolingo", data.language_scores?.duolingo, "-");
 
-  // 右侧：活动科研获奖（本科�?
+  // 右侧：活动科研获奖（本科）
   setNumberOrZero("summary_activities", data.activities);
   setNumberOrZero("summary_research", data.research);
   setNumberOrZero("summary_awards", data.awards);
@@ -1630,11 +1630,11 @@ function renderMasterSummary(data) {
   renderList("summary_master_target_schools", data.target_schools);
   renderList("summary_master_target_majors", data.target_majors);
 
-  // 清空本科目标�?
+  // 清空本科目标
   renderList("summary_bachelor_target_schools", []);
   renderList("summary_bachelor_target_majors", []);
 
-  // 中间：大学经�?
+  // 中间：大学经历
   setText("summary_undergrad_type", data.undergraduate_type, "-");
   setText("summary_grad_school", data.graduated_school, "-");
   setText("summary_grad_major", data.graduated_major, "-");
@@ -1698,7 +1698,7 @@ function renderMasterSummary(data) {
 }
 
 function showBachelorCards() {
-  // 隐藏所�?master
+  // 隐藏所有 master
   document.querySelectorAll(".card-master").forEach((el) => {
     el.style.display = "none";
   });
@@ -1710,7 +1710,7 @@ function showBachelorCards() {
 }
 
 function showMasterCards() {
-  // 隐藏所�?bachelor
+  // 隐藏所有 bachelor
   document.querySelectorAll(".card-bachelor").forEach((el) => {
     el.style.display = "none";
   });
@@ -1844,7 +1844,7 @@ function resetSelects(prefix) {
   });
 }
 
-// Select2 清空（多�?单选通用�?
+// Select2 清空（多选/单选通用）
 function resetSelect2(selector) {
   const $el = $(selector);
   if ($el.length) {
@@ -1859,7 +1859,7 @@ function resetBachelorFormUI() {
   resetSelects("select_bachelor_");
   resetRadios("radio_highSchool_domestic_or_international");
 
-  // Select2（根据你 collect 里用到的�?
+  // Select2（根据你 collect 里用到的字段）
   resetSelect2("#select_bachelor_to_school");
   resetSelect2("#select_bachelor_to_major");
   updateBachelorTargetInputs();
@@ -1871,7 +1871,7 @@ function resetMasterFormUI() {
   resetSelects("select_master_");
   resetRadios("radio_undergraduate_domestic_or_abroad");
 
-  // Select2（根据你 collect 里用到的�?
+  // Select2（根据你 collect 里用到的字段）
   resetSelect2("#select_master_to_school");
   resetSelect2("#select_master_to_major");
   resetSelect2("#select_master_graduated_school");
@@ -1903,7 +1903,7 @@ function resetMasterFormUI() {
 
 //   const ctx = canvas.getContext("2d");
 
-//   // 如果 Chart.js 是全局脚本引入，模块里有时�?window.Chart 更稳
+//   // 如果 Chart.js 是全局脚本引入，模块里有时用 window.Chart 更稳
 //   const ChartCtor = window.Chart || Chart;
 
 //   studentRadarChart = new ChartCtor(ctx, {
@@ -1971,7 +1971,7 @@ function resetMasterFormUI() {
 //   const hint = document.getElementById("studentRadarHint");
 //   if (hint) {
 //     hint.textContent = missing.length
-//       ? `未填�?未提供：${missing.join("�?)}（雷达图�?0 显示）`
+//       ? `未填/未提供：${missing.join("、")}（雷达图按 0 显示）`
 //       : "";
 //   }
 // }
