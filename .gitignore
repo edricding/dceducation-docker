@@ -77,3 +77,9 @@ temp/
 # ---- IDE ----
 .vscode/
 .idea/
+
+# ---- Let's Encrypt (do not commit cert/private keys) ----
+nginx/certbot/conf/*
+!nginx/certbot/conf/.gitkeep
+nginx/certbot/www/*
+!nginx/certbot/www/.gitkeep
