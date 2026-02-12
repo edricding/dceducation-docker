@@ -18,7 +18,7 @@ docker compose stop nginx
 
 docker compose --profile ops run --rm --service-ports certbot certonly \
   --standalone \
-  --email your-email@example.com \
+  --email info@dceducation.com.cn \
   --agree-tos \
   --no-eff-email \
   -d dceducation.com.cn \
