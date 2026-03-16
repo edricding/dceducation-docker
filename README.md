@@ -1,4 +1,5 @@
 # HTTPS Setup (Docker + Nginx + Let's Encrypt)
+- 2026.03
 
 ## 1) Prerequisites
 - DNS `A` records already point to this server:
