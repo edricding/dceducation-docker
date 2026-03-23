@@ -38,7 +38,7 @@ After startup, `http://dceducation.com.cn` and `http://backend.dceducation.com.c
 Set a daily cron job (example: 03:10 every day):
 
 ```bash
-10 3 * * * cd /path/to/dceducation-docker && docker compose --profile ops run --rm certbot renew --webroot -w /var/www/certbot --quiet && docker compose exec -T nginx nginx -s reload
+cd /path/to/dceducation-docker && docker compose --profile ops run --rm certbot renew --webroot -w /var/www/certbot --quiet && docker compose exec -T nginx nginx -s reload
 ```
 
 Notes:
